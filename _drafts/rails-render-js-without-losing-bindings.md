@@ -52,6 +52,31 @@ $('.user').on('click',function(e){
 
 But after renering via `list.js.erb` the click event on `.user` didn't get fired.
 
+## The real problem
+
+I hope everyone undestood the problem. The actual issue has nothing to do with rails. The real problem was my understanding of `$.on` method.
+
+I initialy thought the [$.on](http://api.jquery.com/on/) is same as [$.live](http://api.jquery.com/live/) method, Attach the event handler for the selector, now and in future. Future means any element added to dom with selector even after the bindings are done.
+
+But `$.on` will bind the event handlers only for the selector elements exists at the time of binding.
+
+Since after rending `list.js.erb` all the existing `tr.user` elements are replaced with new ones. `$.on` won't bind event handlers for the new once, hence the functionaly brokes.
+
 ## Solution
 
-I hope the problem is now 
+Now I am on to solution. After a lot of googling I found that the if I want `$.on` to work same as `$.live` I need to change how I bind the event handler to the elements.
+
+The worked solution is,
+
+{% highlight js %}
+# users.js
+$(document).on('click','.user', {} ,function(e){
+  $(e.currentTarget).next('tr.user-details').fadeToggle(500)
+})
+{% endhighlight %}
+
+This will bind the event handlers to the DOM selector elements not only now, but also in future (selectors added to DOM after the bindings).
+
+Hope this helped you.
+
+PS : This soultion is not only for rails, but also help for the event bindings for the ajaxed contents.
