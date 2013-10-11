@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Setup postgresql"
+title: "Setup postgresql on ubuntu"
 date: 2013-10-11 00:00:00 IST
 updated: 2013-10-11 00:00:00 IST
-categories: rails
+categories: postgresql ubuntu
 ---
 
 ## Installation
