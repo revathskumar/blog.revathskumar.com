@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Setup postgresql on ubuntu"
-date: 2013-10-14 08:00:00
-updated: 2013-10-14 08:00:00
+date: 2013-10-11 08:00:00
+updated: 2013-10-11 08:00:00
 categories: postgresql ubuntu
 ---
 
