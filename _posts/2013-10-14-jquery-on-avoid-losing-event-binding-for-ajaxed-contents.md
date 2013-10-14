@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "jQuery.on : losing event binding for ajaxed contents"
+title: "jQuery.on : avoid losing event binding for ajaxed contents"
 date: 2013-10-14 00:00:00 UTC
 updated: 2013-10-14 00:00:00 UTC
 categories: jquery
