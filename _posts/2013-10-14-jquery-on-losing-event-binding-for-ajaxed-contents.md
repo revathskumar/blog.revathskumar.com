@@ -3,7 +3,7 @@ layout: post
 title: "jQuery.on : losing event binding for ajaxed contents"
 date: 2013-10-14 00:00:00
 updated: 2013-10-14 00:00:00
-categories: rails
+categories: jquery
 ---
 
 
