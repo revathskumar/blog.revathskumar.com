@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Setup postgresql on ubuntu"
-date: 2013-10-11 00:00:00
-updated: 2013-10-11 00:00:00
+date: 2013-10-14 08:00:00
+updated: 2013-10-14 08:00:00
 categories: postgresql ubuntu
 ---
 
@@ -13,7 +13,7 @@ sudo apt-get install postgresql-9.2 postgresql-contrib-9.2
 postgresql-server-9.2 postgresql-server-dev-9.2
 {% endhighlight %}
 
-Unlike MySql, In postgres we can have users coupled with system users. So whenever you try `psql` command the default user will be your current loggedin system user. While installation it creates a postgres user in the system to access db.
+Unlike MySql, In postgres we can have users coupled with system users. So whenever you try `psql` command the default user will be your current loggedin system user. While installation it creates a user with username **postgres** in the system to access db.
 
 ## login into default user
 {% highlight sh %}
@@ -33,7 +33,7 @@ If you forgot to give **CREATEDB** permission while creating user you can alter 
 ALTER USER revath CREATEDB;
 {% endhighlight %}
 
-After creating new role/user now logout from the postgres user by typing `\q` in the psql prompt.
+After creating new role/user, logout from the postgres user by typing `\q` in the psql prompt.
 
 Now login into the psql by selecting the default database.
 
