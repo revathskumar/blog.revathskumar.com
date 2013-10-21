@@ -27,7 +27,7 @@ First thing I done was to setup a boilerplate to run ES6 with traceur.
     <script>
         traceur.options.experimental = true;
     </script>
-    <script type="text/traceur" "calc.js"></script>
+    <script type="text/traceur" src="calc.js"></script>
   </body>
 </html>
 {% endhighlight %}
