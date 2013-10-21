@@ -91,3 +91,42 @@ traceur --out build/calc.js calc.js
 
 This will store the compiled js to *build/calc.js*. You can trun on experimental features with `--experimental` option.
 
+## Using Grunt
+
+If you want to set up traceur compiler with grunt, you can use [grunt-traceur](https://github.com/aaronfrost/grunt-traceur).
+
+**Install grunt-traceur**
+
+{% highlight sh %}
+npm install grunt-traceur --save-dev
+{% endhighlight %}
+
+**Configure traceur task**
+
+{% highlight js %}
+// Gruntfile.js
+module.exports = function(grunt){
+    grunt.initConfig({
+        traceur: {
+            options: {
+                sourceMaps: true,
+                experimental:true  // Turn on all experimental features
+                blockBinding: true // Turn on support for let and const
+            },
+            custom: {
+                files:{
+                  'build/': ['calc.js']
+                }
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-traceur');
+}
+{% endhighlight %}
+
+You can run it by,
+
+{% highlight sh %}
+grunt traceur
+{% endhighlight %}
