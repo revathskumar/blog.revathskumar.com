@@ -14,6 +14,17 @@ This is just a summary of my unprepard flash talk on [MariaJS](http://peter.mich
 
 Since there were no slides, I was not able to share them who is behind and where you can find the docs and more details of it. Please find those details below.
 
+Here is the explanation of MVC by Peter Michaux.
+
+    There is a model that is at the heart of the whole thing. If the model
+    changes, it notifies its observers that a change occurred. The view is the
+    stuff you can see and the view observes the model. When the view is
+    notified that the model has changed, the view changes its appearance. The
+    user can interact with the view (e.g. clicking stuff) but the view
+    doesn’t know what to do. So the view tells the controller what the user
+    did and assumes the controller knows what to do. The controller
+    appropriately changes the model. And around and around it goes.
+
 * Created by : [Peter Michaux](http://peter.michaux.ca/)
   * Github : [@petermichaux](https://github.com/petermichaux)
   * Twitter : [@petermichaux](http://twitter.com/petermichaux)
