@@ -31,3 +31,5 @@ Yeoman helps you to generate bootstap for your application. You can turn your id
 If you want, you can take a look into my presentation from [Kerala Ruby User Group](http://krug.github.io) meetup in August 2013.
 
 <script async class="speakerdeck-embed" data-id="3d9e1a602494013115bc024f2b53895d" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
+
+And at last here is my [source](http://andrzejonsoftware.blogspot.in/2011/09/rails-is-not-mvc.html) from which I said **Rails is not MVC**.
