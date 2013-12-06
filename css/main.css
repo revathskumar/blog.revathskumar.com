@@ -159,13 +159,36 @@ ul.posts span {
 
 
 /* custom */
-h6.description{
+h6.description {
   margin-bottom: 2em;
   font-size: 12px;
   color: #666;
+  float:left;
+  /*margin: 0;*/
+  /*width: 60%;*/
 }
 
 .gittip{
   margin: 20px 0;
   font-weight: bold;
+}
+
+.search-wrapper {
+  width: 53%;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.header ul li {
+  list-style: none;
+  height: 22px;
+}
+
+.site-search {
+  width: 44%;
+  float:right;
+}
+.cse .gsc-control-cse, .gsc-control-cse {
+  padding: 0 !important;
 }

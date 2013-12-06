@@ -19,11 +19,35 @@
         <div class="container">
           <div class="site">
             <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-              <a class="extra" href="/p/about-me.html">about</a>
-              <h6 class="description">Alone I can't make this world better, so I do open source.</h6>
+              <div class="search-wrapper" >
+                <ul>
+                  <li>
+                    <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+                    <a class="extra" href="/">home</a>
+                    <a class="extra" href="/p/about-me.html">about</a>
+                  </li>
+                  <li>
+                    <h6 class="description">Alone I can't make this world better, so I do open source.</h6>
+                  </li>
+                </ul>
+              </div>
+              <div class='site-search'>
+                  <script>
+                    (function() {
+                      var cx = '008344744429318791371:ajdbf7lq3ai';
+                      var gcse = document.createElement('script');
+                      gcse.type = 'text/javascript';
+                      gcse.async = true;
+                      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                          '//www.google.com/cse/cse.js?cx=' + cx;
+                      var s = document.getElementsByTagName('script')[0];
+                      s.parentNode.insertBefore(gcse, s);
+                    })();
+                  </script>
+                  <gcse:search></gcse:search>
+                </div>
             </div>
+            <div style="clear:both"></div>
 
                 {{ content }}
 
