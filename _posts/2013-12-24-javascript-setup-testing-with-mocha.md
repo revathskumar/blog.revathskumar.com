@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "JavaScript : Setup testing with mocha"
-date: 2013-12-21 00:00:00 IST
-updated: 2013-12-21 00:00:00 IST
+date: 2013-12-24 00:00:00 IST
+updated: 2013-12-24 00:00:00 IST
 categories: github
 ---
 
