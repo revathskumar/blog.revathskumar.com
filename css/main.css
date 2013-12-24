@@ -192,3 +192,43 @@ h6.description {
 .cse .gsc-control-cse, .gsc-control-cse {
   padding: 0 !important;
 }
+
+@media only screen and (max-width: 768px) {
+  /* Style adjustments for viewports 480px and over go here */
+  .container{
+    margin: 2px;
+    width: 100%
+    text-overflow: '';
+  }
+
+  .site{
+    font-size: 100%;
+    width: 95%;
+    padding: 0 5px;
+  }
+
+  .header{
+    text-align: center;
+  }
+
+  .header h6.description {
+    float: none;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-search {
+    width: 100%;
+  }
+
+  .posts li span {
+    visibility: hidden;
+    width: 0px;
+    margin-left: -70px;
+  }
+}
