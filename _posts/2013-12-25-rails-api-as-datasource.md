@@ -26,13 +26,12 @@ Here is my sample data from the JSON API.
 
 ActiveResource will deal with the data pretty well except `contacts`. It tends to create an object for contacts. The ActiveResource object will be something similar to
 
-{% highlight ruby %}
-#<Store:0xb4aaec4 @attributes={ "store" => {"description" => "some description", 
-"contacts"=>#<Store::Contact:0xb4aa884 @attributes={ "contact" => {"opening_time"=>
-"09:00", "closing_time"=>"18:00",  "holidays"=>["Sunday"], "message"=>"" } }, 
-@prefix_options={}, @persisted=false>, "name"=> "some store" } } , @prefix_options={}, 
-@persisted=false>
-{% endhighlight %}
+> \#\<Store:0xb4aaec4 @attributes={ "store" => { "description" => "some description", "contacts" => #<Store::Contact:0xb4aa884 @attributes={
+> "contact" => {"opening_time" => "09:00", "clo
+> sing_time" =>"18:00","holidays"=>["Sunday"], 
+> "message" =>"" } },@prefix_options={}, 
+> @persisted=false>, "name"=> "some store" } } 
+> , @prefix_options={}, @persisted=false>
 
 So I hope you have noticed that contacts is an object of `Store::Contact`. This is pretty handy anyway but the main issue was `contacts` attributes are are enclosed inside a root element `contact`. This is not an issue if you are just finding and displaying data. But its a real issue when you try to create or update.
 
@@ -85,7 +84,8 @@ module ActiveResource
   class Base
 
     def create_resource_for(resource_name)
-      resource = self.class.const_set(resource_name, Class.new(ActiveResource::Base))
+      resource = self.class.const_set(resource_name, 
+        Class.new(ActiveResource::Base))
       resource.prefix = self.class.prefix
       resource.site   = self.class.site
       resource.include_root_in_json = false
