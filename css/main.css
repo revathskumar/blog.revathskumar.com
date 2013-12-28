@@ -189,8 +189,43 @@ h6.description {
   width: 44%;
   float:right;
 }
-.cse .gsc-control-cse, .gsc-control-cse {
-  padding: 0 !important;
+
+.social a {
+  width: 32px;
+  height: 32px;
+  float:left;
+  display:block;
+  margin: 0 2px;
+  background: url('http://i653.photobucket.com/albums/uu253/revathskumar/Signature/social-media-icons_zpsdd86c0a3.png') no-repeat 0px 0;
+}
+
+.social .twitter {
+  background-position: -39px 0;
+}
+
+.social .linkedin {
+  background-position: -75px 0;
+}
+.social .aboutme {
+  background-position: -111px 0;
+}
+.social .youtube {
+  background-position: -150px 0;
+}
+.social .stumbleupon {
+  background-position: -184px 0;
+}
+.social .blogger {
+  background-position: -221px 0;
+}
+.social .foursquare {
+  background-position: -257px 0;
+}
+.social .stackoverflow {
+  background-position: -293px 0;
+}
+.social .github {
+  background-position: -330px 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -228,7 +263,7 @@ h6.description {
 
   .posts li span {
     visibility: hidden;
-    width: 0px;
+    width: 0;
     margin-left: -70px;
   }
 }
