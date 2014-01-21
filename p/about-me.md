@@ -2,6 +2,9 @@
 layout: default
 title: "About Me"
 ---
+
+# About Me
+
 * Rubyist / JavaScripter
 * [Yeoman](http://yeoman.io/) Team member
 * Webaholic
