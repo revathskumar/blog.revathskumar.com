@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kerala JS : Promises in JavaScript"
+title: "Slides : Promises in JavaScript"
 date: 2013-12-12 12:00:00 IST
 updated: 2013-12-12 12:00:00 IST
 categories: talks

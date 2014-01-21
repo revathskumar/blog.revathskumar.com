@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "KeralaJS : flash talk on MariaJS and Yeoman"
+title: "Slides : flash talk on MariaJS and Yeoman"
 date: 2013-11-18 18:19:00 IST
 updated: 2013-11-18 18:19:00 IST
 categories: talks
