@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "CoffeeSctipt : Existential operator & Multiline comment"
-date: 2014-02-25 00:00:00 IST
-updated: 2014-02-25 00:00:00 IST
-categories: css
+date: 2014-02-25 11:00:00 IST
+updated: 2014-02-25 11:00:00 IST
+categories: CoffeeSctipt
 ---
 
 Eventhough I am using CoffeeScript for a couple of months now, many of the feature were still unknown to me. Two days before I got hands into two such features which I wish I have known from the beginning.
