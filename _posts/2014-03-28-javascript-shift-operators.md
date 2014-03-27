@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "JavaScript : shift operators"
-date: 2014-02-23 00:00:00 IST
-updated: 2014-02-23 00:00:00 IST
+date: 2014-03-28 00:00:00 IST
+updated: 2014-03-28 00:00:00 IST
 categories: javascript
 ---
 
