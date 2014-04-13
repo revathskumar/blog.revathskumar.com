@@ -13,6 +13,15 @@ Here I talked about "Modern Frontend Workflow" with [Yeoman](http://yeoman.io), 
 If you missed it, please find below the slides of my talk.
 
 <script async class="speakerdeck-embed" data-id="7b25de30784d01315a1f1214273280ab" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
+<br/>
+# some best thing happend for me in conference
 
-I would like to thank the whole organiser for organising such a beautiful event and giving opportunity for me to give a talk and also Rahul Ramesh([@theCoderDotIn](https://twitter.com/theCoderDotIn)) for push me and said "you can do it" when I told him I am not ready to give a talk in a conference.
+* First experience on talking in a conference
+* Met some twitter friends ([@vipinonline](https://twitter.com/vipinonline), [@arunkrishnans](https://twitter.com/arunkrishnans), [@sanooj_ah](https://twitter.com/sanooj_ah))
+* Got introduced to CSS4 by [@shwetank](https://twitter.com/shwetank)
+* came to know about overriding `throw` in JavaScript from [@shinexavier](https://twitter.com/shinexavier)
+* Of course a bunch of twitter followers. ;)
+
+
+I would like to thank the whole organisers for organising such a beautiful event and giving opportunity for me to give a talk and also Rahul Ramesh([@theCoderDotIn](https://twitter.com/theCoderDotIn)) for push me and said "you can do it" when I told him I am not ready to give a talk in a conference.
 
