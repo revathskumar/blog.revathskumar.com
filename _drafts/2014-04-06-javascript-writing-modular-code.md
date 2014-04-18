@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "JavaScript : Writing modular code"
-date: 2014-04-06 11:00:00 IST
-updated: 2014-04-06 11:00:00 IST
+date: 2014-04-18 15:00:00 IST
+updated: 2014-04-18 15:00:00 IST
 categories: javascript
 ---
 
