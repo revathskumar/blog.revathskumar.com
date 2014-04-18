@@ -267,3 +267,7 @@ h6.description {
     margin-left: -70px;
   }
 }
+
+.highlight {
+  line-height: 0.9em;
+}
