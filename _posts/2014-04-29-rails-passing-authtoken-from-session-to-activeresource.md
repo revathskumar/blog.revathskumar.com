@@ -28,7 +28,7 @@ end
 and we patched `ActiveResource::Connection#authorization_header` to use our token
 
 ```ruby
-In ActiveResource::Connection#authorization_header patch
+# In ActiveResource::Connection#authorization_header patch
 module ActiveResource
   
   class Base 
@@ -43,10 +43,10 @@ module ActiveResource
 end
 ```
 
-Recently we figured out there was some issues and thought not to use class variables. Then we need to some way to access `session` inside `ActiveResource::Connection#authorization_header`. While searching for a solution we came into [request_store](https://github.com/steveklabnik/request_store) gem.
+Recently we figured out there was some issues and thought not to use class variables. Then we need some way to access `session` inside `authorization_header` method. While searching for a solution we came into [request_store](https://github.com/steveklabnik/request_store) gem.
 
 # Request Store
-Request store gem helps to store a global state in Rails app in a Thread safe way. We can use it like
+Request store gem helps to store a global state in Rails app in a thread safe way. We can use it like
 
 ```ruby
 def index
@@ -57,7 +57,7 @@ def index
 end
 ```
 
-Then we updated our code to use request_store. Please find below the updated code
+Then we updated our code to use request_store. 
 
 ```ruby
 # app/controllers/application_controller.rb
