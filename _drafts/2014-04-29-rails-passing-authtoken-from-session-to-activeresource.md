@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Rails : Passing authtoken from session to ActiveResource"
-date: 2014-04-28 00:00:00 IST
-updated: 2014-04-28 00:00:00 IST
+date: 2014-04-29 11:00:00 IST
+updated: 2014-04-29 11:00:00 IST
 categories: rails
 ---
 
@@ -86,3 +86,7 @@ module ActiveResource
   end
 end
 ```
+
+Now it is working fine, But I would like to know your comments on this. 
+
+Thanks. 
