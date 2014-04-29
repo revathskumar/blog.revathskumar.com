@@ -21,7 +21,7 @@ Here is the explanation of MVC by Peter Michaux.
     stuff you can see and the view observes the model. When the view is
     notified that the model has changed, the view changes its appearance. The
     user can interact with the view (e.g. clicking stuff) but the view
-    doesn’t know what to do. So the view tells the controller what the user
+    doesn't know what to do. So the view tells the controller what the user
     did and assumes the controller knows what to do. The controller
     appropriately changes the model. And around and around it goes.
 

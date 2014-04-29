@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CoffeeSctipt : Existential operator & Multiline comment"
+title: "CoffeeSctipt : Existential operator &amp; Multiline comment"
 date: 2014-02-25 11:00:00 IST
 updated: 2014-02-25 11:00:00 IST
 categories: CoffeeSctipt
