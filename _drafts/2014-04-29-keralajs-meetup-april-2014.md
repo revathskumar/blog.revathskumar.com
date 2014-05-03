@@ -3,7 +3,7 @@ layout: post
 title: "KeralaJS : Meetup April 2014"
 date: 2014-04-29 00:00:00 IST
 updated: 2014-04-29 00:00:00 IST
-categories: rails
+categories: talks
 ---
 
 Last saturday(2014-04-26), we had our 5th [KeralaJS](http://keralajs.org/2014/04/23/keralajs-meetup-april-2014) meetup at [Toobler](http://toobler.com/). We started our meetup with introduction to KeralaJS for our new members. Then moved to live coding session by [Deepak Kumar](https://twitter.com/42races) on "Introduction to [Ember.js](http://emberjs.com/)". The session continued till 4, explaining how to get started with Ember and various features of it.
