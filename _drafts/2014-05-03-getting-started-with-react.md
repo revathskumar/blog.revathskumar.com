@@ -10,7 +10,7 @@ Recently when I saw a tweet saying "its super easy to build UI components with [
 
 # React
 
-React is a simple JavaScript library from Facebook to create UI components. React uses `*.jsx` files for its template. You can either precompile it with react npm module or in the browser with `JSXTransformer.js`. 
+React is a simple JavaScript library from Facebook to create UI components. React uses `*.jsx` extention. We write both the HTML template and its logic in the same .jsx file. You can either precompile it with react npm module or in the browser with `JSXTransformer.js`. 
 
 I started with installing react with bower.
 
@@ -48,16 +48,19 @@ var HelloMessage = React.createClass({
 var parent = document.querySelector('.jumbotron');
 React.renderComponent(<HelloMessage name="Revath" />, parent);
 ```
+Fot each component you will extend `React.createClass`
 
 The `React.renderComponent` method accepts two arguments
 
 1. The Component name and the properties
     > In this case the component is `HelloMessage` which has a property `name` with value "Revath"
 
-2. The parent element where it should inject in the DOM.
+2. The parent element is where it should inject in the DOM.
    > In this case it is the element with class `jumbtron`
 
-It is optional to use `/** @jsx React.DOM */` as the first line when you use [gulp-react] to precompile.
+The `render` method is where you will define the HTML template.
+
+It is optional to use `/** @jsx React.DOM */` as the first line when you use [gulp-react]() to precompile.
 
 To precompile this I configured the gulpfile.
 
@@ -71,4 +74,7 @@ gulp.task('react', function(){
     .pipe(gulp.dest('.tmp/scripts/'));
 });
 ```
+
+This will precompile all the `*.jsx` files in `app/scripts/` and put it in `.tmp/scripts/`.
+
 
