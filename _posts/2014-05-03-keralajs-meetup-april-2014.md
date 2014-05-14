@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "KeralaJS : Meetup April 2014"
-date: 2014-04-29 00:00:00 IST
-updated: 2014-04-29 00:00:00 IST
+date: 2014-05-03 00:00:00 IST
+updated: 2014-05-03 00:00:00 IST
 categories: talks
 ---
 
