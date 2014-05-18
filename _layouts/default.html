@@ -7,6 +7,29 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@revathskumar">
+    <meta name="twitter:creator" content="@revathskumar">
+    <meta name="twitter:domain" content="blog.revathskumar.com">
+    {% if page.title %}
+      <meta name="twitter:title" content="{{ page.title }}">
+    {% else %}
+      <meta name="twitter:title" content="{{ site.title }}">
+    {% endif %}
+    {% if page.url %}
+      <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    {% endif %}
+    {% if page.description %}
+      <meta name="twitter:description" content="{{ page.description }}">
+    {% else %}
+      <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
+    {% if page.image %}
+      <meta name="twitter:image:src" content="{{ page.image }}">
+    {% else %}
+      <meta name="twitter:image:src" content="http://www.gravatar.com/avatar/2e844d88873b759f691242276c7b58d7?s=200">
+    {% endif %}
+
     <!-- syntax highlighting CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
 
@@ -27,7 +50,7 @@
                 <a class="extra" href="/p/about-me.html">about</a>
               </li>
               <li>
-                <h6 class="description">Alone I can't make this world better, so I do open source.</h6>
+                <h6 class="description">{{ site.description }}</h6>
               </li>
             </ul>
           </div>
