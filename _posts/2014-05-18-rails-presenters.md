@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Rails : Presenters"
+excerpt: "Getting started with rails presenters"
 date: 2014-05-18 19:00:00 IST
 updated: 2014-05-18 19:00:00 IST
 categories: rails

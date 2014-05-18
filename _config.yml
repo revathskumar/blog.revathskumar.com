@@ -5,3 +5,4 @@ pygments: true
 url: http://blog.revathskumar.com
 
 permalink: '/:year/:month/:title.html'
+excerpt_separator: "\n\n"

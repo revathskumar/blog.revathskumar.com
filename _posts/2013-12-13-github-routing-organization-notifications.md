@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Github : Routing organization notifications to official email"
+excerpt : "Here is how you can do custom routing of email in github"
 date: 2013-12-13 00:00:00 IST
 updated: 2013-12-13 00:00:00 IST
 categories: github
