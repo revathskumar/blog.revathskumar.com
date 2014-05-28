@@ -2,8 +2,8 @@
 layout: post
 title: "Express.js : Github authentication with passport"
 excerpt: "Configure github authentication with express.js and passport"
-date: 2014-05-27 00:00:00 IST
-updated: 2014-05-27 00:00:00 IST
+date: 2014-05-30 00:00:00 IST
+updated: 2014-05-30 00:00:00 IST
 categories: nodejs, express
 tags: express, passport, github, authentication
 ---
@@ -70,12 +70,15 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
+  // If you are storing the whole user on session we can just pass to the done method, 
+  // But if you are storing the user id you need to query your db and get the user 
+  //object and pass to done() 
   done(null, user);
 });
 ```
 The `serializeUser` will store the user id in the session and `deserializeUser` will get the user from our database and store it in `req.user`.
 
-# configure routes
+# Configure routes
 We need to configure the routes for auth callback and error.
 
 ```js
@@ -93,7 +96,9 @@ The implementation of the routes are upto you.
 ```js
 // routes/auth.js
 exports.callback = function(req, res){
-  // Find or create user
+  // In the real application you might need to check 
+  // whether the user exits and if exists redirect 
+  // or if not you many need to create user.
   res.send('Login success');
 };
 
@@ -101,4 +106,7 @@ exports.error = function(req, res){
   res.send('Login Failed');
 };
 ```
+Thats it, you successfully implemented the github authentication for you express.js app with passport. In this I just skipped the usage of models and store the data to make it short. Consider this as a steeping stone and if you have any issues on implementing this in a real app, lemme know via comments. I will try my best to address it.
 
+Until next time.  
+Thank you.  
