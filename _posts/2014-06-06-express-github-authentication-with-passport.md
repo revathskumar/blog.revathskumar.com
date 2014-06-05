@@ -2,15 +2,15 @@
 layout: post
 title: "Express.js : Github authentication with passport"
 excerpt: "Configure github authentication with express.js and passport"
-date: 2014-05-30 00:00:00 IST
-updated: 2014-05-30 00:00:00 IST
+date: 2014-06-06 00:00:00 IST
+updated: 2014-06-06 00:00:00 IST
 categories: nodejs, express
 tags: express, passport, github, authentication
 ---
 
-[Express.js](http://expressjs.com) is one of the popular web application framework for Node.js. In order to implement Github authentication I used [passport](http://passportjs.org/) module.
+[Express.js](http://expressjs.com) is one of the popular web application framework for Node.js. To implement Github authentication [passport](http://passportjs.org/) module seems to really flexible.
 
-To start, register a new application on Github at [Account > Applications](https://github.com/settings/applications). This will obtain you a client id and client secret for your application which we will use later. While registering new appplication they will ask for a callback url, let it be http://localhost:3000/auth/callback.
+To start, register a new application on Github goto [Account > Applications > Register new application](https://github.com/settings/applications/new). This will yield you a client id and client secret for your application which we will use later. While registering new appplication they will ask for a callback url, let it be `http://localhost:3000/auth/callback`.
 
 # Install passport
 After creating new express.js project install the [passport](https://www.npmjs.org/package/passport) and [passport-github](https://www.npmjs.org/package/passport-github) Strategy.
@@ -55,7 +55,7 @@ passport.use(new GithubStrategy({
 }));
 ```
 
-Github doen't have a `refreshToken` so we don't care about those. The object we passed to `done()` method will be received by `serializeUser`.
+Github doen't have a `refreshToken` so we don't care about it. The object we passed to `done()` method will be received by `serializeUser`.
 
 In order to maintain the users session,
 Passport will serialize and deserialize `user` instances to and from the session. we need to configure those methods as our needs.
