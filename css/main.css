@@ -100,12 +100,12 @@ ul.posts span {
   overflow: hidden;
 }
 
-.site .footer .contact {
+.contact {
   float: left;
   margin-right: 3em;
 }
 
-.site .footer .contact a {
+.contact a {
   color: #8085C1;
 }
 
@@ -232,7 +232,7 @@ h6.description {
   /* Style adjustments for viewports 480px and over go here */
   .container{
     margin: 2px;
-    width: 100%
+    width: 100%;
     text-overflow: '';
   }
 
@@ -259,6 +259,21 @@ h6.description {
 
   .site-search {
     width: 100%;
+  }
+
+  .posts {
+    width: 99%;
+    overflow: hidden;
+  }
+
+  .posts li {
+    text-align: left;
+    white-space: nowrap;
+    padding: 5px 0;
+  }
+
+  .posts li a{
+    padding: 5px 0;
   }
 
   .posts li span {
