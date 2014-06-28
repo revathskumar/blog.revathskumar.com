@@ -281,6 +281,11 @@ h6.description {
     width: 0;
     margin-left: -70px;
   }
+
+  .license {
+    text-align: left;
+    width: 90%;
+  }
 }
 
 .highlight {
