@@ -242,6 +242,10 @@ h6.description {
     padding: 0 5px;
   }
 
+  .site img {
+    width: 100%;
+  }
+
   .header{
     text-align: center;
   }
