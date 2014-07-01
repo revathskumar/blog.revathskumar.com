@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Sublime Text handler for better errors in Ubuntu"
-excerpt: "Sublime Text handler for better errors in Ubuntu"
+title: "Sublime Text handler for firefox in Ubuntu"
+excerpt: "Sublime Text handler for firefox in Ubuntu"
 date: 2014-07-02 00:00:00 IST
 updated: 2014-07-02 00:00:00 IST
 categories: rails, sublime
