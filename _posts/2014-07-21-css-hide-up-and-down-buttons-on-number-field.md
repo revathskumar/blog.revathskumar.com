@@ -1,0 +1,30 @@
+---
+layout: post
+title: "CSS : Hide up/down buttons on number field"
+excerpt: "CSS : Hide up/down buttons on number field"
+date: 2014-07-21 00:00:00 IST
+updated: 2014-07-21 00:00:00 IST
+categories: css
+tags: css
+---
+
+While working on the responsive version of [whatznear](http://whatznear.com), we wanted to use `<input type="number">` for the pincode so that mobile can show the appropriate the keyboard. But when we use number type in desktop it will show a up/down buttons. The up/down spins for a pincode input is doesn't look appropriate.
+
+## Here is how you can hide those up/down spins with CSS.
+  
+
+```css
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+```
+
+This will ensure that appropriate keyboard will be show in mobile and input element looks 
+similar to textbox on desktop.
