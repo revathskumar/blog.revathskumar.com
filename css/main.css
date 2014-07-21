@@ -157,6 +157,15 @@ ul.posts span {
   background-color: #333;
 }
 
+.post blockquote {
+  margin-left: 20px;
+  background-color: #DDD;
+}
+
+.post blockquote > p {
+  padding: 10px;
+  margin: 0;
+}
 
 /* custom */
 h6.description {
