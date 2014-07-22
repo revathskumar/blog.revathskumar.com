@@ -2,8 +2,8 @@
 layout: post
 title: "Why you should not store JSON in cookie"
 excerpt: "Why you should not store JSON in cookie"
-date: 2014-07-22 00:00:00 IST
-updated: 2014-07-22 00:00:00 IST
+date: 2014-07-23 00:00:00 IST
+updated: 2014-07-23 00:00:00 IST
 categories: webapps, performance
 tags: webapps, performance
 ---
@@ -25,7 +25,7 @@ Firebug shows you two types of cookie size.
 
 So if you use JSON, the characters like `{}:",` etc will be a unnecessary weight for the cookie. In the above image you can see that the difference of Raw size and size is around 48 Bytes which means this cookie's ~40 Bytes are unnessary.
 
-We can avoid this unnessary weight, by choosing plain text in the cookie and writing our own parser to that we store multiple values in cookie.
+We can avoid this unnessary weight, by choosing plain text in the cookie and writing our own parser to extract the multiple values we stored in cookie.
 
 For example, instead of storing 
 
