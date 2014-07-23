@@ -62,7 +62,7 @@ I created a github repo for my blog with
 Then I created a new branch named [gh-pages](http://pages.github.com/). In order to publish blog with github pages your branch name should be gh-pages.
 
 Then I did my initial commit and push to the gh-pages branch.
-Now I can see my blog in [revathskumar.github.io/blog.revathskumar.com](revathskumar.github.io/blog.revathskumar.com).
+Now I can see my blog in [revathskumar.github.io/blog.revathskumar.com](http://revathskumar.github.io/blog.revathskumar.com).
 
 
 ## _Custom domain_
