@@ -11,6 +11,8 @@ tags: css
 While working on the responsive version of [whatznear](http://whatznear.com), we wanted to use `<input type="number">` for the pincode so that mobile can show the appropriate the keyboard. But when we use number type in desktop it will show a up/down buttons. The up/down spins for a pincode input is doesn't look appropriate.
 
 ## Here is how you can hide those up/down spins with CSS.
+
+![Input spin](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/5ffea443-1a5f-424c-9650-407158a048be_zpsa4806bc6.png)
   
 
 ```css
