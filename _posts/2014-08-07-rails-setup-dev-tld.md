@@ -2,22 +2,22 @@
 layout: post
 title: "Rails : Setup .dev TLD"
 excerpt: "Rails : Setup .dev TLD"
-date: 2014-08-04 00:00:00 IST
-updated: 2014-08-04 00:00:00 IST
+date: 2014-08-07 00:00:00 IST
+updated: 2014-08-07 00:00:00 IST
 categories: rails
 tags: rails
 ---
 
-While I was working with PHP, I used to setup *.dev* domain with [Apache VirtualHost](http://www.phprepo.in/2011/09/adding-virtual-host-in-apache-on-ubuntu/) for my development. But after I moved to Ruby on Rails, I never used it since Rails were not using apache and port other than 80.
+While I was working with PHP, I used to setup *.dev* domain with [Apache VirtualHost](http://www.phprepo.in/2011/09/adding-virtual-host-in-apache-on-ubuntu/) for my development. But after I moved to Ruby on Rails, I never used it since Rails were not using apache server and port 80.
 
-In the begining I tried to set domain with `/etc/hosts`, but I came to know that hosts file won't accept PORT. They only map IP. But now I managed to find a way to setup *.dev* domain for rails development.
+In the begining I tried to set domain with `/etc/hosts`, but I came to know that hosts file won't accept PORT. They only map IP address. But now I managed to find a way to setup *.dev* domain for rails development.
 
-You can either setup this manually or you can skip manual setup and directly [use invoker](#invoker) gem.
+You can either setup this manually or [use invoker](#invoker) gem.
 
 <div id="manual"></div>
 ## 1. Manual Setup
 
-To setup *.dev* domain, the prerequisites are [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) and [rinetd](http://www.boutell.com/rinetd/). **dnsmasq** is a lightweight DNS server, which can be configured in a variety of convenient ways. **rinetd** is a internet redirection server rinetd redirects TCP connections from one IP address and port to another
+To setup *.dev* domain, the prerequisites are [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) and [rinetd](http://www.boutell.com/rinetd/). **dnsmasq** is a DNS subsystem provides a local DNS server for the network, with forwarding of all query types to upstream recursive DNS servers and cacheing of common record types. **rinetd** is a internet redirection server rinetd redirects TCP connections from one IP address and port to another
 
 ### Installation
 
@@ -51,7 +51,7 @@ append the below config to /etc/rinetd.conf
 0.0.0.0 80 0.0.0.0 4000
 0.0.0.0 443 0.0.0.0 3003
 ```
-The second line in above config is needed only if you use SSL. After save the confif restar the rinetd, dnsmasq &amp; network.
+The second line in above config is needed only if you use SSL. After saving the config restart the rinetd, dnsmasq &amp; network.
 
 ```sh
 sudo service rinetd restart
