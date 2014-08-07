@@ -2,8 +2,8 @@
 layout: post
 title: "CSS : box-sizing: border-box;"
 excerpt: "CSS : box-sizing: border-box;"
-date: 2014-07-29 00:00:00 IST
-updated: 2014-07-29 00:00:00 IST
+date: 2014-08-08 00:00:00 IST
+updated: 2014-08-08 00:00:00 IST
 categories: css
 tags: css
 ---
@@ -34,6 +34,28 @@ Using `box-sizing` property we can set the box model of an element to either IE 
 
 `box-sizing: content-box` will set to the default box model of non IE browsers.
 
+`box-sizing` property is vendor specific, so you may need to use
+
+{% highlight css %}
+.someclass {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+{% endhighlight %}
+
 ## * {box-sizing: border-box}  
 
 [Paul Irish](http://twitter.com/paul_irish) has written an [blog post](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) on advantage of resting all the elements to border-box by default. In non IE browsers, the default box-sizing is **content-box**.
+
+To reset all elements to border-box,
+
+{% highlight css %}
+*, *:before, *:after {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+{% endhighlight %}
