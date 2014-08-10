@@ -2,15 +2,15 @@
 layout: post
 title: "Slides : keralaJS July meetup: Going mobile"
 excerpt: "Slides: Going mobile"
-date: 2014-08-09 00:00:00 IST
-updated: 2014-08-09 00:00:00 IST
+date: 2014-08-11 00:00:00 IST
+updated: 2014-08-11 00:00:00 IST
 categories: talks
 tags: talks
 ---
 
 In our [KeralaJS](http://keralajs.org) July meetup, I given a talk on things I learned on responsive design while we ([whatznear](https://whatznear.com)) went mobile with our responsive design.
 
-In summary,
+In summary, Here is the things I discussed in my talk
 
 # Making `<table>` responsive
 I already wrote a detailed post on [`<table>` in responsive design](/2014/07/css-table-in-responsive-design.html)
