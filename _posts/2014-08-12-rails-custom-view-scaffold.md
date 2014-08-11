@@ -2,8 +2,8 @@
 layout: post
 title: "Rails: Custom view scaffold"
 excerpt: "Rails: Custom view scaffold"
-date: 2014-08-13 00:00:00 IST
-updated: 2014-08-13 00:00:00 IST
+date: 2014-08-12 00:00:00 IST
+updated: 2014-08-12 00:00:00 IST
 categories: rails
 tags: rails
 ---
@@ -87,3 +87,16 @@ end
 {% endhighlight %}
 
 Now configure new `Custom` template engine,
+
+In **Rails 3** 
+
+{% highlight ruby %}
+# config/application.rb
+config.generators do |g|
+  # ...
+  g.template_engine :custom
+  g.fallbacks[:custom] = :erb # or haml/slim etc
+end
+{% endhighlight %}
+
+Done, Now `rails g scaffold <name>` command will generate `index`, `edit`, `show`, `new`, `_form`, `_search_form`, `_table` &amp; `index.js`.
