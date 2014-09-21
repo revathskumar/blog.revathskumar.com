@@ -12,7 +12,7 @@ I given a talk on [VCR](https://github.com/vcr/vcr) and [Webmock](https://github
 
 Since we at [whatznear](http://whatznear.com/) uses **API first** architecture, our web apps are the ones who consume our API first. So we need to mock our API with in our tests, so our tests wil run faster and reliable. In today's talk I tried to cover,
 
-* How to mock http calls
+* How to stub http calls
 * Why webmock alone didn't worked
 * Why we used VCR
 
