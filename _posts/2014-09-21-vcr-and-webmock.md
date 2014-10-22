@@ -4,7 +4,7 @@ title: "Slides : VCR and Webmock"
 excerpt: "VCR and webmock"
 date: 2014-09-21 00:00:00 IST
 updated: 2014-09-21 00:00:00 IST
-categories: slides
+categories: slides, talks
 ---
 
 Today at [KRUG meetup](http://krug.github.io/posts/sep-2014-kochi-meetup/), 
