@@ -1,7 +1,7 @@
 name: Revath S Kumar
 description: "Alone I can't make this world better, so I do open source."
 markdown: redcarpet
-pygments: true
+highlighter: true
 url: http://blog.revathskumar.com
 
 permalink: '/:year/:month/:title.html'
