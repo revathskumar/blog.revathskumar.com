@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Ruby: Render template with erb"
-excerpt: "Ruby: Render template with erb"
+title: "Ruby: Rendering erb template"
+excerpt: "Ruby: Rendering erb template"
 date: 2014-10-28 00:00:00 IST
 updated: 2014-10-28 00:00:00 IST
 categories: ruby
