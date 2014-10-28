@@ -129,7 +129,15 @@ ul.posts span {
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .4em;
+  padding: .2em .4em;
+}
+
+.post h1,h2,h3 {
+  margin: 1em 0;
+}
+
+.post .highlight {
+  margin: 1em 0;
 }
 
 .post ul, .post ol {
@@ -139,11 +147,11 @@ ul.posts span {
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .2em;
 }
 
 .post pre code {
   border: none;
+  line-height: 1.2;
 }
 
 /* terminal */
