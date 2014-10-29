@@ -10,14 +10,16 @@ categories: ruby
 I never used [ERB](http://www.ruby-doc.org/stdlib-2.1.4/libdoc/erb/rdoc/ERB.html) outside Rails or without [tilt](http://github.com/rtomayko/tilt). So while I
 was working with a bare rack app, I though I should try our ERB directly and checkout its api.
 
-So I taken a look into ERB Class just enought to render a template, nothing much detail. Here is the syntax for ERB constructor,
+So I taken a look into ERB Class just enough to render a template, nothing much in detail. Here is the syntax for ERB constructor,
 
 ```ruby
 ERB.new(template_string, safe_eval=nil, trim_mode=nil, outvar='_erbout')
 ```
 
+let see how we can render some template with this.
+
 # Using Sting template
-Here is the simple example, for rendering a string template. Since we didn't specify the `outvar` the result method will return the rendered html.
+Here is the simple example, for rendering a string template. Since we didn't specify the `outvar` the `result` method will return the rendered html.
 
 ```ruby
 name = "Whatznear";
@@ -26,7 +28,7 @@ ERB.new("<h1>Hello ERB World!! </h1><h3><%= name %></h3>").result(binding)
 
 Hope you noticed that we are passing `binding` to result method. binding gives the context in which the template to be evaluated, so they can replace the correct variables with its values.
 
-If you like look into binding in details, you can check the [ruby doc for Binding](http://www.ruby-doc.org/core-2.1.4/Binding.html). The above snippet will result in 
+If you like looking into details of `binding`, you can check the [ruby doc for Binding](http://www.ruby-doc.org/core-2.1.4/Binding.html). The above snippet will result in 
 
 ```html
 <h1>Hello ERB World!! </h1><h3>Whatznear</h3>
@@ -56,7 +58,7 @@ end
 <%# index.erb %>
 <h1>Hello ERB World!! </h1><h3><%= @name %></h3>
 ```
-Here, in the `@name`, an instance variable because we are passing the context of `Basicerb` object to `result` method.
+Here, we used `@name`, an instance variable because we are passing the context of `Basicerb` object to `result` method.
 
 If you want to store the rendered html into another instance variable you can the variable as `outvar`.
 
@@ -112,12 +114,14 @@ class Basicerb
 end
 ```
 
-Lets break it down how it works, The [Enumerable#inject](http://www.ruby-doc.org/core-2.1.4/Enumerable.html#method-i-inject) will accept a value and a block. The block will be executed for every element and value will be taken as first value. So in this case, in the first iteration, `prev` will be nil and temp will be the `@template` (view) string and pass it to `_render` method. Since this `@template` doesn't have a `yield` it just render the string as before. 
+Lets break it down how it works, The [Enumerable#inject](http://www.ruby-doc.org/core-2.1.4/Enumerable.html#method-i-inject) will accept a value and a block. The block will be executed for every element and the value we passed will be taken as first element. So in this case, in the first iteration, `prev` will be `nil` and `temp` will be the `@template` (view) string and pass it to `_render` method. Since this `@template` doesn't have a `yield` it just render the string as before. 
 
-In the second iteration, the `prev` will be rendered html of `@template` and `temp` will be `@layout`. Then these values will be passed to `_render`. Now while rendering layout it have a `yield` method which will be replaced by rendered html of `@template`. And finaly the `render` method will return 
+In the second iteration, the `prev` will be rendered html of `@template` and `temp` will be `@layout`. Then these values will be passed to `_render`. Now while rendering layout it have a `yield` method which will be replaced by rendered html of `@template`. And finaly the `render` method will return html as below.
 
 ```html
 <div class="jumbotron">
   <h1>Hello ERB World!! </h1><h3>Whatznear</h3>
 </div>
 ```
+
+Hooray, the result seems what we expected.
