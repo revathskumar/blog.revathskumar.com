@@ -8,7 +8,7 @@ categories: regex
 image: http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-02223852_zpsaf17908a.png
 ---
 
-Recently, I got a request to show prices in comma seperated format on [whatznear.com](http://whatznear.com). Since we are using rails, it have a handy method to do [number_to_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency), but unfortunately that was not enough because it follow US system of seperation with thousands. My requirement was to show prices in Indian system of seperation with hundreds.
+Recently, I got a request to show prices in comma seperated format on [whatznear.com](http://whatznear.com). Since we are using rails, it have a handy method to do [number\_to\_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency), but unfortunately that was not enough because it follow US system of seperation with thousands. My requirement was to show prices in Indian system of seperation with hundreds.
 
 ```ruby
 450,500 # US system
