@@ -8,34 +8,51 @@ categories: expressjs, socket
 tags: expressjs, socket
 ---
 
-I always wondered how this chat application works in realtime. we just enter some text and send, the right next moment it reaches the other end. From the first time I heard of socket.io, It was in mind that I should build a simple chat application.
+I always wondered how this chat application works in real time. we just enter some text and send, the right next moment it reaches the other end. From the first time I heard of socket.io, It was in mind that I should build a simple chat application.
 
-Here I use [socket.io](http://socket.io) and [express.js](http://expressjs.com).
+Here I used [socket.io](http://socket.io) and [express.js](http://expressjs.com). Let see what all features we need for a simple chat,
+
+* setup socket.io
+* Accept a user
+* Update the user list for all connections
+* User can select some other users available
+* When the user enter a text, show up to the corresponding user
+
+## The socket.io setup
+
+Let get ready with socket.io, since in this blog post I am gonna concentrate on socket.io, I will be skipping the default express.js boilerplate code for convenience. We need to setup the socket.io on both server and client to accept connection.
+
+On server you can install socket.io from npm,
+
+```sh
+npm install --save socket.io
+```
+
+Then in your `app.js` require the `socket.io` and bind the connection event. We will register more events in `connection` callback as we advance more functionalities.
 
 ```js
+// server
+// app.js
+var io = require('socket.io');
+
+server = http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
 io = io.listen(server);
 var sockets = {};
+
 io.sockets.on('connection', function(socket) {
-  socket.on('send', function(data){
-    var chatCollection = db.get('chats');
-    chatCollection.insert({text: data.chat, to: data.to}, function(err, doc){
-      if(err){
-        console.log(err);
-      }else{
-        sockets[data.to].emit('get', {chat: data.chat});
-        // socket.broadcast.emit('get', {chat: data.chat});
-      }
-    });
-  });
-
-  socket.on('new user', function(data){
-    sockets[data.name] = socket;
-    console.log(data);
-    socket.broadcast.emit('user list update', {name: data.name});
-  });
-
-  socket.on('disconnect', function () {
-    socket.broadcast.emit('remove user', {id: this.id});
-  });
+  // register all events here
 });
 ```
+
+Then on client side, we will add socket.io, we don't need to install anything for client as the `socket.io.js` will be served by socket.io in server.
+
+```html
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+</script>
+```
+
