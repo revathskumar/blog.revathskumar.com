@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "handlebars.js : Register custom helpers and chaining"
-excerpt: "handlebars.js : Register custom helpers and chaining11"
-date: 2014-11-15 00:00:00 IST
-updated: 2014-11-15 00:00:00 IST
+excerpt: "handlebars.js : Register custom helpers and chaining"
+date: 2014-11-24 00:00:00 IST
+updated: 2014-11-24 00:00:00 IST
 categories: javascript, handlebars
 ---
 
-[Handlebars.js](https://github.com/wycats/handlebars.js) won't allow you do any data manipulation from the view. So if you didn't use presenter or manipulated data for view you will be in trouble. One way you can get though this is defining custom helpers for data manipulation. I personaly prefer not to use lot of helpers and use only if you can't avoid.
+[Handlebars.js](https://github.com/wycats/handlebars.js) won't allow you do any data manipulation from the view. So if you didn't use presenter or manipulated data before bringing to view, you will be in trouble. One way you can get though this is by defining custom helpers for data manipulation. I personaly prefer not to use lot of helpers and use only if I can't avoid.
 
 ## Register Helper
 
@@ -25,12 +25,12 @@ Now you can use this as
 
 
 ```js
-<span>{{ total_price this.product.price this.quantity }}</span>
+{ { total_price this.product.price this.quantity } }
 ```
 
 ## Chaining helpers
 
-Handlebars won't allow you to chain the helpers. And as per the [@wycats](https://github.com/wycats/), He doesn't have any [plan to support in the future](https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546). But some handlerbars fans have done some workarounds to support this.
+Handlebars won't allow you to chain the helpers. And as per the [@wycats](https://github.com/wycats/), he doesn't have any [plan to add this feature](https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546). But some handlerbars fans have done some workarounds to support this.
 
 ```js
 // https://github.com/wycats/handlebars.js/issues/304#issuecomment-15635762
@@ -52,10 +52,10 @@ Handlebars.registerHelper('chain', function () {
 });
 ```
 
-which can be used by 
+which can be used as 
 
 ```js
-{{chain "taxAdd" "formatPrice" this.product.price}}
+{ { chain "taxAdd" "formatPrice" this.product.price } }
 ```
 
 You can see the detailed discussion over [wycats@handlebars.js#304](https://github.com/wycats/handlebars.js/issues/304)
