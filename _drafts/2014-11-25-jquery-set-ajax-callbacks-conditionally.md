@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "jQuery: set ajax callbacks conditionaly"
-excerpt: "jQuery: set ajax callbacks conditionaly"
+title: "jQuery: set ajax callbacks conditionally"
+excerpt: "jQuery: set ajax callbacks conditionally"
 date: 2014-11-25 00:00:00 IST
 updated: 2014-11-25 00:00:00 IST
 categories: javascript, jquery, promises
 ---
 
-When I work with `$.ajax`, many times I came across sintuations where  I need to set the 
-success callback conditionaly. I am not pretty intrested in setting a common callback and check the condition inside it. I like my functions to be simple and do less things as possible. So I used to set the options object explicity and set the `options['success']` contitionaly and pass the resultant option object to `$.ajax` method. 
+When I work with `$.ajax`, many times I came across situations where  I need to set the 
+success callback conditionally. I am not pretty intrested in setting a common callback and check the condition inside it. I like my functions to be simple and do less things as possible. So I used to set the options object explicity and set the `options['success']` conditionally and pass the resultant option object to `$.ajax` method. 
 
 
 ```js
@@ -34,7 +34,7 @@ else if(type == "other") {
 $.ajax(options)
 ```
 
-But, ever since I am introduced to promises, I use the promise way to accomblish things. no more setting of options object conditionaly. Since the `$.ajax` method will return a promise, use can use the returned object to chain with `$.done` method. I like to set the `$.done` method conditionly with the callbacks. For me this much more cleaner and extendable than the previous method and its the starting point where I am moving to promises where ever possible.
+But, ever since I am introduced to promises, I use the promise way to accomblish things. no more setting of options object conditionally. Since the `$.ajax` method will return a promise, use the returned object to chain with `$.done` method and set them conditionally with the callbacks. For me this is much more cleaner and extendable than the previous method and its the starting point where I am moving to promises where ever possible.
 
 ```js
 $ajOrder = $.ajax({
