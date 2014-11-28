@@ -7,10 +7,10 @@ updated: 2014-11-29 00:00:00 IST
 categories: javascript, patterns
 ---
 
-When I thought of decoupling modules in [Whatznear](http://whatznear.com), first thing I want to get rid of using `$.trigger` for each and everything. That doen't mean I don't wanna trigger events anymore, but I want some other way for modules to communicate with others and it should not make themselves dependencies to each other. Thus I though of introducing a `Mediator` for inter module communication. I introduced Mediator along with [Module pattern](/2014/11/javascript-extending-module.html).
+When I thought of decoupling modules in [Whatznear](http://whatznear.com), first thing I want to get rid of using `$.trigger` for each and everything. That doen't mean I don't wanna trigger events anymore, but I want some other way for modules to communicate with others and it should not make themselves dependencies. Thus I though of introducing a `Mediator` for inter module communication. I introduced Mediator along with [Module pattern](/2014/11/javascript-extending-module.html).
 
 ```js
-window.Mediator = (function(){
+Mediator = (function(){
   var subscribe = function(channel,func, context) {
     if(!Mediator.channels[channel]){
       Mediator.channels[channel] = [];
@@ -23,7 +23,7 @@ window.Mediator = (function(){
     if(!Mediator.channels[channel]){
       return;
     }
-    args = Array.prototype.slice.call(arguments, 1);
+    var args = Array.prototype.slice.call(arguments, 1);
     var subscripions = Mediator.channels[channel];
     for(i=0; i < subscripions.length; i++) {
       subscripion = channels[i];
