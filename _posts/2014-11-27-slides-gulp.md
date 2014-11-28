@@ -4,7 +4,7 @@ title: "Slides: Gulp"
 excerpt: "Slides of my talk 'Gulp' at keralaJS meetup "
 date: 2014-11-27 00:00:00 IST
 updated: 2014-11-27 00:00:00 IST
-categories: slides
+categories: slides, talks
 ---
 
 Last weekend we had our [KeralaJS Novemeber](http://keralajs.org/2014/11/21/keralajs-meetup-november-2014) meetup. There were mainly two talks were listed. 
