@@ -33,7 +33,7 @@ If you are familiar with flash animations, you will already know that time will 
 
 # @keyframes
 
-`@keyframes` let the author control over animation sequence, and author can tell what to do when it reach this particular sequence. We will define a `@keyframe` with a name and that name will be provided as `animation-name`.
+`@keyframes` let the author control over animation sequence, and author can tell what to do when it reach this particular sequence. We will define a `@keyframes` with a name and that name will be provided as `animation-name`.
 
 ```css
 @keyframes some-name {
@@ -156,4 +156,4 @@ since `@keyframes` is vendor specific the above code will work only in firefox. 
 `tranform` property also support other transformations like `skew`, `translate`, `scale` etc.
 You can try those tranformations as well. Here is a jsbin with some of those transforms are implemented.
 
-<a class="jsbin-embed" href="http://jsbin.com/wudel/4/embed?html,css,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/wudel/4/embed?css,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
