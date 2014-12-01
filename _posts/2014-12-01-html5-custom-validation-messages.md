@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 ```
 
-This is just like any other event handle like `click`, `mouseover`, `mouseout` etc. The event object will be passed to the handler. From the event object we will get the target element using `e.target`. Now the target will have a property names `validity` which is an object of `ValidityState`. The `ValidityState` object will have all the errors types with a boolean value.
+This is just like any other event handle like `click`, `mouseover`, `mouseout` etc. The event object will be passed to the handler. From the event object we will get the target element using `e.target`. Now the target will have a property named `validity` which is an object of `ValidityState`. The `ValidityState` object will have all the errors types with a boolean value.
 
 ```js
 [object ValidityState] {
