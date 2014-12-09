@@ -17,7 +17,7 @@ The talk was divided into 3 main parts,
 2. How it Helped me.
 3. My Idea about a meetup.
 
-In the section, "My idea about meetup" I thought of correcting some misconseption of meetups.
+In the section, "My idea about meetup" I thought of correcting some misconseption about meetups.
 
 
 <script async class="speakerdeck-embed" data-id="9ea82d805edd013222947e850d3f03a4" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
