@@ -73,7 +73,7 @@ ok, go ahead and use the library in our controller, to upload files to s3 bucket
 # app/controllers/some_controller.rb
 def image
   begin
-    image = S3Store.new(params[:upload][:image], 10).store
+    image = S3Store.new(params[:upload][:image]).store
     #...
   rescue Exception => e
     #...
