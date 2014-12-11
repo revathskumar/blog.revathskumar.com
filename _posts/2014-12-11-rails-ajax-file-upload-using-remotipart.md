@@ -9,20 +9,28 @@ categories: rails
 
 Rails `remote` is one of the best way to submit a form with ajax. But it is not capable of uploading files using ajax. That's where `remotipart` gem comes into action.
 
-**Add gem to Gemfile**
+## Add gem to Gemfile
 
 ```ruby
 # Gemfile
 gem 'remotipart'
 ```
 
-Then you need to add remotipart to javascript manifest.
+After adding `remotipart` to `Gemfile` do the `bundle install`.
+
+## Add to javascript manifest
+
+Then you need to require `remotipart` in javascript manifest.
 
 ```js
+// app/assets/javascripts/application.js
+
 //= require jquery.remotipart 
 ```
 
-You are done, now make sure your form have `multipart` attribute.
+## set `multipart` option for form
+
+As in every form with fileupload, you need to set the `multipart` option. 
 
 ```erb
 <%= form_for(@upload, remote: true, multipart: true) do |f| %>
