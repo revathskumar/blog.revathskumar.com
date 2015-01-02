@@ -9,11 +9,13 @@ categories: javascript, express, nodejs
 
 Nowadays big companies like google and facebook are tracking uses even they are logged out. Most of the sites are now installed with facebook like button and google analytics which help them to track users easily.
 
-We might need Google analytics and Facebook like button for our apps to reach and target users. Many users really want to be tracked and installing these trackers for those users is against our ethics. But how you will know whether users don't want to be tracked?
+We might need Google analytics and Facebook like button for our apps to reach and target users. Many users really don't want to be tracked and care about their privacy. Installing these trackers for those users is against our ethics. Its our duty to respect the privacy of our users.
 
-The people who care about privacy, will be enabled DNT in their browsers.  Now every popular browsers are equipped with a **Do not track (DNT)** settings. If the user is enabled Do not Track browser will send a **DNT** flag with headers. Using this flag you can identify the users who care for privacy and can be opt out from installing tracker for them.
+But how we will know whether users don't want to be tracked when they visit our website?
 
-Recently, when I released [Gist reader](http://gistreader.herokuapp.com/), a toy app for reading gists written in markdown, I thought of not to install any trackers for those who send **DNT** flag. Since *Gist reader* was build with [Express.js](http://expressjs.com) I can show you how I opt out Google Analytics for users with DNT flag.
+Now every popular browsers are equipped with a **Do not track (DNT)** settings. The people who care about privacy, will have DNT enabled in their browsers. If the user is enabled Do not Track, the browser will send a **DNT** flag with headers. Using this flag you can identify the users who care for privacy and can be opt out from installing tracker for them.
+
+Recently, when I released [Gist reader](http://gistreader.herokuapp.com/), a toy app for reading gists written in markdown, I thought I don't want to install any tracker for those users who send **DNT** header. Since *Gist reader* was build with [Express.js](http://expressjs.com) I can show you how I opt out Google Analytics for users with DNT flag.
 
 Since DNT should be implement though out all the pages, I implemented it as a middleware. You can get the value of DNT header from `req.headers.dnt`. I used the value from `req.headers.dnt` and passed to view using [app.set](http://expressjs.com/api.html#app.set). The value of `req.headers.dnt` will **`1`** if the user enable DNT and **`0`** if they didn't.
 
