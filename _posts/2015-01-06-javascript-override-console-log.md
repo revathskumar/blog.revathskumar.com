@@ -2,8 +2,8 @@
 layout: post
 title: "JavaScript: override console.log"
 excerpt: "How to implement a custom method for logging, by overriding console.log"
-date: 2015-01-03 00:00:00 IST
-updated: 2015-01-03 00:00:00 IST
+date: 2015-01-06 00:00:00 IST
+updated: 2015-01-06 00:00:00 IST
 categories: javascript
 ---
 
