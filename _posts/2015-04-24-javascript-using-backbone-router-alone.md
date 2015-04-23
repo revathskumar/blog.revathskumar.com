@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Using backbone router alone"
-excerpt: "Using backbone router alone"
+title: "JavaScript : Using backbone router alone"
+excerpt: "JavaScript : Using backbone router alone using exoskeleton"
 date: 2015-04-24 00:00:00 IST
 updated: 2015-04-24 00:00:00 IST
 categories: backbone
