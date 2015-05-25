@@ -130,6 +130,7 @@ ul.posts span {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: .2em .4em;
+  word-wrap: break-word;
 }
 
 .post h1,h2,h3 {
