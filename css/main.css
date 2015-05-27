@@ -131,6 +131,7 @@ ul.posts span {
   background-color: #eef;
   padding: .2em .4em;
   word-wrap: break-word;
+  white-space: pre-wrap; /* For firefox word wrap */
 }
 
 .post h1,h2,h3 {
