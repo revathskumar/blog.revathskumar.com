@@ -172,9 +172,73 @@ This task will upload our configuration to appropriate serves into the path `/pr
 after 'deploy:finishing', 'db_access:copy_production'
 ```
 
-and for staging `config/deploy/staging.rb` add the following line 
+and for staging add the following line in `config/deploy/staging.rb`. 
 
 ```ruby
 after 'deploy:finishing', 'db_access:copy_staging'
 ```
 
+### Run Database migration
+
+So now we have the production configuration along with db credentials are in place. Now it time for database migration. Yii supports running migration from commandline using `yiic migrate` command. Now we need to run it on server using a custom rake task. so we will add
+
+```ruby
+  task :migrate do
+    on roles :app do
+      execute "#{release_path}/protected/yiic migrate --interactive=0"
+    end
+  end
+```
+in `lib/capistrano/tasks/custom.rake` with in `:db_access` namespace. now our `custom.rake` will look like 
+
+```ruby
+# lib/capistrano/tasks/custom.rake
+namespace :db_access do
+  desc 'Copy production config.php from local workstation'
+  task :copy_production => :production do
+    on roles :app do
+      upload! 'protected/config/config-production.php', "#{release_path}/protected/config/config.php"
+    end
+  end
+
+  task :copy_staging => :staging do
+    on roles :app do
+      upload! 'protected/config/config-staging.php', "#{release_path}/protected/config/config.php"
+    end
+  end
+
+  task :migrate do
+    on roles :app do
+      execute "#{release_path}/protected/yiic migrate --interactive=0"
+    end
+  end
+end
+```
+
+So our task is ready. Now we need to run soon after our configuration uploading of respective server finishes. To do that in production server add
+
+```ruby
+after 'deploy:copy_production', 'db_access:migrate'
+```
+
+in `config/deploy/production.rb` and for staging server add 
+
+```ruby
+after 'deploy:copy_staging', 'db_access:migrate'
+```
+
+in `config/deploy/staging.rb`. 
+
+Done. We just finished the whole setup and ready to deploy our Yii application with capistrano. Now you can run
+
+```sh
+cap production deploy
+```
+
+for deploying production server and 
+
+```sh
+cap staging deploy
+```
+
+for deploying application in staging server.
