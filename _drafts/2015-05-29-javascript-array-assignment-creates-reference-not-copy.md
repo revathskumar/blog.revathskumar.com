@@ -2,8 +2,8 @@
 layout: post
 title: "JavaScript : Array assignment creates reference not copy"
 excerpt: "JavaScript : Array assignment creates reference not copy"
-date: 2015-05-30 00:00:00 IST
-updated: 2015-05-30 00:00:00 IST
+date: 2015-05-29 00:00:00 IST
+updated: 2015-05-29 00:00:00 IST
 categories: javascript
 tags: javascript, array
 ---
@@ -28,7 +28,7 @@ console.log(b); // [1, 2, 3]
 console.log(a); // [1, 2, 3, 4]
 ```
 
-JavaScript dosn't have a clone method for array, so if you really want you can define yourself on `Array` even though it's not really recommend to add new methods on primitive types.
+JavaScript doesn't have a clone method for array, so if you really want, you can define yourself on `Array` but its not highly recommended.
 
 ```js
 Array.prototype.clone = function(){
