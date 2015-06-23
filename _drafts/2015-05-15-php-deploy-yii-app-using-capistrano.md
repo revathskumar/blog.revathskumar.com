@@ -8,67 +8,7 @@ categories: php
 tags: php, yii, capistrano
 ---
 
-When I was Rails developer I used to deploy using capistrano with a single command 
-
-```sh
-cap production deploy
-```
-
-But when I came to PHP development, the old FTP drag and drop welcomed me and I was like WTF?. I couldn't agree to this since It takes too much of time of development. So i decided to setup capistrano for my Yii project.
-
-Since I was a ruby developer all the ruby and cap setup was already there in my laptop. But I need to install these things in server.
-
-## Setting up server
-
-### Installing ruby, git and capistrano
-
-Fist step to setting up server for cap deployment is install ruby and git. I usually install ruby using [Ruby Version Manager (rvm)](http://rvm.io). It helps me to manage the ruby versions.
-
-```sh
-apt-get install -y build-essential git-core libyaml-dev 
- 
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -L get.rvm.io | bash -s stable
- 
-source /home/lookup/.rvm/scripts/rvm
-rvm reload
-rvm install 2.2.2
- 
-gem install capistrano --no-ri --no-rdoc
-```
-
-#### Add a usergroup and user for deployment.
-
-After installing ruby and git, we need to add a new usergroup and user for deployment and give appropriate permissions for the deployment directory. I used the default `/var/www` directory for the deployment.
-
-```sh
-sudo addgroup www # create a new usergroup
-sudo adduser deploy # create a new user
-sudo adduser deploy www # add deploy user to www group
-```
-Since apache will run as `www-data` user we need to add `www-data` to our newly created user group.
-
-```sh
-sudo adduser www-data www
-```
-
-Now we need to give appropriate permission for the usergroup.
-
-```sh
-# open /etc/sudoers
-deploy ALL=(ALL:ALL) ALL
- 
-# Set the ownership of the folder to members of `www` group
-sudo chown -R :www  /var/www
- 
-# Set folder permissions recursively
-sudo chmod -R g+rwX /var/www
- 
-# Ensure permissions will affect future sub-directories etc.
-sudo chmod g+s /var/www
-```
-
-Now our server is ready for deployment. Next we need to setup our project.
+In my last blog post I setup my server for capistrano deployment. In this post I will setup my Yii project for capistano deployment.
 
 ## Setting up Yii project for cap deployment
 
