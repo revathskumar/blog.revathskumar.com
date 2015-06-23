@@ -2,13 +2,13 @@
 layout: post
 title: "PHP : Deploy Yii app using capistrano"
 excerpt: "PHP : Deploy Yii app using capistrano"
-date: 2015-05-15 00:00:00 IST
-updated: 2015-05-15 00:00:00 IST
+date: 2015-06-23 00:00:00 IST
+updated: 2015-06-23 00:00:00 IST
 categories: php
 tags: php, yii, capistrano
 ---
 
-In my last blog post I setup my server for capistrano deployment. In this post I will setup my Yii project for capistano deployment.
+In my last blog post we [setup server for capistrano deployment](/2015/06/setup-server-for-capistrano-deployment.html). In this, we will setup the Yii project for capistano deployment.
 
 ## Setting up Yii project for cap deployment
 
@@ -16,7 +16,7 @@ Yii uses different config files for `cli` app (`console.php`) and `web` app (`ma
 
 ```php
 <?php
-# config.php
+# protected/config/config.php
 $config = array();
 
 $db_name = 'sample';
@@ -35,17 +35,32 @@ $config = array(
 
 `$config` is used for custom configuration values. Since I don't want `git` to show configuration file as changes during development, I renamed `config.php` to `config.php.example` and added `config.php` to `.gitignore`. So when I start development I will copy `config.php.example` to `config.php` and fill in the local configuration values. 
 
-Now add `.gitkeep` file to `assets/` and `protected/runtime/` folder and add to git. This will make sure the folders exists on when capistrano pull code from git repository.
+Now add `.gitkeep` file to `assets/` and `protected/runtime/` folder and add to git. This will make sure the folders will exist on server when capistrano pull code from git repository.
 
 ### Configure capistrano
 
-Next step is to configure capistrano for the deployment. If you don't have ruby and capistrano in you local machine install those bu following the same steps we used to setup server. Initialize capistrano in the project directory using 
+Next step is to configure capistrano for the deployment. If you don't have ruby and capistrano in you local machine install those by following the same ruby installation steps we used for seting up server. 
+
+```sh
+apt-get install -y build-essential git-core libyaml-dev 
+
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -L get.rvm.io | bash -s stable
+
+source /home/lookup/.rvm/scripts/rvm
+rvm reload
+rvm install 2.2.2
+
+gem install capistrano --no-ri --no-rdoc
+```
+
+Now Initialize capistrano in the project directory, to generate the configuration files.
 
 ```sh
 cap init
 ```
 
-It will create a `config` directory along with configuration files. In `config/deploy.rb` update the appropriate values for `:application`, `:repo_url` and `:deploy_to` settings.
+It will create a `config` directory in project root folder along with configuration files. In `config/deploy.rb` update the appropriate values for `:application`, `:repo_url` and `:deploy_to` settings.
 
 ```ruby
 set :application, 'project'
@@ -55,7 +70,7 @@ set :repo_url, 'git@github.com:example/project.git'
 set :deploy_to, '/var/www/example'
 ```
 
-The default values for linked_directories will be set for rails so we removed those and set for Yii application.
+The default values for linked_directories will be set for rails, so we remove those and set values for Yii application.
 
 ```ruby
 # Default value for linked_dirs is []
@@ -79,13 +94,15 @@ server 'staging.example.com', user: 'deploy', roles: %w{app}
 role :app, %w{deploy@staging.example.com}
 ```
 
-The basic setup for the deployment of our Yii app is ready. but thats not enough we need to update the production and staging configuration on server for respective deployments.
+`deploy` is the user we created on server while setting up.
 
-In rails we used to put the configuration in the shared folder and symlink to current deployment. This doesn't work in Yii application. It will throw an path error if you try to do so. So we need to upload the production configuration directly to current deployment.
+The basic setup for the deployment of our Yii app is ready. but thats not enough we need to update the production and staging configuration on respective server along with deployments.
+
+In rails we used to put the configuration in the shared folder and symlink to current deployment folder. This doesn't work in Yii application. It will throw an path error if you try to do so. So we need to upload the production configuration directly to current deployment folder.
 
 ### Custom rake task to upload configuration.
 
-For uploading production and staging configuration first we need them separately in our development machine. I put my production configuration in `protected/config/config-production.php` and added to `.gitignore` so I won't add those to git by mistake. Same way for staging I put staging configuration in `protected/config/config-staging.php` and added to `.gitignore`.
+For uploading production and staging configuration first we need them separately in our development machine. I put my production configuration in `protected/config/config-production.php` and added to `.gitignore` so I won't add those to git by mistake. Same way for staging I put configuration in `protected/config/config-staging.php` and added to `.gitignore`.
 
 In order to upload the configuration, we need to write the custom rake task. The `cap init` command have created `lib/capistrano/tasks` folder for it.
 
