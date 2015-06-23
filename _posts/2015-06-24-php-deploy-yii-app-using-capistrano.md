@@ -2,8 +2,8 @@
 layout: post
 title: "PHP : Deploy Yii app using capistrano"
 excerpt: "PHP : Deploy Yii app using capistrano"
-date: 2015-06-23 00:00:00 IST
-updated: 2015-06-23 00:00:00 IST
+date: 2015-06-24 00:00:00 IST
+updated: 2015-06-24 00:00:00 IST
 categories: php
 tags: php, yii, capistrano
 ---
