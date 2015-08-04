@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Service classes in PHP"
+title: "PHP : Service classes"
 excerpt: "Service classes in PHP"
 date: 2015-08-05 00:00:00 IST
 updated: 2015-08-05 00:00:00 IST
@@ -8,13 +8,13 @@ categories: php
 tags: php
 ---
 
-When I started with MVC in PHP, I used to write the whole logic in the controller, then when I learned about `Skinny controllers and fat models` I reduced the code in controller and moved some logics into Models. But that was not enough. When a action which interacts with more than one model, then it doesn't make sense to write the logic in one of the model.
+When I started with MVC in PHP, I used to write the whole logic in controller, then when I learned about `skinny controllers fat models` I reduced the code in controller and moved logic into models. But that was not enough. When a action which interacts with more than one model, then it doesn't make sense to write the logic in one of the model.
 
-The code in controllers can't be used much, so in some cases like placing an Order which has to deal with saving order, saving order items and address etc. Writing all the logic for this process in controller is not an ideal solution since if we want to place and order from some other action we need to duplicate the code.
+The code in controllers can't be reused much, so in some cases like placing an Order which has to deal with saving order, saving order items and address etc. Writing all the logic for this process in controller is not an ideal solution since if we want to place and order from some other action we need to duplicate the code.
 
-So in order to make this more convenient and reusable I thought of abstracting the logic for creating the order into service classes. I got the idea of service classes from `Ruby on Rails`. So when I came back to PHP world I thought of using service classes.
+So in order to make this more convenient and reusable I thought of abstracting the logic for creating the order into service classes. I got this idea of service classes from `Ruby on Rails`. So when I came back to PHP world I thought of using service classes.
 
-The code snippets in this posts are based on [Yii framework](yiiframework.com) Version 1.1.16 and since my intention is to give an overview on service class I am not going to explain any methods which I used.
+The code snippets in this post are based on [Yii framework](yiiframework.com) Version 1.1.16 and since my intention is to give an overview on service classes, I am not going to explain any functions which I used.
 
 So here is what my controller action looks like before using service classes for creating an order.
 
@@ -27,7 +27,9 @@ So here is what my controller action looks like before using service classes for
         $orderData  = Yii::app()->request->getParam('order');
 
         if(empty($orderData['items'])) {
-          $this->_sendResponse(403, array('status' => 'error', 'message' => 'Can\'t save order without items'));
+          $this->_sendResponse(403, array(
+            'status' => 'error', 'message' => 'Can\'t save order without items'
+          ));
         }
         $items = $orderData['items'];
         unset($orderData['items']);
@@ -68,11 +70,15 @@ So here is what my controller action looks like before using service classes for
         }
         catch(Exception $e) {
           $orderTransaction->rollback();
-          $this->_sendResponse(403, array('status' => 'error', 'message' => $e->getMessage()));
+          $this->_sendResponse(403, array(
+            'status' => 'error', 'message' => $e->getMessage()
+          ));
         }
       }
       catch(Exception $e) {
-        $this->_sendResponse(403, array('status' => 'error', 'message' => $e->getMessage()));
+        $this->_sendResponse(403, array(
+          'status' => 'error', 'message' => $e->getMessage()
+        ));
       }
     }
   
@@ -82,7 +88,7 @@ So here is what my controller action looks like before using service classes for
 
 ?>
 ```
-All the logic and exception handling is happening in controller itself and can't be reused when I need to create an order from another action. Also the above code is really difficult to unit test.
+All the logic and exception handling is happening in controller itself and can't be reused when I need to the same functionality from another action. Also the above code is really difficult to unit test.
 
 Then I moved the whole logic to `OrdersService` class which now looks like,
 
@@ -118,7 +124,7 @@ class OrdersService {
           return array('status' => 'success');
         }
         $orderTransaction->rollback();
-        throw new OrdersServiceException("Failed to save all the items. Please Try again", 1);
+        throw new OrdersServiceException("Failed to save the items.", 1);
       }
       else {
         // handle validation errors
@@ -142,7 +148,7 @@ class OrdersException extends Exception {
 }
 ?>
 ```
-Now I am raising an exception for all the errors, except for the validation errors. now I can catch the exception where ever I am using this service and show the errors according to the action like either render error message or send back a JSON with status *error*.
+Now I am raising an exception for all the errors, except for the validation errors. So I can catch the exception where ever I am using this service and show the errors according to the action like either render error message or send back a JSON with status *error*.
 
 Once I moved the order creation logic to service class, now my controller action looks like,
 
@@ -176,7 +182,7 @@ Once I moved the order creation logic to service class, now my controller action
 ?>
 ```
 
-Now the controller have only code which is need to this action. we don't have reuse anything from this code.
+Now the controller have only code which is need to this action. we don't have reuse anything from this because how to display error depends on that particular action.
 
 Hope I gave you a basic idea on service classes. If you have any queries, please drop a comment.
 
