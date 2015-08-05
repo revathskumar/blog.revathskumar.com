@@ -8,13 +8,13 @@ categories: javascript
 tags: javascript
 ---
 
-When you want to ask a confirmation from user about leaving a webpage by closing window or refreshing when their work is not saved, you can use `window.onbeforeunload` event for it.
+When you want to ask a confirmation from user about leaving a webpage by closing or refreshing window when their work is not saved, you can use `window.onbeforeunload` event for it.
 
-unlike other events the use of confirm, alert and prompt will be ignored inside `onbeforeunload` event. We want to return the message we want show to the user.
+unlike other events the use of `confirm`, `alert` and `prompt` will be ignored inside `onbeforeunload` event. We should return the message that we want show to the user.
 
 ```js
 window.onbeforeunload = function (e) {
-  return "You may lose the changes!!! \nAre you sure you want leave the webpage?";
+  return "Are you sure you want leave?";
 };
 ```
 
@@ -22,7 +22,7 @@ if you are using jQuery,
 
 ```js
 $(window).on("beforeunload", function(e) {
-  return "You may lose the changes!!! \nAre you sure you want leave the webpage?";
+  return "Are you sure you want leave?";
 });
 ```
 
@@ -30,9 +30,21 @@ But if you want to support some IE versions, returning message won't help you. Y
 
 ```js
 window.onbeforeunload = function (e) {
-  message = "You may lose the changes!!! \nAre you sure you want leave the webpage?";
+  message = "Are you sure you want leave?";
   e.returnValue = message;
   return message;
+};
+```
+If you want this prompt to be conditional then,
+
+```js
+window.onbeforeunload = function (e) {
+  if(inputChanged) {
+    var message = "Are you sure you want leave?";
+    e.returnValue = message;
+    return message;
+  }
+  return;
 };
 ```
 
@@ -42,8 +54,10 @@ Any value except `null` returned will be converted into string. You can unbind t
 window.onbeforeunload = null;
 ```
 
-jQuery users unbinf using `off` method.
+and in jQuery, using `off` method.
 
 ```js
 $(window).off("beforeunload");
 ```
+
+Here is a demo on [jsbin](http://jsbin.com/bidehe/edit?html,js).
