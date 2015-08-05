@@ -60,4 +60,4 @@ and in jQuery, using `off` method.
 $(window).off("beforeunload");
 ```
 
-Here is a demo on [jsbin](http://jsbin.com/bidehe/edit?html,js).
+Here is a demo on [jsbin](http://jsbin.com/bidehe/edit?html,js,output).
