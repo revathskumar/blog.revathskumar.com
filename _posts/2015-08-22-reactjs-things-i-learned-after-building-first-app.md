@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "React JS : things I learned after building first app"
-excerpt: "React JS : things I learned after building first app"
+title: "JavaScript : Things I learned after building first webapp with ReactJS"
+excerpt: "Things I learned after building first webapp with ReactJS"
 date: 2015-08-22 00:00:00 IST
 updated: 2015-08-22 00:00:00 IST
-categories: reactjs
-tags: reactjs
+categories: reactjs, javascript
+tags: reactjs, javascript
 ---
 
 I was pretty impressed with react.js when I [tried sometimes before](/2014/05/getting-started-with-react.html). When I started building an app with it, there are some small issues popped up, which I missed when creating a sample application. Here I tried to list out all those things.
