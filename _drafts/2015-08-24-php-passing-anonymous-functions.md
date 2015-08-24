@@ -10,7 +10,7 @@ tags: php, closure
 
 Recently when I was writing a PHP API wrapper for a external service, I thought of writing it as independent module which can be plugged into any PHP application. Everything went nice but when I need to do some logging I was forced to depended on application.
 
-So I thought of plugging a logger, but it didn't felt right for me since it complicate things. Then I came to know about [PHP Anonymous functions (Closures)](http://www.php.net/manual/en/functions.anonymous.php) which can be used to pass a function as a callback to another function just like in JavaScript.
+So I thought of plug in a logger. Then I came to know about [PHP Anonymous functions (Closures)](http://www.php.net/manual/en/functions.anonymous.php) which can be used to pass a function as a callback to another function like in JavaScript.
 
 So I modified my Api wrapper like
 
@@ -36,7 +36,7 @@ Class Api {
 ?>
 ```
 
-Now when we use it I can set my logger, to application logger without any issues and still my wrapper is totally independent of my application.
+Now when we use it, I can set my logger to application logger without any issues and still my wrapper is totally independent of my application.
 
 ```php
 <?php
