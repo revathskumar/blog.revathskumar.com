@@ -10,7 +10,7 @@ tags: javascript, babeljs
 
 [BabelJS](http://babeljs.io) allows you to write ES6 or ES7 today. I recently started writing all my javascript in ES6 and transpile though babel.js. 
 
-# How to setup
+## setup
 
 ```sh
 npm i --save-dev babel-cli babel-preset-es2015
