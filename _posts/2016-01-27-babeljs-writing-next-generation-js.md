@@ -91,3 +91,5 @@ Once you install the react preset you can now build `.jsx` files using babel.
 ```sh
 ./node_modules/.bin/babel --presets=es2015,react source.jsx -o output.js
 ```
+
+Now its time to say goodbye to coffeescript and write next generation JavaScript.
