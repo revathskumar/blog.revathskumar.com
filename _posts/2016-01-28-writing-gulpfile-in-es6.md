@@ -21,7 +21,7 @@ From gulp 3.9.0, we can write gulpfile in ES6. But for this you need to add `bab
 }
 ```
 
-Also you need to add the `es2015` preset to `.babelrc`.
+Create a `.babelrc` file and add `es2015` preset.
 
 ```json
 {
