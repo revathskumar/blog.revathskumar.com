@@ -1,2 +1,5 @@
 _site/
 node_modules/
+vendor/
+.bundle/
+.jekyll-metadata
