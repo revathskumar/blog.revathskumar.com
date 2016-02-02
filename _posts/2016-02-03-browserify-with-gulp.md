@@ -9,7 +9,7 @@ tags: browserify, gulp
 image: https://keyholesoftware.com/wp-content/uploads/Browserify-5.png
 ---
 
-![browseify + gulp]({{ page.image }})
+![browserify + gulp]({{ page.image }})
 
 In my [last blog post](/2016/01/browserify.html) I explained how to use browserify command line to bundle javascript modules. In this we will use browserify api to use it along with gulp. I will be writing gulpfile snippets for this post in ES6. You can checkout my post on [writing gulpfile in ES6](/2016/01/writing-gulpfile-in-es6.html).
 
@@ -134,7 +134,7 @@ gulp.task('default', () => {
 
 ## Using with react and babel
 
-If you are planning to right react compenents in ES6 then I recommend `babelify` tranform, otherwise `reactify` tranform will help to bundle the react modules.
+If you are planning to right react components in ES6 then I recommend `babelify` transform, otherwise `reactify` transform will help to bundle the react modules.
 
 ~~~ js
 import gulp from "gulp";
@@ -165,4 +165,4 @@ gulp.task('jsx', () => {
 });
 ~~~ 
 
-Image courtsey [keyholesoftware.com](https://keyholesoftware.com)
+Image courtesy [keyholesoftware.com](https://keyholesoftware.com)
