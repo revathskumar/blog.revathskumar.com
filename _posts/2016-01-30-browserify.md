@@ -107,3 +107,5 @@ Now specify `react` along with `es2015` preset in `--presets` option.
 You can pass the same options to `watchify` to watch and bundle the changes.
 
 We will discuss the browserify with gulp, splitting the bundles and making the bundling faster in the upcoming posts.
+
+image courtsey [braveterry.com](http://www.braveterry.com)
