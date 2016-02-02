@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'pygments.rb'
+gem 'rouge'
 gem 'kramdown'
 
 group :jekyll_plugins do
