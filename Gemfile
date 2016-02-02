@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 gem 'pygments.rb'
-gem 'redcarpet'
+gem 'kramdown'
 
 group :jekyll_plugins do
   gem 'jekyll-compose'
