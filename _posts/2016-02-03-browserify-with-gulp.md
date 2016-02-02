@@ -149,7 +149,7 @@ import babelify from 'babelify';
 gulp.task('jsx', () => {
   browserify({
     entries: 'src/index.jsx',
-    extenstions: ['.jsx'],
+    extensions: ['.jsx'],
     debug: true
   })
   .transform(babelify)
