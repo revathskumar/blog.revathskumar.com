@@ -9,13 +9,11 @@ tags: browserify, gulp
 image: https://keyholesoftware.com/wp-content/uploads/Browserify-5.png
 ---
 
-<center>
 ![browseify + gulp]({{ page.image }})
-</center>
 
 In my [last blog post](/2016/01/browserify.html) I explained how to use browserify command line to bundle javascript modules. In this we will use browserify api to use it along with gulp. I will be writing gulpfile snippets for this post in ES6. You can checkout my post on [writing gulpfile in ES6](/2016/01/writing-gulpfile-in-es6.html).
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import fs from "fs";
@@ -28,13 +26,13 @@ gulp.task('default', () => {
   .bundle()
   .pipe(fs.createWriteStream('./dist/utils.js'));
 });
-```
+~~~ 
 
 A basic implementation can be done as above. But this won't work when you need to pipe with other gulp plugins like `uglify` or `gulp.dist`. This is because `browserify.bundle()` return a [text stream](https://github.com/substack/node-browserify#bbundlecb) where as gulp works using [vinyl stream](https://github.com/gulpjs/vinyl). In order to browserify to work with other plugins you need to use [vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream).
 
 `vinyl-source-stream` will convert text streams from `browserify.bundle()` to vinyl streams so you can pipe with other gulp plugins which support streaming. Install the `vinyl-source-stream` using `npm i --save-dev vinyl-source-stream`.
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import source from "vinyl-source-stream";
@@ -48,13 +46,13 @@ gulp.task('default', () => {
   .pipe(source('utils.js'))
   .pipe(gulp.dest('./dist'));
 });
-```
+~~~ 
 
 Now we can use `gulp.dest` to write the output file but if we try to pipe it to `gulp-uglify` you will get error saying **Streaming not supported**. This is because some gulp plugins doesn't support streaming. The `vinyl-source-stream` returns a **streaming** vinyl object where as uglify expects **buffered** vinyl file objects.
 
 Thats were `vinyl-buffer` comes in. `vinyl-buffer` will convert streaming vinyl files to use buffer. you install *vinyl-buffer* using `npm i --save-dev vinyl-buffer`
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import uglify from "gulp-uglify";
@@ -72,14 +70,14 @@ gulp.task('default', () => {
   .pipe(uglify())
   .pipe(gulp.dest('./dist'));
 });
-```
+~~~ 
 Now in `dist/utils.min.js` you will get minified version of the build.
 
 ## Working with Source Maps
 
 If you want to generate sourcemaps for your builds you can use `gulp-sourcemaps` plugin. Install gulp-sourcemaps using `npm i --save-dev gulp-sourcemaps`.
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import uglify from "gulp-uglify";
@@ -100,13 +98,13 @@ gulp.task('default', () => {
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('./dist'));
 });
-```
+~~~ 
 
 ## Handling Errors
 
 In order to handle errors you bind callback to 'error' event from browserify.
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import uglify from "gulp-uglify";
@@ -131,14 +129,14 @@ gulp.task('default', () => {
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('./dist'));
 });
-```
+~~~ 
 
 
 ## Using with react and babel
 
 If you are planning to right react compenents in ES6 then I recommend `babelify` tranform, otherwise `reactify` tranform will help to bundle the react modules.
 
-```js
+~~~ js
 import gulp from "gulp";
 import browserify from "browserify";
 import uglify from "gulp-uglify";
@@ -165,6 +163,6 @@ gulp.task('jsx', () => {
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('./dist'));
 });
-```
+~~~ 
 
 Image courtsey [keyholesoftware.com](https://keyholesoftware.com)
