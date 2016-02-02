@@ -9,9 +9,7 @@ tags: javascript, browserify
 image: http://www.braveterry.com/wp-content/uploads/2014/11/browserify.png
 ---
 
-<center>
 ![browseify]({{ page.image }})
-</center>
 
 Browserify helps you to bring node modules to browser. You can write frontend javascript as commonjs modules and require in browser. Also it helps to manage packages using npm and we no more need a different package manager for frontend.
 
