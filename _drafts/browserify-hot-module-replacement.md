@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Browserify : hot module replacement (hmr)"
+title: "Browserify : Hot Module Replacement (HMR)"
 excerpt: "Bring webpack's hot module replacement into browserify"
-date: 2016-02-08 00:00:00 IST
-updated: 2016-02-08 00:00:00 IST
+date: 2016-02-09 00:00:00 IST
+updated: 2016-02-09 00:00:00 IST
 categories: javascript
 tags: browserify, hmr
----
+--- 
 
-Ever since I heard about [Hot Module replacement](https://webpack.github.io/docs/hot-module-replacement.html) in webpack I loved the idea. But since I was using [browserify](/2016/01/browserify.html) to bundle I was not able to use it. Recently when I saw [this thread](https://github.com/substack/node-browserify/issues/1143) I thought I should try [browserify-hmr](https://github.com/AgentME/browserify-hmr/).
+Ever since I heard about [Hot Module Replacement (HMR)](https://webpack.github.io/docs/hot-module-replacement.html) in webpack I loved the idea. But since I was using [browserify](/2016/01/browserify.html) to bundle I was not able to use it. Recently when I saw [this thread](https://github.com/substack/node-browserify/issues/1143) I thought I should try [browserify-hmr](https://github.com/AgentME/browserify-hmr/).
 
 browserify-hmr can be used a browserify plugin. By default it uses websocket server transfer the changes. You can specify the mode using `-m` or `mode` option as websocket or ajax.
 
@@ -28,7 +28,7 @@ Now we need some configuration in `.babelrc`.
 
 ~~~ json
 {
-  presets: ["es2015", "react"],
+  "presets": ["es2015", "react"],
   "plugins": ["transform-runtime"],
   "env": {
     "development": {
@@ -94,6 +94,6 @@ gulp.task('hmr', () => {
 
 You can also use `b.plugin()` method to specify the hmr plugin with options. You can find a [sample application](https://github.com/revathskumar/browserify-hmr-example) on github.
 
-One of the issue with [browserify-hmr]() is it **doesn't support** [multiple bundles](https://github.com/AgentME/browserify-hmr/issues/12).
+One of the issue with `browserify-hmr` is it **doesn't support** [multiple bundles](https://github.com/AgentME/browserify-hmr/issues/12).
 
 You can also look into [livereactload](https://github.com/milankinen/livereactload) or [amok](https://medium.com/@caspervonb/amokify-and-an-interactive-programming-workflow-11f863aca2d0#.yghe07ae7).
