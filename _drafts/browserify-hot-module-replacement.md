@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Browserify : hot module replacement (hmr)"
-excerpt: "Bring webpacks hot module replacement into browserify"
+excerpt: "Bring webpack's hot module replacement into browserify"
 date: 2016-02-08 00:00:00 IST
 updated: 2016-02-08 00:00:00 IST
 categories: javascript
@@ -66,7 +66,7 @@ import watchify from 'watchify';
 gulp.task('hmr', () => {
   const b = browserify({
     entries: 'src/index.jsx',
-    extenstions: ['.jsx'],
+    extensions: ['.jsx'],
     plugin: [hmr, watchify], // load hmr as plugin
     debug: true,
     cache: {},
@@ -92,4 +92,8 @@ gulp.task('hmr', () => {
 });
 ~~~
 
-You can also use `b.plugin()` method to specify the hmr plugin with options.
+You can also use `b.plugin()` method to specify the hmr plugin with options. You can find a [sample application](https://github.com/revathskumar/browserify-hmr-example) on github.
+
+One of the issue with [browserify-hmr]() is it **doesn't support** [multiple bundles](https://github.com/AgentME/browserify-hmr/issues/12).
+
+You can also look into [livereactload](https://github.com/milankinen/livereactload) or [amok](https://medium.com/@caspervonb/amokify-and-an-interactive-programming-workflow-11f863aca2d0#.yghe07ae7).
