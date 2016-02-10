@@ -4,11 +4,15 @@ title: "ReactJS : using debounce in react components"
 excerpt: "ReactJS : using debounce in react components"
 date: 2016-02-11 00:00:00 IST
 updated: 2016-02-11 00:00:00 IST
+image: http://image.slidesharecdn.com/slides-140813225923-phpapp01/95/throttle-and-debounce-patterns-in-web-apps-55-638.jpg
 categories: javascript
 tags: browserify
 ---
 
 When I was working with a typeahead feature, I wanted to rate limit the ajax calls made by it using debounce. Usually in such cases I use either [jQuery debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/) or [_.debounce](http://underscorejs.org/#debounce). 
+
+{: style="text-align: center"}
+![debounce]({{ page.image }}){: style="width: 70%"}
 
 But when it came to react components my usual approch didn't worked since react wrap the events with [SyntheticEvent](https://facebook.github.io/react/docs/events.html#syntheticevent). Since synthetic events have [event pooling](https://facebook.github.io/react/docs/events.html#event-pooling)  all properties will be nullified as soon as the callback function is invoked. Due to this the following code won't work.
 
@@ -89,3 +93,4 @@ export default class Comp extends Component {
 }
 ~~~
 
+Image courtesy [Almir Filho](http://www.slideshare.net/almirfilh0/throttle-and-debounce-patterns-in-web-apps)
