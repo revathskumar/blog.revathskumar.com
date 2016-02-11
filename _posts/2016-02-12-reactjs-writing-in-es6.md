@@ -3,7 +3,7 @@ layout: post
 title: "ReactJS : writing in ES6"
 excerpt: "When writing ReactJS components in ES6 here is the certain things that are different from ES5 syntax"
 date: 2016-02-12 00:00:00 IST
-updated: 2016-02-12 00:00:00 IST
+updated: 2016-02-12 00:03:00 IST
 categories: javascript
 tags: reactjs
 ---
@@ -113,4 +113,34 @@ class Comp extends Component {
 Comp.propTypes = {
   name: PropTypes.string
 }
+
+Comp.defaultProps = {
+  name: ""
+}
 ~~~
+
+## Mixins are supported with ES6 classes
+
+Since mixins are not supportes with ES6 classes, we need to use [Higher-Order Components](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775) to reuse functionalities across components.
+
+## Use `.bind(this)` on methods
+
+ES6 classes won't bind the methods with it's instance. You need to explicity bind with instance using `.bind(this)`
+
+~~~ js
+import React, {Component, PropTypes} from 'react';
+
+class Comp extends Component {
+  getData() {
+    // make ajax call
+  }
+  onClick() {
+    this.getData();
+  }
+  render() {
+    return (<div onClick={this.onClick.bind(this)}>Comp with ES5 :: {this.props.name}</div>);
+  }
+}
+~~~
+
+If you didn't bind `this.onClick.bind(this)` the above code will throw `TypeError: this.getData is not a function`.
