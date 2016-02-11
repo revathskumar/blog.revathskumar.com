@@ -2,8 +2,8 @@
 layout: post
 title: "ReactJS : writing in ES6"
 excerpt: "When writing ReactJS components in ES6 here is the certain things that are different from ES5 syntax"
-date: 2016-02-11 00:00:00 IST
-updated: 2016-02-11 00:00:00 IST
+date: 2016-02-12 00:00:00 IST
+updated: 2016-02-12 00:00:00 IST
 categories: javascript
 tags: reactjs
 ---
