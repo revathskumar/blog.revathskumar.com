@@ -80,3 +80,37 @@ class Comp extends Component {
 ~~~
 
 You don't need to to call `getData` in `componentDidMount`.
+
+## Specifing `propTypes`
+
+When using `React.createClass` with ES5 we can specify the `propTypes` like
+
+~~~ js
+var React = require('react');
+
+var Comp = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string
+  },
+  render() {
+    return (<div>Comp with ES5 {this.props.name}</div>);
+  }
+})
+~~~
+
+But when using ES6 it's bit different
+
+~~~ js
+import React, {Component, PropTypes} from 'react';
+
+class Comp extends Component {
+  render() {
+    return (<div>Comp with ES5 :: {this.props.name}</div>);
+  }
+}
+
+// specify proptypes in class
+Comp.propTypes = {
+  name: PropTypes.string
+}
+~~~
