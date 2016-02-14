@@ -1,0 +1,7 @@
+web:
+  build: '.'
+  ports:
+    - "4000"
+  command: /bin/bash -l 'jekyll serve -wD'
+  volumes:
+    - .:/code
