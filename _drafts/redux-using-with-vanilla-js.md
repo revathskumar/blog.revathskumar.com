@@ -112,4 +112,4 @@ Now when you click the increment button we dispatch the action for increment and
 
 Here is the working example of [redux with vanilla js](https://jsbin.com/juqoce/1/edit?js,output) in jsbin.
 
-<a class="jsbin-embed" href="https://jsbin.com/juqoce/embed?js,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+<a class="jsbin-embed" href="http://jsbin.com/juqoce/embed?js,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
