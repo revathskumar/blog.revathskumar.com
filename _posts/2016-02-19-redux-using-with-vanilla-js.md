@@ -2,8 +2,8 @@
 layout: post
 title: "Redux : using with vanilla JS"
 excerpt: "A simple example to show how we can use redux with vanilla JS"
-date: 2016-02-18 00:00:00 IST
-updated: 2016-02-18 00:00:00 IST
+date: 2016-02-19 00:00:00 IST
+updated: 2016-02-19 00:00:00 IST
 categories: javascript
 tags: redux
 ---
