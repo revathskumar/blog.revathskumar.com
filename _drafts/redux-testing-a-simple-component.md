@@ -2,13 +2,13 @@
 layout: post
 title: "Redux : testing a simple component"
 excerpt: "Redux : testing a simple component"
-date: 2016-02-19 00:00:00 IST
-updated: 2016-02-19 00:00:00 IST
+date: 2016-02-24 00:00:00 IST
+updated: 2016-02-24 00:00:00 IST
 categories: javascript
 tags: redux
 ---
 
-In my last post on [redux : using with vanilla js](/2016/02/redux-using-with-vanilla-js.html) we created a simple counter. In this post let's see how we can test the compomponent as well as redux actions. For testing I will be using [mocha](http://mochajs.org/) testing framework and for assertion [expect.js](https://github.com/LearnBoost/expect.js).
+In my last post on [redux : using with vanilla js](/2016/02/redux-using-with-vanilla-js.html) we created a simple counter. In this post let's see how we can test the component as well as redux actions. For testing I will be using [mocha](http://mochajs.org/) testing framework and for assertion [expect.js](https://github.com/LearnBoost/expect.js).
 
 For my last post the counter module will look like 
 
@@ -27,7 +27,6 @@ function counter(state=0, action) {
       return state;
   }
 }
-
 
 //actions
 const increment = () => {
@@ -64,7 +63,6 @@ class Counter {
     this.store.dispatch(decrement())
   }
 
-
   update() { 
     console.log(store.getState());
     this.$el
@@ -78,7 +76,7 @@ class Counter {
 }
 ~~~
 
-For testing purpose, I will be adding a new dispatch type called "RESET".
+For testing purpose, I will be adding a new dispatch type called "RESET" which will reset the state to zero.
 
 ~~~ diff
 // reducer 
@@ -111,6 +109,22 @@ mocha.run();
 
 ## Testing actions
 
+While testing action we dispatch the events and see the state is changed accordingly. For this before running each test we need to reset the state to zero to make sure other test cases won't effect one another's results.
+
+So in `beforeEach` callback we dispatch the reset event.
+
+~~~ js
+describe('actions', () => {
+  beforeEach(() => {
+    testStore.dispatch({type: 'RESET'});
+  });
+
+  // test for actions
+});
+~~~
+
+Now we can write tests for the actions described.
+
 ~~~ js
 // code for the component from first snippet
 
@@ -136,3 +150,42 @@ describe('actions', () => {
 
 mocha.run()
 ~~~
+
+So we tested the `actions` separately, now we can test the actual `Counter` component.
+
+## Testing component
+
+For testing we `Counter` component we need to create the `Counter` object. For this I added a new `div#test-counter` to my HTML and we instantiate the `Counter` before the tests.
+
+~~~ js
+const el = d.getElementById('test-counter');
+const c = new Counter({
+  el,
+  store: testStore
+});
+~~~
+
+Now we can use the variable `c` in the following tests and we will `RESET` the store in `beforeEach` as we did while testing actions. Now for testing we can call `c.inc()` and `c.dec()` and check whether the states are changed.
+ 
+~~~ js
+let c;
+describe('Counter', () => {
+  beforeEach(() => {
+    testStore.dispatch({type: 'RESET'});
+  });
+
+  it('inc', () => {
+    c.inc();
+    expect(testStore.getState()).toEqual(1);
+  });
+
+  it('dec', () => {
+    c.dec();
+    expect(testStore.getState()).toEqual(-1);
+  });
+});
+~~~
+
+Here is full version of [redux and component tests](https://jsbin.com/jibagu/edit?js,output) in jsbin. 
+
+<a class="jsbin-embed" href="http://jsbin.com/jibagu/3/embed?js,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
