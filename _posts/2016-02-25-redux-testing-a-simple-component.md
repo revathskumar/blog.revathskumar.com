@@ -2,8 +2,8 @@
 layout: post
 title: "Redux : testing a simple component"
 excerpt: "Redux : testing a simple component"
-date: 2016-02-24 00:00:00 IST
-updated: 2016-02-24 00:00:00 IST
+date: 2016-02-25 00:00:00 IST
+updated: 2016-02-25 00:00:00 IST
 categories: javascript
 tags: redux
 ---
