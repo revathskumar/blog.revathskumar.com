@@ -13,7 +13,7 @@ Presenters is a abstraction layer between the template and the controller. It en
 
 Consider this as my view template before using presenters,
 
-```erb
+~~~ erb
   <!-- app/views/users/show.html.erb -->
   <dt>Website:</dt>
   <dd>
@@ -31,7 +31,7 @@ Consider this as my view template before using presenters,
     <span class="none">None given</span>
   <% end %>
   </dd>
-```
+~~~ 
 
 This is a design smell. We are writing the conditionals in the template. How we can avoid this using presenters?
 
@@ -39,18 +39,18 @@ This is a design smell. We are writing the conditionals in the template. How we 
 
 Create a new folder named `presenters` in the `app` directory. Then create a `UserPresenter` class inside it.
 
-```ruby
+~~~ ruby
 # app/presenters/user_presenter.rb
 class UserPresenter
   def initialize
 
   end
 end
-```
+~~~ 
 
 Now to use this, the easiest but **ugly way** is to let the controller know about the presenter.
 
-```ruby
+~~~ ruby
 # app/controllers/user_controller.rb
 class UserController < ApplicationController
   def show
@@ -58,13 +58,13 @@ class UserController < ApplicationController
     @user = UserPresenter.new(user, view_context)
   end
 end
-```
+~~~ 
 
 Passing the `view_context` to presenter help us to use the helper methods inside the presenter.
 
 Now the updated `UserPresenter` will look like,
 
-```ruby
+~~~ ruby
 # app/presenters/user_presenter.rb
 class UserPresenter
   def initialize user, template
@@ -72,11 +72,11 @@ class UserPresenter
     @template = template
   end
 end
-``` 
+~~~ 
 
 Now move the logic for the twitter and website into the presenter.
 
-```ruby
+~~~ ruby
 # app/presenters/user_presenter.rb
 class UserPresenter
   def initialize user, template
@@ -100,23 +100,23 @@ class UserPresenter
     end
   end
 end
-```
+~~~ 
 
 So Now look into our view template
 
-```erb
+~~~ erb
   <!-- app/views/users/show.html.erb -->
   <dt>Website:</dt>
   <dd><% @user.website %></dd>
   <dt>Twitter:</dt>
   <dd><% @user.twitter %></dd>
-```
+~~~ 
 
 Does it look much better than what we had before? I know, Yes!
 
 But using `@template` to call all the helper method is not fine, so we need to refactor it by adding a method missing.
 
- ```ruby
+~~~ ruby
 # app/presenters/user_presenter.rb
 class UserPresenter
   def initialize user, template
@@ -145,7 +145,7 @@ class UserPresenter
       @template.send(*args, &block);
     end
 end
-```
+~~~ 
 
 Even better Ah!!.
 Try out and lemme know how you felt about presenters.
