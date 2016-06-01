@@ -19,13 +19,13 @@ Usually I write a ajax call like below
     url: "/someurl",
     method: "GET",
     data: { 
-      a: "a"  
+      a: "a"
     },
     success: function(data) {
       console.log('success', data) 
     },
     error: function(xhr) {
-      console.log('error', xhr);  
+      console.log('error', xhr);
     }
   })
 ~~~
@@ -37,13 +37,13 @@ But now a days I write using the `.done` and `.fail` methods.
     url: "/someurl",
     method: "GET",
     data: { 
-      a: "a"  
+      a: "a"
   })
   .done(function(data) {
     console.log('success', data) 
   })
   .fail(function(xhr) {
-    console.log('error', xhr);  
+    console.log('error', xhr);
   });
 ~~~
 
@@ -60,7 +60,7 @@ or fail option. But on the other hand youI bind any number of callbacks to `.don
     url: "/someurl",
     method: "GET",
     data: { 
-      a: "a"  
+      a: "a"
   })
   .done(function(data) {
     console.log('success callback 1', data) 
@@ -69,10 +69,10 @@ or fail option. But on the other hand youI bind any number of callbacks to `.don
     console.log('success callback 2', data) 
   })
   .fail(function(xhr) {
-    console.log('error callback 1', xhr);  
+    console.log('error callback 1', xhr);
   })
   .fail(function(xhr) {
-    console.log('error callback 2', xhr);  
+    console.log('error callback 2', xhr);
   });
 ~~~
 
@@ -90,7 +90,7 @@ options I want to do condition checking inside the callback where as when using
     url: "/someurl",
     method: "GET",
     data: { 
-      a: "a"  
+      a: "a"
   });
 
   if (someConditionIstrue) {
@@ -99,14 +99,14 @@ options I want to do condition checking inside the callback where as when using
       console.log('when condition is true', data);
     })
     .fail(function(xhr) {
-      console.log('error callback for true condition', xhr);  
+      console.log('error callback for true condition', xhr);
     });
   } else {
     jqXhr.done(function(data){
       console.log('when condition is false', data);
     })
     .fail(function(xhr) {
-      console.log('error callback for false condition', xhr);  
+      console.log('error callback for false condition', xhr);
     });
   }
 ~~~
@@ -119,7 +119,7 @@ on `jqXhr` variable outside the if-else block.
     url: "/someurl",
     method: "GET",
     data: { 
-      a: "a"  
+      a: "a"
   });
 
   jqXhr
@@ -127,7 +127,7 @@ on `jqXhr` variable outside the if-else block.
     console.log('common callback', data);
   })
   .fail(function(xhr) {
-    console.log('error common back', xhr);  
+    console.log('error common back', xhr);
   });
 
   // Conditional ones goes here
