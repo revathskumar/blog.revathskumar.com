@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaScript: function expression and declaration"
-excerpt: "HTML: Handling left-to-right text"
+excerpt: "JavaScript: function expression, named function expression and declaration"
 date: 2014-12-10 00:00:00 IST
 updated: 2014-12-10 00:00:00 IST
 categories: javascript
