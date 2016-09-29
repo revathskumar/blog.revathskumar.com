@@ -1,46 +1,54 @@
 ---
 layout: post
-title: "React : server side rendering"
+title: "React.js : server side rendering"
+excerpt: "React.js server side rendering along with express.js and react-router"
+date: 2016-09-29 00:00:00 IST
+updated: 2016-09-29 00:00:00 IST
+categories: javascript
+tags: reactjs
 ---
 
-Now server rendering is a big thing for heavy client side apps and now most of
-the client side frameworks supports it. Yesterday I tried a bit of react server
-rendering along with expressjs and react router.
+This is post is originally published on [crypt.codemancers.com](http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/).
+
+----
+
+These days server side rendering has become an important feature for heavy client side applications and now most of
+the client side frameworks support it. Yesterday I tried a bit of react server
+rendering along with express.js and react-router.
 
 ## Setup Express js server and dependencies.
 
-As usual we can start with scaffolding a new expressjs app using expressjs-
-generator and installing all the dependencies. I used `webpack` for client side
+We can start with scaffolding a new express.js app using [expressjs-generator](http://expressjs.com/en/starter/generator.html) and installing all the dependencies. We use `webpack` for client side
 bundling. 
 
-You can install all the dependencies like
+We can install all the dependencies by running
 
-~~~ sh
+~~~sh
 npm i --save react react-dom react-router babel-register
 ~~~
 
-and development dependencies like
+and development dependencies by running
 
-~~~ sh
+~~~sh
 npm i --save-dev babel-cli babel-core babel-preset-es2015 babel-preset-react babel-preset-stage-0 webpack babel-loader
 ~~~
 
-## Setting up webpack & babel for client.
+## Setup webpack & babel for client.
 
-I decided to keep all my client js and react components in a new folder named
-`client` and put all the compiled js in `public/javascripts`. I added a
+We will keep all our client JavaScript and React components in a new folder named
+`client` and put all the compiled js in `public/javascripts`. Also we shall add a
 `.babelrc` to load babel presets and configs.
 
-~~~ json
+~~~json
 {
     "presets": ["es2015", "react", "stage-0"]  
 }
 ~~~
 
-Now to webpack config. I pointed the entry file, output directory and babel
-loader in `webpack.config.js`
+Now in `webpack.config.js`, we will configure the entry point, output directory and babel
+loader.
 
-~~~ js
+~~~javascript
 // webpack.config.js
 
 var path = require('path');
@@ -59,8 +67,7 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015'],
-          plugins: ['transform-object-assign']
+          presets: ['react', 'es2015']
         }
       }
     ]
@@ -68,28 +75,25 @@ module.exports = {
 };
 ~~~
 
-Now I can run 
+Now we can run the following to build client JavaScript files in development mode with debug flag turned on, and watch for changes.
 
-~~~ sh
-webpack --debug --hot --output-path-info --devtool=eval --display-modules --watch -d
+~~~sh
+webpack --debug --watch
 ~~~
 
-for build client js in development mode with debugging and hot module reloading.
-
-For easier use I added this command to [npm scripts](https://docs.npmjs.com/misc/scripts) with name `webpack:server`, so I just need to run 
-`npm run webpack:server`.
+For easier use, we can add the command to [npm scripts](https://docs.npmjs.com/misc/scripts) with name `webpack:server`. Now we just need to run `npm run webpack:server`.
 
 ## Setup react router
 
 Now the basic scaffolding and development setup is finished and time to start
-building our app. I started it with configuring the router. I panned mainly for
+building our app. We can start with configuring the router. We are planning mainly for
 two routes `/home` to show the rendering of static component and `/list` to show
 the server side rendering with some data.
 
-First I have to define the entry point which will mount our `react-router`
+First we have to define the entry point which will mount our `react-router`
 component to DOM. 
 
-~~~ js
+~~~javascript
 // client/app.jsx
 
 import React from 'react';
@@ -100,9 +104,9 @@ import AppRouter from './router.jsx';
 render(<AppRouter/>, document.querySelector('#app'));
 ~~~
 
-Then the routes defined in `client/router.jsx`
+Next, define routes in `client/router.jsx`
 
-~~~ js
+~~~javascript
 // client/router.jsx
 
 import React from 'react';
@@ -126,9 +130,9 @@ const AppRouter = () => {
 export default AppRouter;
 ~~~
 
-`AppRoot` is nothing but a simple layout for all the root routes.
+`AppRoot` is nothing but a simple layout for our app.
 
-~~~ js
+~~~javascript
 // client/app-root.jsx
 
 import React, {Component} from 'react';
@@ -152,11 +156,12 @@ export default AppRoot;
 
 ## Setup express js for server side rendering
 
-Since we are using React + ES6 for components we need to use `babel-register` so 
-that we can write express js routes in ES6 and require the ES6 route we already wrote.
-I required the `babel-register` at the beginning of express js entry point `app.js`.
+Since we are using React + ES6 for components, we have to use the `babel-register` on server 
+side so that we can write express js routes also in ES6 and import the react routes we 
+already wrote. Please note that, we have to require/import the `babel-register` at the beginning of 
+express js entry point `app.js`.
 
-~~~ js
+~~~javascript
 // app.js
 require('babel-register');
 var express = require('express');
@@ -166,18 +171,17 @@ var favicon = require('serve-favicon');
 //rest of the express js boilerplate
 ~~~
 
-Then I rename the `routes/index.js` to `routes/index.jsx`. Now I can use the 
-client routes and react components in server side. For server side rendering we use 
-`renderToString` method from `react-dom/sever` package and `match`, `createRoutes` and `RouterContext`
+Then we rename the `routes/index.js` to `routes/index.jsx`, after this we can use the 
+react routes and react components on server side. For server side rendering we use 
+`renderToString` method from `react-dom/sever` package and methods like `match`, `createRoutes` and `RouterContext`
 from `react-router`.
 
-[match](https://github.com/reactjs/react-router/blob/master/docs/API.md#match-routes-location-history-options--cb) 
-utility will match a set of routes to a location without rendering and call as callback. 
-For `match` we have to provide the set of routes, which need to be created from our `client/router.jsx`(`appRouter`) component.
-We can use [createRoutes](https://github.com/reactjs/react-router/blob/master/docs/API.md#createroutesroutes) 
-method from `react-router` to do this. 
+[match](https://github.com/ReactTraining/react-router/blob/c3cd9675bd8a31368f87da74ac588981cbd6eae7/docs/API.md#match-routes-location-history-options--cb) 
+function in `react-router` module will match a set of routes to a location and calls a callback, without rendering.
+We use [createRoutes](https://github.com/reactjs/react-router/blob/master/docs/API.md#createroutesroutes) 
+method from `react-router` to create a set of routes from our `client/router.jsx`(`appRouter`) component and provide it to `match`.
 
-~~~ js
+~~~javascript
 // routes/index.jsx
 // express and react imports
 
@@ -186,30 +190,30 @@ import appRouter from '../client/router.jsx';
 const routes = createRoutes(appRouter());
 ~~~
 
-Once we had a match [RouterContext](https://github.com/reactjs/react-router/blob/master/docs/API.md#routercontext) will 
-renders the component tree for the given router state.
+Once we have a match [RouterContext](https://github.com/ReactTraining/react-router/blob/c3cd9675bd8a31368f87da74ac588981cbd6eae7/docs/API.md#routercontext) will render the component tree for the given router state and return the component markup as a string with the help of `renderToString` method.
 
-Once we have the route match we can render the `RouterContext` to string using the `renderToString` method.
+~~~javascript
+// Express.js route
 
-~~~ js
-
-router.get('\*', (req, res) => {
+router.get('*', (req, res) => {
   match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
     // check for error and redirection
     const content = renderToString(<RouterContext {...renderProps}/>);
-    // passing to jade view
+    // pass content to jade view (we'll see it in a while)
   })
 })
 ~~~
 
-Now I have the react component rendered as string and I need to pass this to `jade` view. 
-So I made change to my jade view which will accept a `content` variable and substitute 
-inside the react app mount point.  
+Now we have the react components rendered as string and we need to pass this to our [pug.js (Previously known as jade)](https://pugjs.org/api/getting-started.htmlF) view. 
+The jade view will accept the string in `content` variable and substitute inside the react app mount point.  
 
-~~~ jade
+~~~jade
+//- views/index.jade
 extends layout
 
 block content
+  script(type='text/javascript').
+    window.__INITIAL_STATE__ = !{JSON.stringify(data)}
   div.container#app!= content
 ~~~
 
@@ -217,7 +221,7 @@ block content
 
 `/home` points to a static component called `Home` which we are going to render from server.
 
-~~~ js
+~~~javascript
 import React from 'react';
 
 const Home = () => {
@@ -231,9 +235,9 @@ const Home = () => {
 export default Home;
 ~~~
 
-and now when I join the dots the `routes/index.jsx` will look the below code.
+and now when we join the dots the `routes/index.jsx` will look like this
 
-~~~ js
+~~~javascript
 import express from 'express';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
@@ -253,7 +257,7 @@ router.get('/home', (req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
       const content = renderToString(<RouterContext {...renderProps}/>);
-      res.render('index', {title: 'Express', content});
+      res.render('index', {title: 'Express', data: false, content});
     } else {
       res.status(404).send('Not Found');
     }
@@ -263,11 +267,10 @@ router.get('/home', (req, res) => {
 
 ## Rendering component on server with data
 
-In this I am trying to render a list of users, the data source is not db, but an api for demo purpose.
-So to render data, we need to fetch that from the server, pass it to component via [context](/2016/02/reactjs-context.html).
-So we start with writing a Higher Order Component to set the data to context.
+In this section, we are trying to render a list of users, the data source is not DB but an API for demo purpose.
+In order to render data, we need to fetch data from the server, pass it to a component via [context](https://facebook.github.io/react/docs/context.html). For this we need to write a Higher Order Component to set the data to context.
 
-~~~ js
+~~~javascript
 import express from 'express';
 import request from 'request';
 import React, {Component} from 'react';
@@ -300,7 +303,7 @@ The above `DataProvider` will set data to context if we pass it via props named 
 
 The `List` component will look like,
 
-~~~ js
+~~~javascript
 import React, {Component} from 'react';
 
 class List extends Component {
@@ -347,12 +350,12 @@ export default List;
 ~~~
 
 The above list component will look for data in context first, then in global state and later in component level state. 
-While we render it from server the data will be available in context and component and use it to render the initial HTML. 
-later after loading it in browser the component can fetch again and update the data.
+While we render it from server, the data will be available in context and component use the data in context to render the initial HTML. 
+Later after loading it in browser the component can fetch again and update the data.
 
 Now we can setup the route to fetch the data and render the component. 
 
-~~~ js
+~~~javascript
 router.get('/list', (req, res) => {
   match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
     if (error) {
@@ -362,7 +365,7 @@ router.get('/list', (req, res) => {
     } else if (renderProps) {
       request('http://jsonplaceholder.typicode.com/users', (error, response, body) => {
         const data = {items: JSON.parse(body)};
-		const content = renderToString(<DataProvider {...renderProps} data={data}/>);
+        const content = renderToString(<DataProvider {...renderProps} data={data}/>);
         res.render('index', {title: 'Express', data, content});
       });
     } else {
@@ -372,6 +375,7 @@ router.get('/list', (req, res) => {
 });
 ~~~
 
-Thats it. we successfully rendered our react components from server side with and without data, so that user dont want to wait
+Thats it. We successfully rendered our react components from server side with and without data, so that user don't have to wait
 for another ajax request after loading the page to see the data.
 
+Thanks to codemancers team especially [@emil](https://twitter.com/emilsoman), [@kashyap](https://twitter.com/kgrz) and [@yuva](https://twitter.com/iffyuva) for helping to fix spelling and grammer mistakes.
