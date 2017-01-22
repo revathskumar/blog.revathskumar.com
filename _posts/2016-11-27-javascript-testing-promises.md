@@ -147,3 +147,38 @@ Now see the difference in the mocha's failure message with actual and expected d
 
 Isn't this error message better for programmers to debug the failure. 
 
+### UPDATE : 2017-01-22
+
+There is even better way, Thanks to [@blakeembrey](https://twitter.com/blakeembrey).
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/revathskumar">@revathskumar</a> FWIW, you shouldn&#39;t use `done` at all with mocha (<a href="https://t.co/ijOcbpydV3">https://t.co/ijOcbpydV3</a>) - you should just return the promise directly</p>&mdash; Blake Embrey (@blakeembrey) <a href="https://twitter.com/blakeembrey/status/803386495180472320">November 28, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+We don't need to use `done` at all, instead we can just [return the promise](http://mochajs.org/#working-with-promises) from `it` block.
+
+~~~ diff
+// test.js
+const getUsers = require('./index');
+const ApiClient = require('./api');
+const sinon = require('sinon');
+const expect = require('chai').expect;
+
+describe('getUsers', () => {
+  context('on success', () => {
+    it('returns user data', () => {
+      const getSpy = sinon.stub(ApiClient, 'get').returns(Promise.resolve([
+        {id: 1, name: 'Leanne Graham'},
+        {id: 2, name: 'Ervin Howell'}
+      ]));
+
++      return getUsers().
+        then((res) => {
+          expect(res).to.eql([
+            {id: 1, name: 'Leanne Graham'},
+            {id: 2, name: 'Ervin Howel'}
+          ]);
+        });
+    });
+  });
+});
+~~~
