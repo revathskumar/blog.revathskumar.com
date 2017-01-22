@@ -168,7 +168,7 @@ ul.posts span {
 }
 
 .post blockquote {
-  margin-left: 20px;
+  margin: 20px 0 20px 0;
   background-color: #DDD;
 }
 
