@@ -145,32 +145,32 @@ Now its time to create a deployment. On aws navigate to AWS CodeDeploy and creat
 
 Fill in the name of application and instances uing the tag `Name` and value `codedeploy-demo`.
 
-![codedeploy-createapp](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/ba60e303-38a5-46ff-ae16-a271378ca386_zpsehmq5we4.png)
+![codedeploy-createapp](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/ba60e303-38a5-46ff-ae16-a271378ca386_zpsehmq5we4.png)
 
 Now choose the deployment configuration, for the demo purpose I set it as `CodeDeployDefault.AllAtOnce`. More info on [aws doc][codedeploy_deployment_configuration]
 
-![codedeploy-deployment-config](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/codedeploy-deployment-config_zpssmtudjai.png)
+![codedeploy-deployment-config](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-deployment-config_zpssmtudjai.png)
 
 Now add the the IAM role `code-deploy`, which we create before as the service role
 
-![codedeploy-servicerole](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/codedeploy-servicerole_zpslli4ft9e.jpg)
+![codedeploy-servicerole](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-servicerole_zpslli4ft9e.jpg)
 
 Once the application is created, we can deploy new revision.
 
-![codedeploy-create-newversion](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/codedeploy-create-newversion_zpsq7ukgrgk.jpg)
+![codedeploy-create-newversion](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-create-newversion_zpsq7ukgrgk.jpg)
 
 For the first time, the codedeploy app will ask to `connect to Github`.
 
-![codedeploy-connect-github](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/codedeploy-connect-github_zpstqj3ucc8.png)
+![codedeploy-connect-github](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-connect-github_zpstqj3ucc8.png)
 
 Once the github connection is setup, You can provide the repo name along with github username,
 Eg: `revathskumar/aws-github-auto-deploy`, commit id.
 
-![codedeploy-repo-details](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/codedeploy-repo-details_zpspsbmrroo.png)
+![codedeploy-repo-details](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-repo-details_zpspsbmrroo.png)
 
 Now we can click on `Deploy Now`, which will deploy to all the instance configured for the codedeployment application.
 
-![codedeploy-success](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/5eb496f1-080e-48c9-a18b-5c6da8303ff2_zpsbevqopxc.png)
+![codedeploy-success](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/5eb496f1-080e-48c9-a18b-5c6da8303ff2_zpsbevqopxc.png)
 
 # Setup Autodeploy from Github
 
@@ -220,11 +220,11 @@ Please make sure you replace the ACCOUNT_REGION, ACCOUNT_ID, APPLICATION_NAME an
 
 Now lets create a new user.
 
-![codedeploy-create-user](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/9f12a5a9-e9ee-42f9-acfc-055ab6d04ac0_zpswohszkry.png)
+![codedeploy-create-user](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/9f12a5a9-e9ee-42f9-acfc-055ab6d04ac0_zpswohszkry.png)
 
 In the next screen attach the policy we created before
 
-![codedeploy-user-attach-policy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/42a3886c-2670-49a3-ae3b-dd4587b55634_zpskwhe4upo.png)
+![codedeploy-user-attach-policy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/42a3886c-2670-49a3-ae3b-dd4587b55634_zpskwhe4upo.png)
 
 Once the user is created, it will show the `Access ID` and `Secret Access Token`
 Copy those and keep it. Will come handy later.
@@ -235,7 +235,7 @@ To invoke AWS codedeploy from github, we need to configure two integrations on G
 Before we configure we need to [generate new token][github_new_token] with access to 
 repo status and repo_deployments.
 
-![github-add-token](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/github-add-token_zpsropdhh5l.png)
+![github-add-token](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-token_zpsropdhh5l.png)
 
 Once the token is generated, Copy the token and keep it. We need this token while enabling the integrations.
 
@@ -244,7 +244,7 @@ Once the token is generated, Copy the token and keep it. We need this token whil
 We can add AWS CodeDeploy integration by navigating to Project `Settings` -> `Integrations and services`.
 Then from the `Add service` dropdown choose `AWS CodeDeploy`
 
-![github-add-codedeploy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/github-add-codedeploy_zpsvqrtforc.png)
+![github-add-codedeploy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-codedeploy_zpsvqrtforc.png)
 
 Fill the Application name, Deployment group, AWS region, Access Key, Secret Token and Gihub Token we generated. 
 Once we save it, We can move to next integration.
@@ -254,7 +254,7 @@ Once we save it, We can move to next integration.
 From the same Project `Settings` -> `Integrations and services`, this time we can choose 
 `GitHub Auto-Deployment` from the `Add service` dropdown. 
 
-![github-add-autodeploy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/github-add-autodeploy_zpsoc2uzvzd.png)
+![github-add-autodeploy](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-autodeploy_zpsoc2uzvzd.png)
 
 If you don't have a CI server, You don't need to check the `Deploy on status` checkbox.
 
