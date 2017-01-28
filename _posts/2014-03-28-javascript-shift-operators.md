@@ -40,20 +40,20 @@ Add 1 to it : 11110101 + 1 = 11110110
 
 So here I am gonna address 3 shift operators which revised recently, which are
 
-* >> (Signed right shift)
-* << (Signed left shift)
-* >>> (Unsigned right shift)
+* `>>` (Signed right shift)
+* `<<` (Signed left shift)
+* `>>>` (Unsigned right shift)
 
 <br/>
-# >> (Signed right shift)
+# `>>` (Signed right shift)
 On `10 >> 1`, here 10 is converted to binary as `00001010` and shit the bits 1 position to the right. Which results `00000101` equalant of 5 in decimal.
 
 On `-10 >> 1`, -10 is converted to binary as `11110110` and when shifts to 1 position to right it becomes `11111011` which is equalant to -5. 
 
-# << (Signed left shift)
+# `<<` (Signed left shift)
 On `10 << 1`, here the difference is, it shift the bits 1 posision to its left. which results `00010100` equalant of 20 in decimal. On `-10`, in the same way after shift it become `11101100` equalant to -20
 
-# >>> (Unsigned right shift)
+# `>>>` (Unsigned right shift)
 On `10 >>> 1`, here the processing of positive integers are same the `>>` (right shift) but bit different for the negative numbers.
 
 On `-10 >>> 1`, the binary equalant of `-10` is `11110110`. now shift 1 postition to right, adding zero's on left. which results `01111011` converting this to decimal (discarding sign) will result `123`.
