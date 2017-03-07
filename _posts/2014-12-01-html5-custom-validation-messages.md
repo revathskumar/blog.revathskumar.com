@@ -9,7 +9,7 @@ categories: html5, javascript
 
 ### UPDATE : 2017/03/08
 
-We have to clear the custom validity either using `onInput` or `onChange` event 
+We have to clear the custom validity either using `oninput` or `onchange` event 
 to avoid an extra invalid loop with blank message. The snippets below is updated accordingly.
 
 <hr />
@@ -73,10 +73,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var age_element = document.getElementsByName("age");
   age_element[0].oninvalid = invalid;
+  age_element[0].oninput = function(e) {
+    e.target.setCustomValidity("");
+  };
 });
 ```
 
-Set `setCustomValidity` to empty string to indicate that element doesn't have custom validity message. After settings the custom message for other errors our code will look like
+Set `setCustomValidity` to empty string on `oninput` or `onchange` event to clear the custom validity message. 
+After settings the custom message for other errors our code will look like
 
 ```js
 document.addEventListener("DOMContentLoaded", function(){
