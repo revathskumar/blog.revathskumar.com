@@ -7,6 +7,13 @@ updated: 2014-12-01 00:00:00 IST
 categories: html5, javascript
 ---
 
+### UPDATE : 2017/03/08
+
+We have to clear the custom validity either using `onInput` or `onChange` event 
+to avoid an extra invalid loop with blank message. The snippets below is updated accordingly.
+
+<hr />
+
 By the introduction of HTML5 validations, things are really getting easy for the developers regarding the form validation. we can validate the inputs using the attributes itself. They usually have their on predefined validation message. What if we want our custom validation message. we always need it. right?
 
 For the required attribute, the usual error message is "*Please fill out this field*". Let see how we can customize those messages.
@@ -18,7 +25,7 @@ Here is a simple form with number field `age` with required attribute, minimum i
   <label for="age"> Age </label>
   <input type="number" name="age" required="required" min="1" max="150"/>
   <input type="submit"/>
-</form>
+</form> 
 ```
 
 This form is invalid if age field is blank, non-number, less than or equal to zero and greater than 150. Every input have a **oninvalid** event handler in which we can assign a handler method, this method will be triggered when value in this input is invalid.
@@ -30,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
   };
 
   var age_element = document.getElementsByName("age");
-  age_element[0].oninvalid = invalid;
+  age_element[0].oninvalid = invalid; 
 });
 ```
 
@@ -91,17 +98,19 @@ document.addEventListener("DOMContentLoaded", function(){
       e.target.setCustomValidity("Value Missing");
       return;
     } 
-  }; 
+  };
 
   var age_element = document.getElementsByName("age");
   age_element[0].oninvalid = invalid;
-    
+  age_element[0].oninput = function(e) {
+    e.target.setCustomValidity("");
+  };
 });
 ```
 
 If you want to see this in action here is the jsbin.
 
-<a class="jsbin-embed" href="http://jsbin.com/xameda/5/embed?js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/xameda/embed?js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 Hope you enjoyed the post. Let me know if you have any feedback or corrections.  
 Thank You.  
