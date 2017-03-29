@@ -20,8 +20,8 @@ Passwords are something which the users will be able to change and keep it secre
 You have seen that most bank portals will force users to change the passwords after a interval. 
 And they insist that never reuse the password which you used some where else.
 
-Now when you lock you phone, apps and payments using fingerprint you are literally using the same password
-in all the places and this password is something you can't change.
+Now when you lock you phone, apps and payments using fingerprint, it means you are using the same password
+in all the places and this password which you chose can't change.
 
 ## How secure is Fingerprint based authentication?
 
@@ -37,6 +37,13 @@ May that was a great work by some hackers, but in India fingerprints where [fake
 Fingerprint is something which we leave everywhere when you touch your phone, wallet, door
 handle you name it, that means you are advertising that here is my password everywhere and 
 use the same to secure everything.
+
+## You dont need to be concious or alive
+
+For the attacker who trying to get into you system which secured with fingerprint, its 
+easy for them that you dont need to be concious or alive. They make you unconcious and 
+authenticate using your system using your fingers, but if you chose to use password
+attacker needs you to be concious and alive to break in.
 
 ## What Google says about fingerprint security? 
 
