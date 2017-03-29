@@ -38,12 +38,12 @@ Fingerprint is something which we leave everywhere when you touch your phone, wa
 handle you name it, that means you are advertising that here is my password everywhere and 
 use the same to secure everything.
 
-## You dont need to be concious or alive
+## You don't need to be conscious or alive
 
-For the attacker who trying to get into you system which secured with fingerprint, its 
-easy for them that you dont need to be concious or alive. They make you unconcious and 
+For an attacker, who trying to get into you system which secured with fingerprint, its 
+easy for them that you don't need to be conscious or alive. They make you unconscious and 
 authenticate using your system using your fingers, but if you chose to use password
-attacker needs you to be concious and alive to break in.
+attacker needs you to be conscious and alive to break in.
 
 ## What Google says about fingerprint security? 
 
