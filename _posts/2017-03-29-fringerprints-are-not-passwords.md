@@ -4,19 +4,19 @@ title: 'Fingerprints are not passwords'
 excerpt: "What you do when your account locked with biometric info compromised?"
 date: 2017-03-29 00:00:00 IST
 updated: 2017-03-29 00:00:00 IST
-categories: thoughts
+categories: braindump
 tags: password, security
 ---
 
 ## Why Fingerprints are not passwords?
 
-What you do when your GMail or facebook account compromised? 
+What you do when your Gmail or facebook account compromised?
 You change your passwords, right?
 
 Now consider your Gmail and Facebook is protected with your fingerprint.
 Now when they those accounts are compromised, are you going to get more new fingers?
 
-Password are some thing which should be able to update time to time and unique. 
+Passwords are something which the users will be able to change and keep it secret.
 You have seen that most bank portals will force users to change the passwords after a interval. 
 And they insist that never reuse the password which you used some where else.
 
@@ -34,7 +34,7 @@ May that was a great work by some hackers, but in India fingerprints where [fake
 
 ![fake fingerprint](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/fingerprints/jio-fingerprintsales.png)
 
-Fingerprint is something which we leave everywhere you touch your phone, wallet, door 
+Fingerprint is something which we leave everywhere when you touch your phone, wallet, door
 handle you name it, that means you are advertising that here is my password everywhere and 
 use the same to secure everything.
 
@@ -47,7 +47,7 @@ that `fingerprint may be less secure than a strong PIN, pattern or password`.
 
 ## Conclusion
 
-Your fingerprints can't replace `passwords`, It's meant for identification not for **Authentication** and **Authorizations**.
-If you are using fingerprints to secure you data without any password or two factor auth then your data is highly vulnerable to compromise.
+Your fingerprints can't replace `passwords`, It's meant for identification not for **authentication** or **authorization**.
+If you are using fingerprints to secure your data without any password or two factor auth then your data is highly vulnerable to compromise.
 
 Use fingerprints as **usernames**, not passwords.
