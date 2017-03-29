@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "CSS : Understanding em and rem for font size"
-date: 2014-04-19 00:00:00 IST
-updated: 2014-04-19 00:00:00 IST
+date: 2014-04-19 01:0:00 IST
+updated: 2014-04-19 01:00:00 IST
 categories: css
 ---
 
