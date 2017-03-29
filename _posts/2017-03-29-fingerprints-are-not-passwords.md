@@ -3,7 +3,7 @@ layout: post
 title: 'Fingerprints are not passwords'
 excerpt: "What you do when your account locked with biometric info compromised?"
 date: 2017-03-29 00:00:00 IST
-updated: 2017-03-29 00:00:00 IST
+updated: 2017-03-29 16:00:00 IST
 categories: braindump
 tags: password, security
 ---
