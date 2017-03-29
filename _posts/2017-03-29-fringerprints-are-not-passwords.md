@@ -45,6 +45,9 @@ easy for them that you don't need to be conscious or alive. They make you uncons
 authenticate using your system using your fingers, but if you chose to use password
 attacker needs you to be conscious and alive to break in.
 
+Even your friend/roommate can get access into your phone/system while you are asleep or
+passed out.
+
 ## What Google says about fingerprint security? 
 
 In the [help of pixel phone](https://support.google.com/pixelphone/answer/6300638) Google warn users
