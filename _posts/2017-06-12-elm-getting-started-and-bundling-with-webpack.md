@@ -9,10 +9,10 @@ tags: elm, webpack
 image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-install.png
 ---
 
-[ELM lang](http://elm-lang.org) is new languange to write reliable webapps which will generate javascript 
+[ELM lang](http://elm-lang.org) is new language to write reliable webapps which will generate javascript 
 with preformance in focus and no runtime exceptions. To get started we need to go though the [The Elm Architecture](https://guide.elm-lang.org/architecture/) and understand the basic pattern of `Model`, `Update` and `View`.
 
-Once we done we can start with playing with some snippets. In this post I we will cover 
+Once we done we can start with playing with some snippets. In this post we will cover 
 * How to setup ELM
 * How to start playing with a **Hello world** example.
 * How to bundle your app with webpack.
