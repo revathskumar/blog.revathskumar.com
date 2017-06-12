@@ -8,11 +8,9 @@ categories: elm
 tags: elm, webpack
 image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-install.png
 ---
+[ELM lang](http://elm-lang.org) is a new language to write reliable web apps which will generate javascript with performance in focus and no runtime exceptions. To get started we need to go through the [The Elm Architecture](https://guide.elm-lang.org/architecture/) and understand the basic pattern of `Model`, `Update` and `View`.
 
-[ELM lang](http://elm-lang.org) is new language to write reliable webapps which will generate javascript 
-with preformance in focus and no runtime exceptions. To get started we need to go though the [The Elm Architecture](https://guide.elm-lang.org/architecture/) and understand the basic pattern of `Model`, `Update` and `View`.
-
-Once we done we can start with playing with some snippets. In this post we will cover 
+Once we were done we can start with playing with some snippets. In this post, we will cover 
 * How to setup ELM
 * How to start playing with a **Hello world** example.
 * How to bundle your app with webpack.
@@ -32,7 +30,7 @@ is a flexible dev server with live reloading.
 
 ## Setup ELM project
 
-Since we have ELM installed in system now, we can get started with installing the elm dependencies using `elm package` in a empty directory.
+Since we have ELM installed in the system now, we can get started with installing the elm dependencies using `elm package` in an empty directory.
 
 ~~~sh
 elm package install
@@ -42,7 +40,7 @@ This will install `elm-lang/core`, `elm-lang/virtual-dom` & `elm-lang/html`. Als
 
 ![elm package install](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-packge-install.png)
 
-A sample `elm-package.json` file will look like the one below.
+A sample `elm-package.json` will look like the one below.
 
 ```json
 // elm-package.json
@@ -63,7 +61,7 @@ A sample `elm-package.json` file will look like the one below.
 }
 ```
 
-Now let's write a ELM program to show **Hello World**.
+Now, let's write a ELM program to show **Hello World**.
 
 ~~~elm
 -- index.elm
@@ -73,7 +71,7 @@ import Html.Attributes exposing (..)
 main = span [class "welcome"] [text "Hello World"]
 ~~~
 
-Now lets run `elm reactor` and open `http://localhost:8000/` see its running in browser.
+Now, let's run `elm reactor` and open `http://localhost:8000/` see its running in the browser.
 
 ![elm in browser](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-hello-world.png)
 
@@ -122,8 +120,8 @@ main =
 
 ~~~
 
-Now we know how to run small ELM program, but when it comes to real project we will be using bundling tools like
-`webpack`. Next we will look into how we can bundle a ELM program with **webpack**. We will use the same counter program
+Now we know how to run small ELM program, but when it comes to a real project we will be using bundling tools like
+`webpack`. Next, we will look into how we can bundle a ELM program with **webpack**. We will use the same counter program
 to bundle and run with webpack.
 
 ## Bundling with Webpack
@@ -203,7 +201,7 @@ module.exports = {
 };
 ~~~
 
-Now we are done with configuing webpack with elm loader, Let's see this in action by executing the command
+Now we are done with configuring webpack with elm loader, Let's see this in action by executing the command
 
 ~~~sh
 ./node_modules/.bin/webpack-dev-server
@@ -212,4 +210,3 @@ Now we are done with configuing webpack with elm loader, Let's see this in actio
 and open the `http://localhost:8081/` in the browser.
 
 ![elm counter app in browser](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-counter-webpack.png)
-
