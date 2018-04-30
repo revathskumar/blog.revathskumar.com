@@ -3,7 +3,7 @@ layout: post
 title: 'ELM : Adding and removing CSS classes conditionally'
 excerpt: 'ELM : Adding and removing CSS classes conditionally'
 date: 2017-11-07 00:00:00 IST
-updated: 2017-11-07 00:00:00 IST
+updated: 2018-04-01 05:00:00 IST
 categories: elm
 tags: elm
 ---
@@ -17,6 +17,7 @@ ELM, provide built in support for the same by [classList](http://package.elm-lan
 `classList` function will accept a list of `Tuples`. The type annotation of argument is `List (String, Bool)`. Each tuple should be paired with a css classname and a boolean value. The second value in `Tuple` can be expression which yeilds a Boolean value.
 
 ```elm
+import Html exposing (..)
 import Html.Attributes exposing (classList)
 
 navbar : model -> Html Action
