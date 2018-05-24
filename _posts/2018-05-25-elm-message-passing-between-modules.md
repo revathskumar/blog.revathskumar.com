@@ -175,10 +175,12 @@ view model =
 That's it.
 we successfully moved `Item` into a separate module and started passing messages between modules.
 
-Versions of Language/packages used in this post.
+    Versions of Language/packages used in this post.
 
-* ELM : 0.18
-* List.Extra : 7.1.0 
+    | Library/Language | Version |
+    | ---------------- |---------|
+    |      ELM         |  0.18.0 |
+    |    List.Extra    |  7.1.0  |
 
 
 [part_1]: /2018/05/elm-update-field-in-a-list.html
