@@ -5,7 +5,10 @@ excerpt: 'Simple way to update a field in the list of Items.'
 date: 2018-05-01 06:05:00 IST
 updated: 2018-05-01 06:05:00 IST
 categories: elm
+tags: elm
 ---
+
+**Part 2 is now published : [ELM : message passing between modules][part_2]**
 
 when we work on a project which has a list or a grid, in most cases we come to a situtation where we need to update one of the field in a list of Items.
 In this blog we will see how we can update the field in a list.
@@ -76,6 +79,8 @@ update msg model =
         ( { model | items = items }, Cmd.none )
 ``` 
 
-As of now this is pretty simple and no confusion, But gets complicated when we decide to move the `ItemView` to a seperate module. We see that in the next blog post.
+As of now this is pretty simple and no confusion, But gets complicated when we decide to move the `ItemView` to a seperate module. We see that in the [next blog post][part_2].
 
 if you have any feedback, please drop a comment below.
+
+[part_2]: /2018/05/elm-message-passing-between-modules.html
