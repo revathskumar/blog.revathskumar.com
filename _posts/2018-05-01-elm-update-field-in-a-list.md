@@ -81,6 +81,14 @@ update msg model =
 
 As of now this is pretty simple and no confusion, But gets complicated when we decide to move the `ItemView` to a seperate module. We see that in the [next blog post][part_2].
 
+    Versions of Language/packages used in this post.
+
+    | Library/Language | Version |
+    | ---------------- |---------|
+    |      ELM         |  0.18.0 |
+
 if you have any feedback, please drop a comment below.
+
+
 
 [part_2]: /2018/05/elm-message-passing-between-modules.html
