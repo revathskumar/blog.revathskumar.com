@@ -9,7 +9,7 @@ categories: javascript
 
 The difference between function expression and function declaration is present in most of the interview question references. So I though I should document it myself.
 
-# function expression
+# <a class="anchor" name="function-expression" href="#function-expression"><i class="anchor-icon"></i></a>function expression
 
 ```js
 // function expression
@@ -26,7 +26,7 @@ The two main points to remember about function expression is,
 * can't be called before assignment, will be undefined.
 
 
-# named function expression
+# <a class="anchor" name="named-function-expression" href="#named-function-expression"><i class="anchor-icon"></i></a>named function expression
 
 Its just a simple variant of function expression. Here instead of anonymous function we will assign a named function.
 
@@ -50,7 +50,7 @@ var a = function ar(){
 
 This way we can use `ar` for recursion and `a` for normal function calls.
 
-# function declaration
+# <a class="anchor" name="function declaration" href="#function declaration"><i class="anchor-icon"></i></a>function declaration
 
 ```js
 // function declaration
