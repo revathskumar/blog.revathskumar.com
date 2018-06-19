@@ -4,13 +4,13 @@
   "description": "Personal blog",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.3.2",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.9.4",
     "gulp-concat": "^2.2.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp css"
   },
   "repository": {
     "type": "git",
