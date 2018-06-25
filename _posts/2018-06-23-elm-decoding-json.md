@@ -80,6 +80,13 @@ You can see the decode in action on [ellie-app][ellie_link]
 
 <iframe src="https://ellie-app.com/embed/yghR44wmJda1" style="width:100%; height:400px; border:0; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
+    Versions of Language/packages used in this post.
+
+    | Library/Language | Version |
+    | ---------------- |---------|
+    |      ELM         |  0.18.0 |
+    |      core        |  5.1.1  |
+
 [json_card]: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/elm-json-decoder/3762360637_6b851c9478.jpg
 [json_card_src]:http://www.flickr.com/photos/44792728@N00/3762360637
 [json_decode]: http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode

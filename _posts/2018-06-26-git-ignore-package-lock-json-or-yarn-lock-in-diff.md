@@ -29,4 +29,11 @@ alias gd="git diff -- ':!package-lock.json' ':!yarn.lock'"
 Hope this tip helped.  
 Comments are welcome.
 
+    Versions of Language/packages used in this post.
+
+    | Library/Language  | Version |
+    | ----------------- |---------|
+    |      Git          |  2.17.1 |
+
+
 [git_diff]: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/git-diff/git-diff-package-lock.png
