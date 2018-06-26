@@ -41,7 +41,7 @@ json =
 ```
 
 Next lets define a custom decoder function called `decodeObjValue`, which is composed from the different methods available in `Json.Decode` library.
-This will defined as per the stucture of our `json` and `Obj`. 
+This will defined as per the structure of our `json` and `Obj`. 
 
 ```elm
 decodeObjValue : Json.Decode.Decoder Obj
@@ -58,7 +58,7 @@ since we are expecing `b` to be of type `String`
 **Note:** It is extremely important to keep the order of the fields. The decoding will fail if we try to decode the field `b` first.
 
 In Elm, all type alias's are shorthand functions In our case `Obj` is `(\a b -> Obj a b)`
-This is the reason why we should keep the order of field. If we tru to decode `b` first the `Obj` will receive a String as first param and it can't accept it.
+This is the reason why we should keep the order of field. If we try to decode `b` first the `Obj` will receive a String as first param and it can't accept it.
 
 Now we defined or agreed on how to decode the incoming json. Next we need to run this decoder.
 Since our input is `String` we will use [Json.Decode.decodeString][decode_string] to parse the given string and run our custom decoder.
