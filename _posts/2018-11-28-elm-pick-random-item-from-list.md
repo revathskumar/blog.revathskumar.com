@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'ELM : Pick random item from list'
-excerpt: 'ELM : Pnetick random item from list'
+excerpt: 'Pick random item from list using elm/random'
 date: 2018-11-28 23:05:00 IST
 updated: 2018-11-28 23:05:00 IST
 categories: elm
