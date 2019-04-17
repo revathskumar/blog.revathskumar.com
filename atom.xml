@@ -15,7 +15,7 @@
 
  {% for post in site.posts limit:25 %}
  <entry>
-   <title>{{ post.title }}</title>
+   <title>{{ post.title | xml_escape }}</title>
    <link href="http://blog.revathskumar.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://blog.revathskumar.com{{ post.id }}</id>
