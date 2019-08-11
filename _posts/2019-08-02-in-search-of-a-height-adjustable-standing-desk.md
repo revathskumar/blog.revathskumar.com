@@ -1,13 +1,16 @@
 ---
 layout: post
 title: In search of a height adjustable standing desk
-excerpt: Just to pen down my expericance in search of height adjustable standing desk
+excerpt:
+  Just to pen down my expericance in search of height adjustable standing desk
   the options available, feature etc
 date: 2019-08-02 20::00 IST
-updated: 2018-08-02 20:00:00 IST
+updated: 2019-08-02 20:00:00 IST
 categories: standing-desk
 tags: standing-desk
+image: https://static.revathskumar.com/2019/standing-desk/staging-desk-home-800.jpg
 ---
+
 I was searching for a **height adjustable standing desk** for my personal use. I searched online and went to some store and local vendors to see the demo.
 
 # What are the features I was looking for?
