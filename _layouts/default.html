@@ -31,8 +31,13 @@
     {% endif %}
     {% if page.image %}
       <meta name="twitter:image:src" content="{{ page.image }}">
+      <meta name="twitter:image" content="{{ page.image }}">
+      <meta name="og:image" content="{{ page.image }}">
     {% else %}
       <meta name="twitter:image:src" content="http://www.gravatar.com/avatar/2e844d88873b759f691242276c7b58d7?s=200">
+    {% endif %}
+    {% if page.date %}
+      <meta name="article:published_time" content="{{ page.date }}">
     {% endif %}
 
     <link rel="stylesheet" href="/css/blog.min.css" type='text/css'>
