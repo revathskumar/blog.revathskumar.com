@@ -2,7 +2,7 @@
 layout: post
 title: In search of a height adjustable standing desk
 excerpt:
-  Just to pen down my expericance in search of height adjustable standing desk
+  Just to pen down my experience in search of height adjustable standing desk
   the options available, feature etc
 date: 2019-08-02 20::00 IST
 updated: 2019-08-02 20:00:00 IST
