@@ -7,35 +7,36 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width">
 
-    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@revathskumar">
     <meta name="twitter:creator" content="@revathskumar">
     <meta name="twitter:domain" content="blog.revathskumar.com">
     {% if page.excerpt %}
       <meta name="description" content="{{ page.excerpt | strip_html }}">
+      <meta name="og:description" content="{{ page.excerpt | strip_html }}">
+      <meta name="twitter:description" content="{{ page.excerpt | strip_html }}">
     {% else %}
       <meta name="description" content="{{ site.description }}">
+      <meta name="og:description" content="{{ site.description }}">
+      <meta name="twitter:description" content="{{ site.description }}">
     {% endif %}
     {% if page.title %}
       <meta name="twitter:title" content="{{ page.title }}">
+      <meta name="og:title" content="{{ page.title }}">
     {% else %}
       <meta name="twitter:title" content="{{ site.title }}">
+      <meta name="og:title" content="{{ site.title }}">
     {% endif %}
     {% if page.url %}
+      <meta name="og:url" content="{{ site.url }}{{ page.url }}">
       <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-    {% endif %}
-    {% if page.excerpt %}
-      <meta name="twitter:description" content="{{ page.excerpt | strip_html }}">
-    {% else %}
-      <meta name="twitter:description" content="{{ site.description }}">
     {% endif %}
     {% if page.image %}
       {% if page.image contains "/assets/images/" %}
-        <meta name="twitter:image:src" content="{{ site.url }}{{ page.image }}">
         <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
         <meta name="og:image" content="{{ site.url }}{{ page.image }}">
       {% else %}
-        <meta name="twitter:image:src" content="{{ page.image }}">
         <meta name="twitter:image" content="{{ page.image }}">
         <meta name="og:image" content="{{ page.image }}">
       {% endif %}
