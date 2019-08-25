@@ -6,5 +6,6 @@ url: http://blog.revathskumar.com
 
 permalink: '/:year/:month/:title.html'
 excerpt_separator: "\n\n"
-exclude: [vendor]
+exclude: [vendor, node_modules]
+include: [.well-known]
 timezone: Asia/Kolkata
