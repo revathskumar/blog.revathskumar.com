@@ -13,7 +13,7 @@ As of now, Heroku doesn't support auto-deploy from GitLab. So we have to use Git
 
 For this blog post, we will take a rails app with a Postgres database. We need Gitlab to run the unit tests and deploy to staging and then later to production.
 
-For staging and production, we will keep different branches to make things simpler and easy to do hotfix.
+For staging and production, we will keep different branches to make things simpler. It will also make it easier for us to push a hotfix.
  
 # <a class="anchor" name="setting-up-gitlab-ci" href="#setting-up-gitlab-ci"><i class="anchor-icon"></i></a>Setting up Gitlab CI
 
@@ -51,11 +51,11 @@ cache:
     - vendor/ruby
 ```
 
-Once the basic config is done. Let configure the to run test cases.
+Once the basic config is done, let us configure the gitlab ci to run the test cases.
 
 # <a class="anchor" name="tests" href="#tests"><i class="anchor-icon"></i></a>Tests
 
-To run the test cases we have to first install the missing dependencies like `nodejs`, `postgresql-client` (to run migrations), `yarn` etc. All these installations can be done as part of the `before_script`.
+To run the test cases, we have to first install the missing dependencies like `nodejs`, `postgresql-client` (to run migrations), `yarn` etc. All these installations can be done as part of the `before_script`.
 
 You can give a name for the stage using `stage` config in the test block.
 
@@ -100,7 +100,7 @@ We can configure different environments for the project in `Operations -> Enviro
 
 # <a class="anchor" name="deploy" href="#deploy"><i class="anchor-icon"></i></a>Deploy
 
-Once the tests are passing we can configure the deployments as next stage.
+Once the tests are passing, we can configure the deployments in the next stage.
 The deployments to run only from particular branches, ie., 
 
 * from `develop` branch, deploy to staging
