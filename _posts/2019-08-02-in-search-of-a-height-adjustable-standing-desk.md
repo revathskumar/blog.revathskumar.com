@@ -24,7 +24,7 @@ I was searching for a **height adjustable standing desk** for my personal use. I
 
 # <a class="anchor" name="feather-lite" href="#feather-lite"><i class="anchor-icon"></i></a>Feather lite
 
-[Feather lite](featherlite) is the first one I went to see the demo. They had both manual and electic.
+[Feather lite][featherlite] is the first one I went to see the demo. They had both manual and electic.
 Personally, I felt it bit expensive and take 1 month to ship. Also they don't offer any free home delivery.
 Different showrooms had different prices, so I recommend to take quotation from multiple showrooms.
 
@@ -62,7 +62,7 @@ On motor, Featherlite provide 1 year warrenty.
 
 # <a class="anchor" name="rife" href="#rife"><i class="anchor-icon"></i></a>Rife
 
-[Rife](rife) sells the table without table top and you have to assemble youself with their guide. Since the vendor is from delhi, I couldn't get any demo as they
+[Rife][rife] sells the table without table top and you have to assemble youself with their guide. Since the vendor is from delhi, I couldn't get any demo as they
 don't have any showroom in Bangalore.
 
       Features       | ❌ / ✅
@@ -81,7 +81,7 @@ Rife also provide 1 year warrenty on motor.
 
 # <a class="anchor" name="kufallo" href="#kufallo"><i class="anchor-icon"></i></a>Kufallo
 
-[Kuffallo](kuffallo) is based in Bangalore & one of the low cost option available. I went and saw a demo in their office in JP Nagar.
+[Kuffallo][kuffallo] is based in Bangalore & one of the low cost option available. I went and saw a demo in their office in JP Nagar.
 The major issues I saw with `Kuffallo` was the **stability**.
 When we adjust the height the table was trembling heavily. Also the demo I saw was 4 x 2 feet.
 Even we customize and put 5 x 2.5 feet table top there is high chance that it might go wrong.
@@ -98,7 +98,7 @@ Even we customize and put 5 x 2.5 feet table top there is high chance that it mi
 
 # <a class="anchor" name="pepperfry" href="#pepperfry"><i class="anchor-icon"></i></a>Pepperfry
 
-The last one I enquired was [Pepperfry](pepperfry). Since this was sold by third party seller pepperfry didn't had any item for demo in their showroom.
+The last one I enquired was [Pepperfry][pepperfry]. Since this was sold by third party seller pepperfry didn't had any item for demo in their showroom.
 Also they don't do any customization of table top to the desired (5 x 2.5).
 
       Features       | ❌ / ✅
