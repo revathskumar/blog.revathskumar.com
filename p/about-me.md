@@ -12,6 +12,7 @@ title: "About Me"
 
 ## GPG Key
 
-FingerPrint: `5938AD6CCB200939`
+Key fingerprint: `0991 7233 2C62 2139 813B  05A5 5938 AD6C CB20 0939`
+
 
 [GPG keys](https://pgp.pm/pks/lookup?op=get&search=0x5938AD6CCB200939)
