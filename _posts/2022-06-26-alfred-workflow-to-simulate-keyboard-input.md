@@ -4,7 +4,7 @@ title: 'Alfred : workflow to simulate keyboard input'
 excerpt: 'Alfred : workflow to simulate keyboard input'
 date: 2022-06-26 18:15 +0530
 updated: 2022-06-26 18:15 +0530
-categories: rails
+categories: alfred
 tags: alfred
 ---
 
