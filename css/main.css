@@ -406,3 +406,8 @@ h6:hover a.anchor i.anchor-icon {
   cursor: pointer;
   margin-right: 3px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-evenly;
+}
