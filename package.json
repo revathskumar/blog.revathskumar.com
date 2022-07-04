@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Personal blog",
   "main": "index.js",
+  "engines": {
+    "node": ">= 18",
+    "npm": ">= 8"
+  },
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
