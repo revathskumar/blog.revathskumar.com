@@ -9,3 +9,5 @@ excerpt_separator: "\n\n"
 exclude: [vendor, node_modules]
 include: [.well-known]
 timezone: Asia/Kolkata
+paginate: 50
+paginate_path: "/page/:num/"
