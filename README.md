@@ -4,11 +4,25 @@ Url : [blog.revathskumar.com](http://blog.revathskumar.com)
 
 All the posts in the blog are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
+## Syntax highlight themes
+
+```sh
+# https://github.com/brazacz/rouge-themes#get-rouge-css-themes-with-rougify
+rougify style github > css/syntax.css
+```
+
+## convert images to webp
+
+```
+brew install imagemagick
+convert assets/images/types_for_axios_data/type_for_response.{jpg,webp}
+```
+
 ### License
 
 ```
 The MIT License (MIT)
-Copyright (c) 2020 Revath S Kumar
+Copyright (c) 2023 Revath S Kumar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in the
