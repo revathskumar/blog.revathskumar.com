@@ -398,3 +398,45 @@ h6:hover a.anchor i.anchor-icon {
   display: flex;
   justify-content: space-evenly;
 }
+
+/* dark mode */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #809fff;
+  }
+
+  body a:hover {
+    color: #809fff;
+  }
+
+  .site .header h1.title a {
+    color: #F17E7E;
+  }
+
+  .site .header h1.title a:hover {
+    color: #fb9999;
+  }
+
+  .site .header a.extra:hover {
+    color: #ede9e9;
+  }
+
+  .site .footer,
+  h2.description {
+    color: #A1A1A1;
+  }
+
+  .social {
+    filter: invert(1);
+  }
+
+  .language-plaintext {
+    background-color: #56565b !important;
+  }
+}
