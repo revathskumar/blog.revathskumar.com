@@ -169,6 +169,10 @@ h3 {
   border: 1px solid #ddd;
 }
 
+.language-plaintext {
+  padding: 0 0.3rem;
+}
+
 .post pre code {
   border: none;
   line-height: 1.2;
@@ -548,6 +552,11 @@ h6:hover a.anchor i.anchor-icon {
 
   .social {
     filter: invert(1);
+  }
+
+  .post pre,
+  .post code {
+    border-color: #3a3e41;
   }
 
   .language-plaintext {
