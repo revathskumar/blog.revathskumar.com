@@ -7,8 +7,9 @@ All the posts in the blog are licensed under a [Creative Commons Attribution-Non
 ## Syntax highlight themes
 
 ```sh
-# https://github.com/brazacz/rouge-themes#get-rouge-css-themes-with-rougify
+# rougify help style
 rougify style github > css/syntax.css
+rougify style github.dark > css/syntax-dark.css
 ```
 
 ## convert images to webp
