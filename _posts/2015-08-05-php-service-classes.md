@@ -14,7 +14,7 @@ The code in controllers can't be reused much, so in some cases like placing an O
 
 So in order to make this more convenient and reusable I thought of abstracting the logic for creating the order into service classes. I got this idea of service classes from `Ruby on Rails`. So when I came back to PHP world I thought of using service classes.
 
-The code snippets in this post are based on [Yii framework](yiiframework.com) Version 1.1.16 and since my intention is to give an overview on service classes, I am not going to explain any functions which I used.
+The code snippets in this post are based on [Yii framework](https://www.yiiframework.com/) Version 1.1.16 and since my intention is to give an overview on service classes, I am not going to explain any functions which I used.
 
 So here is what my controller action looks like before using service classes for creating an order.
 
