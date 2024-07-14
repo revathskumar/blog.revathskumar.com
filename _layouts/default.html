@@ -49,6 +49,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="/css/blog.min.css?v=1.0.3" type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to blog.revathskumar.com" href="/atom.xml" />
 
   </head>
   <body>
@@ -56,14 +57,14 @@
     <div class="container">
       <div class="site">
         <div class="header">
-          <div class="search-wrapper" >
+          <div class="search-wrapper">
             <ul>
               <li>
                 <h1 class="title"><a href="/">{{ site.name }}</a></h1>
                 <a class="extra" href="/">home</a>
                 <a class="extra" href="/p/about-me.html">about</a>
                 <a class="extra" href="/talks.html">talks</a>
-                <a class="extra" rel="nofollow" target="_blank" href="http://feeds.feedburner.com/revathskumar">feed</a>
+                <a class="extra" target="_blank" href="/atom.xml">feed</a>
               </li>
               <li>
                 <h2 class="description">{{ site.description }}</h6>
