@@ -29,6 +29,7 @@
               ruby
               bundler
               nodejs_22
+              libwebp
             ];
           };
       });
