@@ -3,7 +3,7 @@ layout: post
 title: writing gjs gtk app in typescript
 excerpt: writing gjs gtk app in typescript
 date: 2025-01-06 14:00 CEST
-updated: 2025-01-06 14:00 CEST
+updated: 2025-01-10 18:00 CEST
 categories: typescript
 tags:
   - typescript
@@ -208,11 +208,11 @@ The create-gtk code is available at https://github.com/revathskumar/create-gtk.
 
 Helpful Links & Honourable Mentions
 
-* https://gjs.guide/guides/
-* https://rmnvgr.gitlab.io/gtk4-gjs-book/
-* https://github.com/gjsify/example-gtk4 by Pascal Garber.
-* https://github.com/gjsify/ts-for-gir/
-* https://gjsify.org/pages/projects
+* [https://gjs.guide/guides/](https://gjs.guide/guides/)
+* [https://rmnvgr.gitlab.io/gtk4-gjs-book/](https://rmnvgr.gitlab.io/gtk4-gjs-book/)
+* [https://github.com/gjsify/example-gtk4](https://github.com/gjsify/example-gtk4) by Pascal Garber.
+* [https://github.com/gjsify/ts-for-gir/](https://github.com/gjsify/ts-for-gir/)
+* [https://gjsify.org/pages/projects](https://gjsify.org/pages/projects)
 
 Hope this is helpful.
 
