@@ -16,7 +16,7 @@ Recently I wanted to write a small GTK utility for personal use, and I was looki
 
 In case you want to skip all the manual steps, and want to bootstrap the application (including packaging) in single command you can skip to [Bootstrap using create-gtk](#bootstrap-using-create-gtk) after installing the system dependencies.
 
-## Install dependencies<a class="anchor" name="install-dependencies" href="#install-dependencies"><i class="anchor-icon"></i></a>
+## <a class="anchor" name="install-dependencies" href="#install-dependencies"><i class="anchor-icon"></i></a>Install dependencies
 
 I am using `Debian 12 (bookworm)` I installed the GTK and other system dependencies using `apt-get`.
 
@@ -26,7 +26,7 @@ sudo apt-get install libgtk-4-dev pkg-config meson gjs libadwaita-1-dev
 
 `libadwaita-1-dev` is required only if you are planning to use `Adwaita` widgets.
 
-## Setup typescript project<a class="anchor" name="setup-typescript-project" href="#setup-typescript-project"><i class="anchor-icon"></i></a>
+## <a class="anchor" name="setup-typescript-project" href="#setup-typescript-project"><i class="anchor-icon"></i></a>Setup typescript project
 
 As usual, I start to set up the project by
 
@@ -130,7 +130,7 @@ const main = () => {
 };
 main();
 ```
-## Setup build<a class="anchor" name="setup-build" href="#setup-build"><i class="anchor-icon"></i></a>
+## <a class="anchor" name="setup-build" href="#setup-build"><i class="anchor-icon"></i></a>Setup build
 
 I use `esbuild` to build the typescript application. The basic configuration is given below. The target can be set based on the gjs version, a reference is given along with the esbuild configuration. [Support for sourcemap](https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/938) has recently merged with Gnome 48, but since it is not available to me, I will skip this option.
 
@@ -174,7 +174,7 @@ G_MESSAGES_DEBUG=all gjs -m "dist/index.js"
 
 {: style="text-align: center"}
 ![basic GTK window in gjs](/assets/images/gjs-typescript/basic-window.webp){: style='width: 100%'}
-## Bootstrap using create-gtk<a class="anchor" name="bootstrap-using-create-gtk" href="#bootstrap-using-create-gtk"><i class="anchor-icon"></i></a>
+## <a class="anchor" name="bootstrap-using-create-gtk" href="#bootstrap-using-create-gtk"><i class="anchor-icon"></i></a>Bootstrap using create-gtk
 
 In order to avoid doing all the above steps manually, 
 I wrote a NPM initializer [create-gtk](https://www.npmjs.com/package/create-gtk) to bootstrap gjs GTK4 apps with some defaults.
