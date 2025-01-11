@@ -15,7 +15,7 @@ image: ""
 ---
 In this blog post, I will show you how to read from stdin in a GTK application written with gjs. 
 
-Since I was already using [greenclip](https://github.com/erebe/greenclip)(with [rofi](https://github.com/davatorium/rofi)) for clipboard history, I wanted [Bender](https://github.com/revathskumar/bender) like `greenclip print | bender` .
+Since I was already using [greenclip](https://github.com/erebe/greenclip)(with [rofi](https://github.com/davatorium/rofi)) for clipboard history, I would like to use [Bender](https://github.com/revathskumar/bender) in a similar way. `greenclip print | bender` .
 
 As a beginner to GJS-GTK, my first challenge was to [bootstrap a GTK app](/2025/01/writing-gjs-gtk-app-in-typescript.html) and read the data from stdin. 
 
