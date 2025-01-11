@@ -20,7 +20,7 @@ Since I was already using [greenclip](https://github.com/erebe/greenclip)(with [
 As a beginner to GJS-GTK, my first challenge was to [bootstrap a GTK app](/2025/01/writing-gjs-gtk-app-in-typescript.html) and read the data from stdin. 
 
 For the first prototype, I used the [InputStream.read_bytes](https://docs.gtk.org/gio/method.InputStream.read_bytes.html) like below
-## Using read_bytes <a class="anchor" name="using-read-bytes" href="#using-read_bytes"><i class="anchor-icon"></i></a>
+## <a class="anchor" name="using-read-bytes" href="#using-read_bytes"><i class="anchor-icon"></i></a>Using read_bytes 
 
 ```ts
 const cli = new Gio.ApplicationCommandLine();
@@ -49,7 +49,8 @@ Once I had an initial prototype, I started looking into better ways to read from
 A quick search of the above errors led me to some discussions on the Gnome forums like [this](https://discourse.gnome.org/t/cannot-read-from-inputstream-gio-inputstream/15186) and [this](https://discourse.gnome.org/t/dynamically-allocated-buffer-for-gio-inputstream/24576) which lead me to a [bug report #501 on GJS](https://gitlab.gnome.org/GNOME/gjs/-/issues/501) & a [merge request #787](https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/787) 
 
 Based on [merge request #787](https://gitlab.gnome.org/GNOME/gjs/-/merge_requests/787) I decided to give a try to `MemoryOutputStream.splice_async`. 
-## Using MemoryOutputStream.splice_async<a class="anchor" name="using-splice-async" href="#using-splice-async"><i class="anchor-icon"></i></a>
+
+## <a class="anchor" name="using-splice-async" href="#using-splice-async"><i class="anchor-icon"></i></a>Using MemoryOutputStream.splice_async
 
 I started replacing the read_byes with `splice_async` & `splice_finish` and it worked fine.
 
