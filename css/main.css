@@ -22,8 +22,24 @@ body {
   text-align: center;
 }
 
-h1,
-h2,
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;/*
+text-decoration: underline;
+    text-decoration-color: currentcolor;
+    text-decoration-style: solid;
+  text-decoration-style: dashed;
+  text-decoration-color: #809fff;*/
+  line-height: 1.5;
+
+  width: 100%;
+  border-bottom-style: double;
+  border-bottom-color: #809fff;
+}
+
 h3,
 h4,
 h5,
@@ -31,7 +47,7 @@ h6 {
   font-size: 100%;
 }
 
-p {
+p, .share {
   margin: 1em 0;
 }
 
@@ -86,6 +102,7 @@ ul.posts span {
 
 .site .header h1.title {
   display: inline-block;
+  font-size: 100%;
 }
 
 .site .header h1.title a {
@@ -206,6 +223,7 @@ h2.description {
   font-size: 12px;
   color: #666;
   float: left;
+  border: none;
 }
 
 .donation {
@@ -274,6 +292,13 @@ figcaption {
 
 @media only screen and (max-width: 768px) {
   /* Style adjustments for viewports 480px and over go here */
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    line-break: auto;
+    word-break: break-word;
+    text-align: center;
+  }
   .container {
     margin: 2px;
     width: 100%;
@@ -557,6 +582,10 @@ h6:hover a.anchor i.anchor-icon {
   .post pre,
   .post code {
     border-color: #3a3e41;
+  }
+
+  .post blockquote {
+    background-color: #3a3e41;
   }
 
   .language-plaintext {
