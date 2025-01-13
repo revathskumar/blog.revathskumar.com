@@ -1,5 +1,7 @@
 :root {
   --h-border: #809fff;
+  --header-link-light: #595959;
+  --header-link-dark: #969696;
 }
 
 /*****************************************************************************/
@@ -114,7 +116,7 @@ ul.posts span {
 }
 
 .site .header a.extra {
-  color: #aaa;
+  color: light-dark(var(--header-link-light), var(--header-link-dark));
   margin-left: 1em;
 }
 
@@ -123,7 +125,7 @@ ul.posts span {
 }
 
 .site .meta {
-  color: #aaa;
+  color: light-dark(var(--header-link-light), var(--header-link-dark));
   margin: 1em 0;
   display: flex;
   justify-content: space-between;
