@@ -3,13 +3,14 @@ layout: post
 title: "JavaScript : understanding string normalize"
 excerpt: "JavaScript : understanding string normalize and different normalization forms"
 date: 2025-01-13 10:16 CEST
-updated: 2025-01-13 10:16 CEST
+updated: 2025-01-21 12:16 CEST
 categories: javascript
-tags:
-  - javascript
-  - unicode
+tags: javascript unicode string
 image: ""
 ---
+
+> Visualize different string normalization forms using [string-normalize.surge.sh/?str=öé+ﬀ](https://string-normalize.surge.sh/?str=%C3%B6%C3%A9+%EF%AC%80)
+
 Recently, When I was working on enhancing the search of [Bender](https://github.com/revathskumar/bender), I wanted to search words with characters like `"ö"` or `"é"` using normal characters like `o` and `e`. 
 While looking into handling this case, I came across `String.prototype.normalize` 
 
