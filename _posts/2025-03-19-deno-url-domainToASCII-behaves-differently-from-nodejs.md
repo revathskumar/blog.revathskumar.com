@@ -26,11 +26,12 @@ But in Node.js & Bun, `domainToASCII` will consider `example.com:8000` as invali
 
 Below is the tabular form of return value of `domainToASCII("example.com:8000")` in various runtimes.
 
-|  | Output             |
+|  | return value             |
 | ---------- | ------------------ |
 | Deno       | `exmaple.com:8000` |
 | Node.js    | `<empty string>`   |
 | Bun        | `<empty string>`   |
+{: style="width:100%"}
 
 Hope this is Helpful.   
 
