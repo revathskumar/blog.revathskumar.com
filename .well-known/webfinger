@@ -1,0 +1,28 @@
+{
+  "subject": "acct:revathskumar@fosstodon.org",
+  "aliases": [
+    "https://fosstodon.org/@revathskumar",
+    "https://fosstodon.org/users/revathskumar"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://fosstodon.org/@revathskumar"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://fosstodon.org/users/revathskumar"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://fosstodon.org/authorize_interaction?uri={uri}"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/jpeg",
+      "href": "https://cdn.fosstodon.org/accounts/avatars/000/258/759/original/f5ce35ed0861e615.jpg"
+    }
+  ]
+}
