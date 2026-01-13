@@ -11,15 +11,15 @@ else
     exit 1;
 fi
 
-for file in "$directory"/*.{png,jpg}
+for file in "$directory"/*.{png}
 do
   echo "$file"
   outfile="${file//.png/.webp}"
-  outfile="${file//.jpg/.webp}"
-  img2webp "$file" -o "$outfile"
-  if [ $? -eq 0 ]; then
-    echo "convertion: success!"
+#  outfile="${file//.jpg/.webp}"
+
+  if img2webp "$file" -o "$outfile"; then
+    echo "conversion: success!"
   else
-    echo "convertion: failure!"
+    echo "conversion: failure!"
   fi
 done

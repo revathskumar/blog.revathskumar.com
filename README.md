@@ -19,6 +19,10 @@ brew install imagemagick
 convert assets/images/types_for_axios_data/type_for_response.{jpg,webp}
 ```
 
+```
+./img.sh assets/images/test/
+```
+
 ### License
 
 ```
