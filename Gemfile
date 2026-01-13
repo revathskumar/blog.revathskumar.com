@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bundler', '~> 4.0'
+
 gem 'jekyll'
 gem 'rouge'
 gem 'kramdown'
@@ -10,3 +12,7 @@ group :jekyll_plugins do
 end
 
 gem "webrick", "~> 1.7"
+gem "ffi"
+gem "google-protobuf"
+
+gem "logger", "~> 1.7"
