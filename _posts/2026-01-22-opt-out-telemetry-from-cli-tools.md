@@ -3,7 +3,7 @@ layout: post
 title: opt-out telemetry from cli tools
 excerpt: opt-out telemetry from cli tools
 date: 2026-01-22 06:32 CEST
-updated: 2026-01-11 06:32 CEST
+updated: 2026-01-22 18:32 CEST
 categories: cli
 tags: telemetry cli
 image: ''
@@ -15,7 +15,7 @@ Many of the tools support disabling the telemetry via environment variables.
 I therefore decided to compile these `env` variables from the various tools and frameworks in one place.
 
 ```sh
-# telementry.fish
+# telemetry.fish
 
 # https://bun.com/docs/runtime/bunfig#telemetry
 set DO_NOT_TRACK 1
@@ -47,6 +47,21 @@ set EXPO_NO_TELEMETRY 1
 ```
 
 This is the list so far, I am planning to keep updating this list on the codeberg repository [cli-telemetry](https://codeberg.org/0x52534B/cli-telemetry/) as I discover more.
+
+## <a class="anchor" name="usage" href="#usage"><i class="anchor-icon"></i></a>Usage
+
+### 1. Download
+
+```sh
+curl -sL https://codeberg.org/0x52534B/cli-telemetry/raw/branch/main/src/shells/telemetry.fish > ~/.config/fish/conf.d/telemetry.fish
+```
+
+### 2. Reload the shell
+
+```sh
+source ~/.config/fish/config.fish
+```
+
 
 The [guide for zsh](https://cli-telemetry.revathskumar.workers.dev/guides/zsh/) is also available.
 
