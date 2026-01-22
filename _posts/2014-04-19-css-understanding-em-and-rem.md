@@ -48,9 +48,9 @@ But `em` have compounding issue, to expain what it is, consider we have
 ```
 
 This will result in 
-<center>
-![em coumpounding issue](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/em_zps2c126b54.png)
-</center>
+
+![em coumpounding issue](/assets/images/archive/em_zps2c126b54.webp)
+
 This is because parent div have a font-size of 2em (16px *2 = 32px), when it comes to child div it 2em becomes 64px(32px * 2 = 64px) because its parent is set to 32px.
 
 * parent : 16px * 2 = 32px
@@ -84,9 +84,9 @@ Since `rem` depends on root element it's free from compounding issue, which make
 
 This will result same font-size for both parent and child paragraph.
 
-<center>
-![rem](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/rem_zps28e36a26.png)
-</center>
+
+![rem](/assets/images/archive/rem_zps28e36a26.webp)
+
 
 `rem` is supported by all the [modern browers](http://caniuse.com/#search=rem) and IE9+. You can use the fallback techniques or a [polyfill](https://github.com/chuckcarpenter/REM-unit-polyfill) to support older browsers.
 

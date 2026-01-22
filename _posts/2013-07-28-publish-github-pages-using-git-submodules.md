@@ -53,11 +53,11 @@ git submodule add -b gh-pages git@github.com:revathskumar/todo-custom-element-ba
 
 You are done, the `gh-pages` is now cloned to `dist` directory. Now when I change directory to dist the git branch will be be set to `gh-pages`
 
-![Change to dist](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/gh-pages_zpsba1924ac.png)
+![Change to dist](/assets/images/archive/gh-pages_zpsba1924ac.webp)
 
 and when I change back the git branch will be `master`.
 
-![change back](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/gh-pages-back_zps7b568471.png)
+![change back](/assets/images/archive/gh-pages-back_zps7b568471.webp)
 
 ## Troubleshooting
 

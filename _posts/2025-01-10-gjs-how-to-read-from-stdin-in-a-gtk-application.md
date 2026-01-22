@@ -4,15 +4,11 @@ title: 'gjs : How to read from stdin in a gtk application'
 excerpt: 'gjs : How to read from stdin in a gtk application'
 date: 2025-01-10 18:45 CET
 updated: 2025-01-10 18:45 CET
-categories: javascript
-tags:
-  - javascript
-  - gjs
-  - gtk
-  - stdin
-  - gtk4
+categories: javascript gjs
+tags: javascript gjs gtk stdin gtk4
 image: ""
 ---
+
 In this blog post, I will show you how to read from stdin in a GTK application written with gjs. 
 
 Since I was already using [greenclip](https://github.com/erebe/greenclip)(with [rofi](https://github.com/davatorium/rofi)) for clipboard history, I would like to use [Bender](https://github.com/revathskumar/bender) in a similar way. `greenclip print | bender` .

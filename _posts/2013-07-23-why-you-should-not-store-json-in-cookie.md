@@ -21,7 +21,7 @@ Firebug shows you two types of cookie size.
 
 **Raw size** is the size of cookie after encoding the content, the actual size when they send to server. When we store JSON, the `{`, `:`, `"`, `}` and `,` are encoded and converted to `%7B`, `%3A`, `%22`, `%7D` and `%2C` respectively.
 
-![Raw size](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/firebug-cookie_zps27ccc4b4.png)
+![Raw size](/assets/images/archive/firebug-cookie_zps27ccc4b4.webp)
 
 So if you use JSON, the characters like `{}:",` etc will be a unnecessary weight for the cookie. In the above image you can see that the difference of Raw size and size is around 48 Bytes which means this cookie's ~40 Bytes are unnessary.
 

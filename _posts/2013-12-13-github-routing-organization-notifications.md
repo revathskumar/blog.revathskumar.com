@@ -15,13 +15,13 @@ Github already have option to do the routing, but I came to know about that only
 
 Before getting started make sure that you added your offical email to you github account. Goto [Accout Settings > Emails](https://github.com/settings/emails) to add it. Also please don't forget to verfiy email before moving to next step.
 
-![Github Emails](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2013/12/b09670a0-9fd3-43cf-b7c5-dcede2704ea2_zps7433a976.png)
+![Github Emails](/assets/images/archive/b09670a0-9fd3-43cf-b7c5-dcede2704ea2_zps7433a976.webp)
 
 # Setup custom routing
 
 After verifing setting up official email you can goto [Account Settings > Notification center](https://github.com/settings/notifications). In that pay attention to **Notification email** section.
 
-![Github Notification emails](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2013/12/57c36e21-3749-47fd-b173-62cc28b79726_zpsd501832d.png)
+![Github Notification emails](/assets/images/archive/57c36e21-3749-47fd-b173-62cc28b79726_zpsd501832d.webp)
 
 Now you can choose the **Edit** link across each organization listing to setup the corresponding emails. Afterwards all the notification from that organization will receive in the corresponding email.
 
