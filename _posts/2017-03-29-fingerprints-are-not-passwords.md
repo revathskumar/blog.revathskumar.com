@@ -32,7 +32,7 @@ We have already saw that [Hackers fakes German minister's fingerprints using pho
 
 May that was a great work by some hackers, but in India fingerprints where [faked by sim card sales people](https://twitter.com/no2uid/status/832871156969410561) to show high sales.
 
-![fake fingerprint](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/fingerprints/jio-fingerprintsales.png)
+![fake fingerprint](/assets/images/2017/fingerprints/jio-fingerprintsales.webp){:style="width:100%"}
 
 Fingerprint is something which we leave everywhere when you touch your phone, wallet, door
 handle you name it, that means you are advertising that here is my password everywhere and 
@@ -53,7 +53,7 @@ passed out.
 In the [help of pixel phone](https://support.google.com/pixelphone/answer/6300638) Google warn users
 that `fingerprint may be less secure than a strong PIN, pattern or password`.
 
-[![google-caution-fingerprint](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/fingerprints/google-caution-fingerprint.png)](https://support.google.com/pixelphone/answer/6300638)
+[![google-caution-fingerprint](/assets/images/2017/fingerprints/google-caution-fingerprint.webp){:style="width:100%"}](https://support.google.com/pixelphone/answer/6300638)
 
 ## Conclusion
 

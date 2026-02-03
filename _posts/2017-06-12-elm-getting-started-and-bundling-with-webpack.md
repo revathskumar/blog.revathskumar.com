@@ -6,7 +6,7 @@ date: 2017-06-12 00:00:00 IST
 updated: 2017-06-12 00:00:00 IST
 categories: elm
 tags: elm, webpack
-image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-install.png
+image: /assets/images/2017/elm-webpack/elm-install.webp
 ---
 [ELM lang](http://elm-lang.org) is a new language to write reliable web apps which will generate javascript with performance in focus and no runtime exceptions. To get started we need to go through the [The Elm Architecture](https://guide.elm-lang.org/architecture/) and understand the basic pattern of `Model`, `Update` and `View`.
 
@@ -26,7 +26,7 @@ npm install -g elm elm-live
 [elm](http://npm.im/elm) will install `elm-package`, `elm-reactor`, `elm-make` & `elm-repl` and [elm-live](https://github.com/tomekwi/elm-live)
 is a flexible dev server with live reloading.
 
-![elm install]({{ page.image }})
+![elm install]({{ page.image }}){:style="width:100%"}
 
 ## Setup ELM project
 
@@ -38,7 +38,7 @@ elm package install
 
 This will install `elm-lang/core`, `elm-lang/virtual-dom` & `elm-lang/html`. Also this command will generate a `elm-package.json` file.
 
-![elm package install](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-packge-install.png)
+![elm package install](/assets/images/2017/elm-webpack/elm-packge-install.webp){:style="width:100%"}
 
 A sample `elm-package.json` will look like the one below.
 
@@ -73,7 +73,7 @@ main = span [class "welcome"] [text "Hello World"]
 
 Now, let's run `elm reactor` and open `http://localhost:8000/` see its running in the browser.
 
-![elm in browser](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-hello-world.png)
+![elm in browser](/assets/images/2017/elm-webpack/elm-hello-world.webp){:style="width:100%"}
 
 We can run `elm live` if we need the live reload for our development.
 
@@ -155,7 +155,7 @@ in the `div#elm-app`.
 var Elm = require('./counter.elm');
 var mountNode = document.getElementById('elm-app');
 
-// The third value on embed are the initial values for incomming ports into Elm
+// The third value on embed are the initial values for incoming ports into Elm
 var app = Elm.Main.embed(mountNode);
 ~~~
 
@@ -167,7 +167,7 @@ Let's create a `package.json` using `npm init` command and then install the webp
 npm install --save elm-webpack-loader webpack webpack-dev-server
 ~~~
 
-Now let's configure the webapack with `elm-webpack-loader`.
+Now let's configure the webpack with `elm-webpack-loader`.
 
 ~~~js
 // webpack.config.js
@@ -209,4 +209,4 @@ Now we are done with configuring webpack with elm loader, Let's see this in acti
 
 and open the `http://localhost:8081/` in the browser.
 
-![elm counter app in browser](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-counter-webpack.png)
+![elm counter app in browser](/assets/images/2017/elm-webpack/elm-counter-webpack.webp){:style="width:100%"}

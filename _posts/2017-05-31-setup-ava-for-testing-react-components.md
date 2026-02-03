@@ -3,9 +3,10 @@ layout: post
 title: 'ReactJS : setup ava for testing react components'
 excerpt: 'Adding ava.js to react project to test react components'
 date: 2017-05-31 23:59:00 IST
-updated: 2017-05-31 23:59:00 IST
+updated: 2025-02-03 12:59:00 CET
 categories: javascript, react
 tags: javascript, react, testing, ava
+image: /assets/images/2017/ava-test-runner/ava.webp
 ---
 
 [Ava.js][ava] is a futuristic test runner, which runs your tests concurrently. This will force you to write tests without
@@ -40,10 +41,10 @@ For this we need to use specia keyword `inherit` in ava's babel config.
 }
 ```
 
-## Adding mocked browser envionment
+## Adding mocked browser environment
 
-Unlike other libraries React need browser enviornment for `ReactDOM.render` and simulate events.
-We will use `browser-env` to add mocked browser envionment. `browser-env` will add variables like `window`, `document` etc to the global namespace.
+Unlike other libraries React need browser environment for `ReactDOM.render` and simulate events.
+We will use `browser-env` to add mocked browser environment. `browser-env` will add variables like `window`, `document` etc to the global namespace.
 
 Install the `browser-env` using 
 
@@ -131,11 +132,11 @@ test('it renders', (t) => {
 
 Now when we run the command `ava`,
 
-<video loop autoplay src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/ava-test-runner/ava-runner.mov" ></video>
+<video loop autoplay src="/assets/images/2017/ava-test-runner/ava-runner.mov" style="width:100%"></video>
 
 ## Snapshot testing
 
-Snapshot testing is introduced with jest, to compare and make sure UI didn't changed unexpectedly. Ava supports snapshot testing using `snapshot` assetion method.
+Snapshot testing is introduced with jest, to compare and make sure UI didn't changed unexpectedly. Ava supports snapshot testing using `snapshot` method.
 
 ```js
 import test from 'ava';

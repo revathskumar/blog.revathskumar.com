@@ -6,7 +6,7 @@ date: 2017-01-23 00:00:00 IST
 updated: 2017-10-23 00:00:00 IST
 categories: react
 tags: react, javascript
-image: 'http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/react-fiber_zps0rs4kvgd.jpg'
+image: '/assets/images/2017/react-fiber/react-fiber_zps0rs4kvgd.webp'
 ---
 
 > Disclaimer : **React Fiber** is experimental and do not use it for production. 
@@ -17,7 +17,7 @@ to diff one tree with another.
 It take advantage of scheduling, and set priority for each fibers. A unit of work to be done is called a `fiber`.
 It uses [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) to schedule the low priority fibers and [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) to schedule the high priority work.
 
-![react-fiber](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/react-fiber_zps0rs4kvgd.jpg)
+![react-fiber](/assets/images/2017/react-fiber/react-fiber_zps0rs4kvgd.webp){:style="width:100%"}
 
 If we want we can give a try, But it not available on npm as of now. So we need to clone the [react](https://github.com/facebook/react/) from github.
 
@@ -48,11 +48,11 @@ Error message "%s(...): Nothing was returned from render. This usually means a r
 
 You can run `gulp react:extract-errors` and then `gulp`.
 
-![react-build](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/Screenshot%20from%202017-01-22%2017-47-21_zpstgfllpbt.png)
+![react-build](/assets/images/2017/react-fiber/react-build.webp){:style="width:100%"}
 
 Now all the packages are build, and available in `build/packages` directory.
 
-![react-packages](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/2c5651b8-77f1-4902-ab2a-ee63e415b934_zps2ylyx2rn.png)
+![react-packages](/assets/images/2017/react-fiber/build-packages.webp){:style="width:100%"}
 
 ### How to try fiber in your project
 
