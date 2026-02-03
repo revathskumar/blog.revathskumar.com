@@ -3,13 +3,12 @@ layout: post
 title: 'Rails : serve dummy data via graphql using ActiveModel and json file'
 excerpt: 'In order to unblock the frontend team to we wanted a graphql server with dummy data served from a json file writing custom resolvers with the help of active model turned to be what we needed.'
 date: 2018-10-31 00:05:00 IST
-updated: 2018-10-31 00:05:00 IST
+updated: 2026-02-02 14:05:00 CET
 categories: rails
 tags: rails, graphql
 ---
 
-`Graphql` is a alternative to REST architecure which allows client to request the data in particular stucture and it returs data in thbe same 
-structure. 
+`Graphql` is a alternative to REST architecture which allows client to request the data in particular structure and it returns data in the same structure. 
 
 When you work as a `Frontend` and `Backend` team, you might need to setup a server to serve dummy data so that `Frontend` team can work in parallel.  
 
@@ -119,7 +118,7 @@ Now in your `/graphiql` interface when you query for
 
 you will receive the response
 
-![collection response](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/graphql-ruby/graphql-1.png)
+![collection response](/assets/images/2018/graphql-ruby/graphql-1.webp)
 
 ## <a class="anchor" name="setup-for-record" href="#setup-for-record"><i class="anchor-icon"></i></a>Setup single record query type
 
@@ -152,7 +151,7 @@ end
 
 The record response will be
 
-![record response](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/graphql-ruby/graphql-2.png)
+![record response](/assets/images/2018/graphql-ruby/graphql-2.webp)
 
 The code is available on [revathskumar/rails-graphql-activemodel-json](https://github.com/revathskumar/rails-graphql-activemodel-json)
 

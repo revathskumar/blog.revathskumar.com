@@ -3,9 +3,10 @@ layout: post
 title: 'Jest : Shared tests'
 excerpt: 'Explains how to write shared tests in jest'
 date: 2018-07-26 00:05:00 IST
-updated: 2018-07-26 00:05:00 IST
+updated: 2026-02-02 14:30:00 CET
 categories: jest
 tags: jest, testing
+image: /assets/images/2018/jest-shared-tests/jest-shared-example-success.webp
 ---
 
 We are tend to follow `DRY` while writing business logic, like we tend to move the block into a function, component etc. But I didn't see much people follow `DRY` while writing tests. In this post I will try explain how to share tests cases.
@@ -92,7 +93,7 @@ describe('<FormA />', () => {
       component.find('button').simulate('click');
       component.update();
       expect(component.text()).toEqual(
-        expec.stringContaining('Name is Required')
+        expect.stringContaining('Name is Required')
       );
     });
 
@@ -102,7 +103,7 @@ describe('<FormA />', () => {
       component.find('button').simulate('click');
       component.update();
       expect(component.text()).toEqual(
-        expec.stringContaining('Age is Required')
+        expect.stringContaining('Age is Required')
       );
     });
   });
@@ -177,7 +178,7 @@ test('render age error message', () => {
 });
 
 describe('change events update states', () => {
-  // test cases from aboove example
+  // test cases from above example
 
   test('update Gender state', () => {
     const component = shallow(<FormB {...this.commonProps} />);
@@ -381,7 +382,7 @@ describe('<FormB />', () => {
 
 Finally, all the tests are green again. 💃
 
-![shared tests running][shared_tests]
+![shared tests running][shared_tests]{:style="width:100%"}
 
 # <a class="anchor" name="this-is-undefined-error" href="#this-is-undefined-error"><i class="anchor-icon"></i></a>`this` is undefined error
 
@@ -420,7 +421,7 @@ The example code is available on [gitlab.com/revathskumar/jest-shared-test-examp
 
 More details on the packages and version on [package.json][package_json]
 
-[shared_tests]: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/jest-shared-tests/jest-shared-example-2.png
+[shared_tests]: /assets/images/2018/jest-shared-tests/jest-shared-example-2.webp
 [gitlab]: https://gitlab.com/revathskumar/jest-shared-test-example
 [gitlab_diff]: https://gitlab.com/revathskumar/jest-shared-test-example/commit/d9031be27747cd60cc2ee70282d52c9f7f45345c
 [package_json]: https://gitlab.com/revathskumar/jest-shared-test-example/blob/3721550f041652022de656279c90817496bba79e/package.json

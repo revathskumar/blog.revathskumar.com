@@ -3,10 +3,10 @@ layout: post
 title: 'ReactJS : Simple performance tip for list or table'
 excerpt: 'By using PureComponent or implementing shouldComponentUpdate in listItem or row component can save lot of rerenders'
 date: 2018-05-28 23:55:00 IST
-updated: 2017-05-28 23:55:00 IST
+updated: 2026-02-03 13:55:00 CET
 categories: react
 tags: react, performance
-image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/react-table-perf/react-optimised-table.gif
+image: /assets/images/2018/react-table-perf/react-optimised-table.gif
 ---
 
 If you implement table or list of your own, this simple tip will gain some performance improvement and can save a lot of rerenders.
@@ -98,11 +98,9 @@ The `TableRow` component have a `console.log` which will log the `id` & `name` w
 
 Now when the user select one of row, all the rows get rerendered in the above example. You can see `console.log` for all the items in the data source.
 
-![react-before-optimised-table](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/react-table-perf/react-before-optimised-table.gif)
+![react-before-optimised-table](/assets/images/2018/react-table-perf/react-before-optimised-table.gif){:style="width:100%"}
 
-You can see the live version in [jsbin](https://jsbin.com/zubihot/2/edit?console,output)
-
-<a class="jsbin-embed" href="http://jsbin.com/zubihot/2/embed?console,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+You can see the live version in [jsbin](https://jsbin.com/zubihot/2/edit?js,output)
 
 In the above demo we have only 4 items and 3 columns, which didn't cause much performance degradation. Where as consider the above table with around 200 items and 50 columns?
 A simple checkbox selection will trigger 200 rerenders for `TableRow` component.
@@ -140,14 +138,12 @@ class TableRow extends React.PureComponent {
 
 Now lets try selecting one of the row and see the improvement.
 
-![react-before-optimised-table](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/react-table-perf/react-optimised-table.gif)
+![react-before-optimised-table](/assets/images/2018/react-table-perf/react-optimised-table.gif){:style="width:100%"}
 
 Now when we select a row, only that row rerenders. [PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) has implemented 
 `shouldComponentUpdate` which does a **shallow compare** of props and do rerenders only if it differs.
 
-You can see the live version in [jsbin](https://jsbin.com/zubihot/edit?console,output)
-
-<a class="jsbin-embed" href="http://jsbin.com/zubihot/embed?console,output">JS Bin on jsbin.com</a><script src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+You can see the live version in [jsbin](https://jsbin.com/zubihot/edit?js,output)
 
 In the demo, the using of `PureComponent` was possible because the props where `number` & `string`. If the props are `Array` or `Object` we won't be 
 able to use `PureComponent` since the **shallow compare** of `PureComponent` might lead to false positives. 

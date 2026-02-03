@@ -3,10 +3,10 @@ layout: post
 title: 'Vue: using HTML5 validations'
 excerpt: 'HTML5 validation in vue app'
 date: 2018-12-05 01:05:00 IST
-updated: 2018-12-05 01:05:00 IST
+updated: 2016-02-02 14:05:00 CET
 categories: vue
 tags: vue, html5
-image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/vue-html5-validation/Screenshot+from+2018-12-05+00-42-47.png
+image: /assets/images/2018/vue-html5-validation/html5-validation.webp
 ---
 
 Handling client side validation using the HTML5 validation api is getting easier due to the wide support on modern browsers.
@@ -63,7 +63,7 @@ export default {
 # <a class="anchor" name="programmatically" href="#programmatically"><i class="anchor-icon"></i></a>Form submit programmatically
 
 When we use `form.submit()`, it wont trigger the native validations. This requirement usually arise when we want to do some task (like update state)
-before the form submission. In such cases we have to trigger the validation and report it manually using `checkValidity` and `reportVaidity` methods.
+before the form submission. In such cases we have to trigger the validation and report it manually using `checkValidity` and `reportValidity` methods.
 
 ```html
 <template>
@@ -277,4 +277,4 @@ if you have any feedback, please drop a comment below.
 [vue_capture_github_issue]: https://github.com/vuejs/vue/issues/8647#issuecomment-412499477
 [vue_capture]: https://vuejs.org/v2/guide/render-function.html#Event-amp-Key-Modifiers
 [working_sample]: https://codesandbox.io/s/5zmz9q9m0p
-[screenshot]: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/vue-html5-validation/Screenshot+from+2018-12-05+00-42-47.png
+[screenshot]: {{ page.image }}

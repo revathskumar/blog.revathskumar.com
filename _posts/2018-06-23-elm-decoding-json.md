@@ -6,7 +6,7 @@ date: 2018-06-23 00:05:00 IST
 updated: 2018-06-23 00:05:00 IST
 categories: elm
 tags: elm, json, decoder
-image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/elm-json-decoder/3762360637_6b851c9478.jpg
+image: /assets/images/2018/elm-json-decoder/3762360637_6b851c9478.webp
 ---
 
 In ELM understanding decoding JSON will take a bit of time. We can define a `Decoder` as a spec on how to perform the translation from JSON
@@ -53,7 +53,7 @@ decodeObjValue =
 
 Since we have only 2 fields in the JSON string we can use `Json.Decode.map2` and pass `Obj` and functions to decode each field.
 Our first field `a` is of type `Int`. So we can use `(Json.Decode.field "a" Json.Decode.int)` and for `b` we use `(Json.Decode.field "b" Json.Decode.string)`
-since we are expecing `b` to be of type `String`
+since we are expecting `b` to be of type `String`
 
 **Note:** It is extremely important to keep the order of the fields. The decoding will fail if we try to decode the field `b` first.
 
@@ -87,7 +87,7 @@ You can see the decode in action on [ellie-app][ellie_link]
     |      ELM         |  0.18.0 |
     |      core        |  5.1.1  |
 
-[json_card]: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/elm-json-decoder/3762360637_6b851c9478.jpg
+[json_card]: /assets/images/2018/elm-json-decoder/3762360637_6b851c9478.webp
 [json_card_src]:http://www.flickr.com/photos/44792728@N00/3762360637
 [json_decode]: http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode
 [decode_string]: http://package.elm-lang.org/packages/elm-lang/core/5.1.1/Json-Decode#decodeString
