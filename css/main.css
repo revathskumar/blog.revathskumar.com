@@ -2,6 +2,10 @@
   --h-border: #809fff;
   --header-link-light: #595959;
   --header-link-dark: #969696;
+  --title: #a00;
+  --title-hover: #000;
+  --title-dark: #F17E7E;
+  --title-dark-hover: #fb9999;
 }
 
 /*****************************************************************************/
@@ -103,17 +107,17 @@ ul.posts span {
   text-decoration: none;
 }
 
-.site .header h1.title {
+.site .header .title {
   display: inline-block;
   font-size: 100%;
 }
 
-.site .header h1.title a {
-  color: #a00;
+.site .header .title{
+  color: var(--title);
 }
 
-.site .header h1.title a:hover {
-  color: #000;
+.site .header .title:hover {
+  color: var(--title-hover);
 }
 
 .site .header a.extra {
@@ -565,12 +569,12 @@ h6:hover a.anchor i.anchor-icon {
     color: var(--h-border);
   }
 
-  .site .header h1.title a {
-    color: #F17E7E;
+  .site .header .title{
+    color: var(--title-dark);
   }
 
-  .site .header h1.title a:hover {
-    color: #fb9999;
+  .site .header .title:hover {
+    color: var(--title-dark-hover);
   }
 
   .site .header a.extra:hover {
