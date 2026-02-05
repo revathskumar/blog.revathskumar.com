@@ -23,6 +23,11 @@ comments: true
   If you find my work helpful, You can <a target="_blank" rel="nofollow" href="https://www.buymeacoffee.com/revathskumar">buy me a coffee</a>.
 </div>
 
+<div class="tags">
+  {% for tag in page.tags %}
+  <div class="tag">#{{ tag }}</div>
+  {% endfor %}
+</div>
 
 <div id="related">
   <h2>Related Posts</h2>

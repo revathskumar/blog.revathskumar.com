@@ -300,6 +300,28 @@ figcaption {
   text-align: center;
 }
 
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+}
+/*
+.tags span {
+    display: inline-block;
+    vertical-align: center;
+  line-height: normal;
+  margin: 0;
+  padding: 0.5em 0;
+}*/
+
+.tags .tag {
+  padding: 0.5em;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+
 @media only screen and (max-width: 768px) {
   /* Style adjustments for viewports 480px and over go here */
   h1 {
