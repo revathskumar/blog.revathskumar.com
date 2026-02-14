@@ -3,17 +3,17 @@ layout: post
 title: "Setting up dangerjs"
 excerpt: "Ever felt like you are repeating the same comment over and over in many PR's during the code review?"
 date: 2019-05-03 00:05:00 IST
-updated: 2019-05-03 00:05:00 IST
+updated: 2026-02-14 00:05:00 IST
 categories: javascript
 tags: dangerjs
-image: https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-logo.png
+image: /assets/images/dangerjs/danger-logo.webp
 ---
 
-Ever felt like you are repeating the same comment over and over in many PR's during the code review? Then this post is for you. 
+Ever felt like you are repeating the same comment over and over in many PR's during the code review? Then this post is for you.
 
 Even though this can't be avoided 100%, you can automate some of these by offloading to [dangerjs][dangerjs].
 
-![danger logo](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-logo.png){: width="100%"}
+![danger logo](/assets/images/dangerjs/danger-logo.webp){: width="100%"}
 
 
 ## <a class="anchor" name="Introduction" href="#Introduction"><i class="anchor-icon"></i></a>Introduction
@@ -75,7 +75,7 @@ npx danger local
 ```
 
 {: style="text-align: center"}
-![danger local](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-local.png)
+![danger local](/assets/images/dangerjs/danger-local.webp)
 
 `danger local` command have limitations when working with [danger.github][dangerjs_github_api] DSL. `danger.github` will be `null` when running `danger local` hence you should add necessary condition.
 
@@ -83,17 +83,17 @@ npx danger local
 
 All these won't benefit your team unless you add this into your **CI**. For that, first Goto [Github Settings][github_setting] and generate new `Github Access Token`. Make sure you gave `repo` scope to while creating.
 
-![github repo scope](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/github-repo-scope.png){: width="100%"}
+![github repo scope](/assets/images/dangerjs/github-repo-scope.webp){: width="100%"}
 
 if your organization already have a **bot** account you can generate token for that account and use it.
 
-once the token is generated copy and add it to your CI you as environment varibable named `DANGER_GITHUB_API_TOKEN`.
+once the token is generated copy and add it to your CI you as environment variable named `DANGER_GITHUB_API_TOKEN`.
 
 then add `npx danger ci` to the steps to execute. You can optionally add `danger ci` to the npm scripts as well.
 
 Now when is PR is open and your CI is triggered danger js will verify the changes first and if there is any issue it will leave a comment there.
 
-![dangerjs comment is action](https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-comment.png){: width="100%"}
+![dangerjs comment in action](/assets/images/dangerjs/danger-comment.webp){: width="100%"}
 
 ## <a class="anchor" name="plugins" href="#plugins"><i class="anchor-icon"></i></a>Plugins
 
