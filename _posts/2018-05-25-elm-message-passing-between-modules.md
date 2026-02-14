@@ -3,21 +3,21 @@ layout: post
 title: 'ELM : message passing between modules'
 excerpt: 'Message passing between modules in ELM.'
 date: 2018-05-25 00:05:00 IST
-updated: 2018-25-05 00:05:00 IST
+updated: 2026-02-14 00:05:00 IST
 categories: elm
 tags: elm
 ---
 
-In the last blog we saw [how to update a field in the list of items][part_1]. In that we had only one module `Main`. 
-In this we will see what are the changes need when we plan to move the `viewItem` into a child module and 
+In the last blog we saw [how to update a field in the list of items][part_1]. In that we had only one module `Main`.
+In this we will see what are the changes need when we plan to move the `viewItem` into a child module and
 how the message passing works between the modules.
 
-If you are planning to seperate module, 
+If you are planning to separate module,
 
 * Parent should have a message to convert the parent message to child message
 * This message will take care of conversion of all the messages related to child module.
 * Same may we have to convert the `Cmd` from child module to parent one.
-* Use `.map` function to convert one message to another  
+* Use `.map` function to convert one message to another
 
 From the last post the whole code will look like
 
