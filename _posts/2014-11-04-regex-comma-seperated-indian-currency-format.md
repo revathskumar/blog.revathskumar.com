@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Regex: comma seperated indian currency format"
-excerpt: "Explaining regex for comma seperated indian currency format"
+title: "Regex: comma separated indian currency format"
+excerpt: "Explaining regex for comma separated indian currency format"
 date: 2014-11-04 00:00:00 IST
-updated: 2014-11-04 00:00:00 IST
+updated: 2026-02-14 00:00:00 IST
 categories: regex
-image: http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-02223852_zpsaf17908a.png
+image: /assets/images/archive/curency-format-regexp.webp
 ---
 
-Recently, I got a request to show prices in comma seperated format on [whatznear.com](http://whatznear.com). Since we are using rails, it have a handy method to do [number\_to\_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency), but unfortunately that was not enough because it follow US system of seperation with thousands. My requirement was to show prices in Indian system of seperation with hundreds.
+Recently, I got a request to show prices in comma separated format on [whatznear.com](http://whatznear.com). Since we are using rails, it have a handy method to do [number\_to\_currency](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency), but unfortunately that was not enough because it follow US system of separation with thousands. My requirement was to show prices in Indian system of separation with hundreds.
 
 ```ruby
 450,500 # US system
@@ -23,7 +23,7 @@ price.to_s.gsub(/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/, "\\1,")
 
 The above regex worked fine for me, but I was curious to know how it works. So I started digging into regex documentation. I am gonna explain, what I understand about the regex.
 
-[![Regex groups explained](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-02223852_zpsaf17908a.png)](http://www.regexper.com/#%2F\(%5Cd%2B%3F\)\(%3F%3D\(%5Cd%5Cd\)%2B\(%5Cd\)\(%3F!%5Cd\)\)\(%5C.%5Cd%2B\)%3F%2F)
+[![Regex groups explained](/assets/images/archive/curency-format-regexp.webp){: style="width:100%"}](http://www.regexper.com/#%2F\(%5Cd%2B%3F\)\(%3F%3D\(%5Cd%5Cd\)%2B\(%5Cd\)\(%3F!%5Cd\)\)\(%5C.%5Cd%2B\)%3F%2F)
 
 ## Group 1 `(\d+?)`
 
@@ -33,7 +33,7 @@ Let look into group 1 ie., `(\d+?)` which says digit should be matched as often 
 
 The Grouping start with `?=` means its a positive lookahead and the previously captured match (matched by group 1) should follow match of this group. Whatever this Group 2 matches won't expand the match of Group 1.
 
-In order to match this group, 2 digits should be found at least once (`(\d\d)+`), followed by a digit (`(\d)`) and non digit. 
+In order to match this group, 2 digits should be found at least once (`(\d\d)+`), followed by a digit (`(\d)`) and non digit.
 
 `(?!\d)` is a [negative lookahead](http://www.regular-expressions.info/lookaround.html) which succeeds when the regex inside lookahead fails. This helps to filter out last 3 digits of a number.
 
@@ -44,9 +44,9 @@ When the group 1 and positive lookahead works together, for the first match ther
 a digit followed by at least 1 group of 2 digits, followed by a single digit and non digit.
 
 lets take the number **1234567.00**, as the regex engine always returns the leftmost match,
-the first match will be `12` since it is followed by group of 2 digit (twice) (34 & 56) and a digit then a `.` (non digit). The second match will be `34` since it is followed by group of 2 digit (once) (56) and then a `.` (non digit). Then the engine will try to match again but `56` **won't** get a match since it is not followed by the group of 2 digits. So the resulting match will be 
+the first match will be `12` since it is followed by group of 2 digit (twice) (34 & 56) and a digit then a `.` (non digit). The second match will be `34` since it is followed by group of 2 digit (once) (56) and then a `.` (non digit). Then the engine will try to match again but `56` **won't** get a match since it is not followed by the group of 2 digits. So the resulting match will be
 
-[![](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-03221047_zps332860c2.png)](http://rubular.com/r/mgw9bMV1HF)
+[![Regexp matching](/assets/images/archive/curency-format-regexp-match.webp){: style="width:100%"}](http://rubular.com/r/mgw9bMV1HF)
 
 
 The last group `(\.\d+)?` is for floating point.
