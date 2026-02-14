@@ -4,8 +4,9 @@ markdown: kramdown
 highlighter: rouge
 url: https://blog.revathskumar.com
 
-permalink: '/:year/:month/:title.html'
-excerpt_separator: "\n\n"
+permalink: "/:year/:month/:title.html"
+# excerpt_separator: "\n\n"
+excerpt_separator: <!--excerpt ends-->
 exclude: [vendor, node_modules]
 include: [.well-known]
 timezone: Asia/Kolkata
