@@ -4,6 +4,13 @@ title: "Revath S Kumar"
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in (2..6) %}
+    <url>
+      <loc>{{ site.url }}{{ site.paginate_path | relative_url | replace: ':num', page }}</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    </url>
+  {% endfor %}
+
   {% for post in site.posts %}
     {% unless post.published == false %}
     <url>
