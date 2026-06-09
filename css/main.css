@@ -406,6 +406,7 @@ figcaption {
   pre.highlight {
     overflow-x: scroll;
     white-space: pre;
+    text-align: start;
   }
 }
 
