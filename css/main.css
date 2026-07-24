@@ -72,6 +72,11 @@ a:visited {
   navigation: auto;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
 
 /*****************************************************************************/
 /*
